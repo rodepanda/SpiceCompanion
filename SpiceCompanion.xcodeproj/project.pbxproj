@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41064C6223A6748500848FB7 /* KeyPadViewController.swift */; };
+		4113E0E424680A010051DBFF /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E324680A010051DBFF /* UIViewControllerExtension.swift */; };
+		4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */; };
+		4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E724682E230051DBFF /* PatchReadPacket.swift */; };
+		4113E0EA246843020051DBFF /* CardPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E9246843020051DBFF /* CardPacket.swift */; };
+		4113E0EC2468480B0051DBFF /* KeyPadPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0EB2468480B0051DBFF /* KeyPadPacket.swift */; };
+		4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0ED246852620051DBFF /* PatchWritePacket.swift */; };
+		4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0EF246857940051DBFF /* LauncherPacket.swift */; };
+		4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */; };
+		4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0F524687EB50051DBFF /* TabBarViewController.swift */; };
+		4113E0F82468A5E70051DBFF /* Notice in Resources */ = {isa = PBXBuildFile; fileRef = 4113E0F72468A5E70051DBFF /* Notice */; };
+		4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137CFA22466DBB400B85CB2 /* FileTools.swift */; };
+		4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D13823A3D5C5006B255A /* AppDelegate.swift */; };
+		4150D13B23A3D5C5006B255A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D13A23A3D5C5006B255A /* SceneDelegate.swift */; };
+		4150D14023A3D5C5006B255A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4150D13E23A3D5C5006B255A /* Main.storyboard */; };
+		4150D14223A3D5C9006B255A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4150D14123A3D5C9006B255A /* Assets.xcassets */; };
+		4150D14523A3D5C9006B255A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */; };
+		4150D14F23A3DEAF006B255A /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */; };
+		4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15223A43A90006B255A /* EditServerViewController.swift */; };
+		4150D15823A504E9006B255A /* Rc4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15723A504E9006B255A /* Rc4.swift */; };
+		4150D15A23A515F5006B255A /* SpiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15923A515F5006B255A /* SpiceClient.swift */; };
+		4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15E23A5244A006B255A /* SendingPacket.swift */; };
+		4150D16123A5271B006B255A /* AvsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D16023A5271B006B255A /* AvsPacket.swift */; };
+		4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D16223A65E3A006B255A /* ConnectionController.swift */; };
+		4177A8A32467635600B695E9 /* PatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177A8A22467635600B695E9 /* PatchManager.swift */; };
+		417CD9DD246757B200426294 /* CoinPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CD9DC246757B200426294 /* CoinPacket.swift */; };
+		417CD9E024675E2500426294 /* patches.json in Resources */ = {isa = PBXBuildFile; fileRef = 417CD9DF24675E2500426294 /* patches.json */; };
+		41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */; };
+		41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */; };
+		41862F4D2466B4A200F4E5A6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4C2466B4A200F4E5A6 /* Card.swift */; };
+		41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */; };
+		B27FAF33263A3742755CC7A0 /* Pods_SpiceCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		352F52CA0B25264E652091AD /* Pods-SpiceCompanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpiceCompanion.debug.xcconfig"; path = "Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion.debug.xcconfig"; sourceTree = "<group>"; };
+		3DFF64F2EE1263F58DC474AD /* Pods-SpiceCompanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpiceCompanion.release.xcconfig"; path = "Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion.release.xcconfig"; sourceTree = "<group>"; };
+		41064C6223A6748500848FB7 /* KeyPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadViewController.swift; sourceTree = "<group>"; };
+		4113E0E324680A010051DBFF /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchTableViewController.swift; sourceTree = "<group>"; };
+		4113E0E724682E230051DBFF /* PatchReadPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchReadPacket.swift; sourceTree = "<group>"; };
+		4113E0E9246843020051DBFF /* CardPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPacket.swift; sourceTree = "<group>"; };
+		4113E0EB2468480B0051DBFF /* KeyPadPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadPacket.swift; sourceTree = "<group>"; };
+		4113E0ED246852620051DBFF /* PatchWritePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchWritePacket.swift; sourceTree = "<group>"; };
+		4113E0EF246857940051DBFF /* LauncherPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherPacket.swift; sourceTree = "<group>"; };
+		4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		4113E0F524687EB50051DBFF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		4113E0F72468A5E70051DBFF /* Notice */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
+		4137CFA22466DBB400B85CB2 /* FileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTools.swift; sourceTree = "<group>"; };
+		4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceCompanionCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4150D13823A3D5C5006B255A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4150D13A23A3D5C5006B255A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4150D13F23A3D5C5006B255A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4150D14123A3D5C9006B255A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4150D14423A3D5C9006B255A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4150D14623A3D5C9006B255A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
+		4150D15223A43A90006B255A /* EditServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServerViewController.swift; sourceTree = "<group>"; };
+		4150D15723A504E9006B255A /* Rc4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rc4.swift; sourceTree = "<group>"; };
+		4150D15923A515F5006B255A /* SpiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiceClient.swift; sourceTree = "<group>"; };
+		4150D15E23A5244A006B255A /* SendingPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingPacket.swift; sourceTree = "<group>"; };
+		4150D16023A5271B006B255A /* AvsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvsPacket.swift; sourceTree = "<group>"; };
+		4150D16223A65E3A006B255A /* ConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
+		4177A8A22467635600B695E9 /* PatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchManager.swift; sourceTree = "<group>"; };
+		4179C0DD23A6A15800FCA226 /* Spice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spice.entitlements; sourceTree = "<group>"; };
+		417CD9DC246757B200426294 /* CoinPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPacket.swift; sourceTree = "<group>"; };
+		417CD9DF24675E2500426294 /* patches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = patches.json; sourceTree = "<group>"; };
+		41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardTableViewController.swift; sourceTree = "<group>"; };
+		41862F4C2466B4A200F4E5A6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
+		A1F97F6F53A78A74F817EEAD /* Pods-Spice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice.release.xcconfig"; path = "Target Support Files/Pods-Spice/Pods-Spice.release.xcconfig"; sourceTree = "<group>"; };
+		BA6906926B31389C1AEA230F /* Pods-Spice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice.debug.xcconfig"; path = "Target Support Files/Pods-Spice/Pods-Spice.debug.xcconfig"; sourceTree = "<group>"; };
+		C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpiceCompanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4150D13223A3D5C5006B255A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B27FAF33263A3742755CC7A0 /* Pods_SpiceCompanion.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		296332EFBFE5DA59C48A7B2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4150D12C23A3D5C5006B255A = {
+			isa = PBXGroup;
+			children = (
+				4113E0F72468A5E70051DBFF /* Notice */,
+				4150D13723A3D5C5006B255A /* SpiceCompanion */,
+				4150D13623A3D5C5006B255A /* Products */,
+				65007332EB131A652F1B9C1C /* Pods */,
+				296332EFBFE5DA59C48A7B2D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4150D13623A3D5C5006B255A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4150D13723A3D5C5006B255A /* SpiceCompanion */ = {
+			isa = PBXGroup;
+			children = (
+				417CD9DE24675E1000426294 /* Patches */,
+				4179C0DD23A6A15800FCA226 /* Spice.entitlements */,
+				4150D15B23A51CB8006B255A /* Packets */,
+				4150D13823A3D5C5006B255A /* AppDelegate.swift */,
+				4150D13A23A3D5C5006B255A /* SceneDelegate.swift */,
+				4150D13E23A3D5C5006B255A /* Main.storyboard */,
+				4150D14123A3D5C9006B255A /* Assets.xcassets */,
+				4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */,
+				4150D14623A3D5C9006B255A /* Info.plist */,
+				4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */,
+				4150D15223A43A90006B255A /* EditServerViewController.swift */,
+				4150D15723A504E9006B255A /* Rc4.swift */,
+				4150D15923A515F5006B255A /* SpiceClient.swift */,
+				4150D16223A65E3A006B255A /* ConnectionController.swift */,
+				41064C6223A6748500848FB7 /* KeyPadViewController.swift */,
+				41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */,
+				41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */,
+				41862F4C2466B4A200F4E5A6 /* Card.swift */,
+				4137CFA22466DBB400B85CB2 /* FileTools.swift */,
+				41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */,
+				4113E0E324680A010051DBFF /* UIViewControllerExtension.swift */,
+				4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */,
+				4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */,
+				4113E0F524687EB50051DBFF /* TabBarViewController.swift */,
+			);
+			path = SpiceCompanion;
+			sourceTree = "<group>";
+		};
+		4150D15B23A51CB8006B255A /* Packets */ = {
+			isa = PBXGroup;
+			children = (
+				4150D15E23A5244A006B255A /* SendingPacket.swift */,
+				4150D16023A5271B006B255A /* AvsPacket.swift */,
+				417CD9DC246757B200426294 /* CoinPacket.swift */,
+				4113E0E724682E230051DBFF /* PatchReadPacket.swift */,
+				4113E0E9246843020051DBFF /* CardPacket.swift */,
+				4113E0EB2468480B0051DBFF /* KeyPadPacket.swift */,
+				4113E0ED246852620051DBFF /* PatchWritePacket.swift */,
+				4113E0EF246857940051DBFF /* LauncherPacket.swift */,
+			);
+			path = Packets;
+			sourceTree = "<group>";
+		};
+		417CD9DE24675E1000426294 /* Patches */ = {
+			isa = PBXGroup;
+			children = (
+				417CD9DF24675E2500426294 /* patches.json */,
+				4177A8A22467635600B695E9 /* PatchManager.swift */,
+			);
+			path = Patches;
+			sourceTree = "<group>";
+		};
+		65007332EB131A652F1B9C1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA6906926B31389C1AEA230F /* Pods-Spice.debug.xcconfig */,
+				A1F97F6F53A78A74F817EEAD /* Pods-Spice.release.xcconfig */,
+				352F52CA0B25264E652091AD /* Pods-SpiceCompanion.debug.xcconfig */,
+				3DFF64F2EE1263F58DC474AD /* Pods-SpiceCompanion.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4150D13423A3D5C5006B255A /* SpiceCompanion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4150D14923A3D5C9006B255A /* Build configuration list for PBXNativeTarget "SpiceCompanion" */;
+			buildPhases = (
+				0A70E4AA46A09148C8BE03E2 /* [CP] Check Pods Manifest.lock */,
+				4150D13123A3D5C5006B255A /* Sources */,
+				4150D13223A3D5C5006B255A /* Frameworks */,
+				4150D13323A3D5C5006B255A /* Resources */,
+				61016DB76DBEACDFD6C866EF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpiceCompanion;
+			productName = Spice;
+			productReference = 4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4150D12D23A3D5C5006B255A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Rodepanda;
+				TargetAttributes = {
+					4150D13423A3D5C5006B255A = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 4150D13023A3D5C5006B255A /* Build configuration list for PBXProject "SpiceCompanion" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4150D12C23A3D5C5006B255A;
+			productRefGroup = 4150D13623A3D5C5006B255A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4150D13423A3D5C5006B255A /* SpiceCompanion */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4150D13323A3D5C5006B255A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4113E0F82468A5E70051DBFF /* Notice in Resources */,
+				417CD9E024675E2500426294 /* patches.json in Resources */,
+				4150D14523A3D5C9006B255A /* LaunchScreen.storyboard in Resources */,
+				4150D14223A3D5C9006B255A /* Assets.xcassets in Resources */,
+				4150D14023A3D5C5006B255A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A70E4AA46A09148C8BE03E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpiceCompanion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61016DB76DBEACDFD6C866EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4150D13123A3D5C5006B255A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */,
+				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
+				4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */,
+				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
+				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
+				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
+				4113E0E424680A010051DBFF /* UIViewControllerExtension.swift in Sources */,
+				4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */,
+				41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */,
+				41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */,
+				4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */,
+				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
+				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
+				4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */,
+				4177A8A32467635600B695E9 /* PatchManager.swift in Sources */,
+				4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */,
+				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
+				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
+				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
+				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
+				4150D14F23A3DEAF006B255A /* ServerTableViewController.swift in Sources */,
+				4113E0EC2468480B0051DBFF /* KeyPadPacket.swift in Sources */,
+				4150D13B23A3D5C5006B255A /* SceneDelegate.swift in Sources */,
+				4150D15A23A515F5006B255A /* SpiceClient.swift in Sources */,
+				417CD9DD246757B200426294 /* CoinPacket.swift in Sources */,
+				41862F4D2466B4A200F4E5A6 /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4150D13E23A3D5C5006B255A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4150D13F23A3D5C5006B255A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4150D14423A3D5C9006B255A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4150D14723A3D5C9006B255A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4150D14823A3D5C9006B255A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4150D14A23A3D5C9006B255A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 352F52CA0B25264E652091AD /* Pods-SpiceCompanion.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR7RY9RVJU;
+				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
+				PRODUCT_NAME = SpiceCompanionCompanion;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4150D14B23A3D5C9006B255A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DFF64F2EE1263F58DC474AD /* Pods-SpiceCompanion.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AR7RY9RVJU;
+				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
+				PRODUCT_NAME = SpiceCompanionCompanion;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4150D13023A3D5C5006B255A /* Build configuration list for PBXProject "SpiceCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4150D14723A3D5C9006B255A /* Debug */,
+				4150D14823A3D5C9006B255A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4150D14923A3D5C9006B255A /* Build configuration list for PBXNativeTarget "SpiceCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4150D14A23A3D5C9006B255A /* Debug */,
+				4150D14B23A3D5C9006B255A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4150D12D23A3D5C5006B255A /* Project object */;
+}
