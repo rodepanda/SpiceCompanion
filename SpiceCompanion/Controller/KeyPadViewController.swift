@@ -43,65 +43,21 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         if SelectedCard.card != nil {
-            insertButton.isUserInteractionEnabled = true
-            insertButton.tintColor = .systemRed
+            insertButton.isEnabled = true
+            insertButton.tintColor = .red
         } else {
-            insertButton.isUserInteractionEnabled = false
+            insertButton.isEnabled = false
             insertButton.tintColor = .darkGray
         }
     }
     
     private func setupButtons(){
         
-        let screenHeight = view.frame.height
-        let screenWidth = view.frame.width
-        let tabBarHeight = tabBarController!.tabBar.frame.height
-        let leftRightPadding = view.frame.width * 0.13
-        let interSpacing = view.frame.width * 0.1
-        let cellWidth = (view.frame.width - 2 * leftRightPadding - 2 * interSpacing) / 3
-        let fourthTop = view.frame.height - tabBarHeight - cellWidth * 3
-        let thirdTop = fourthTop - cellWidth - interSpacing
-        let secondTop = thirdTop - cellWidth - interSpacing
-        let firstTop = secondTop - cellWidth - interSpacing
-        let oneOffset = leftRightPadding
-        let twoOffset = leftRightPadding + cellWidth + interSpacing
-        let threeOffset = twoOffset + cellWidth + interSpacing
-        
-        pButton.frame.size = CGSize(width: cellWidth, height: cellWidth)
-        scanButton.frame.size = CGSize(width: cellWidth, height: cellWidth)
-        coinButton.frame.size = CGSize(width: cellWidth, height: cellWidth)
-        
-        oneButton.frame.origin = CGPoint(x: oneOffset, y: firstTop)
-        twoButton.frame.origin = CGPoint(x: twoOffset, y: firstTop)
-        threeButton.frame.origin = CGPoint(x: threeOffset, y: firstTop)
-        fourButton.frame.origin = CGPoint(x: oneOffset, y: secondTop)
-        fiveButton.frame.origin = CGPoint(x: twoOffset, y: secondTop)
-        sixButton.frame.origin = CGPoint(x: threeOffset, y: secondTop)
-        sevenButton.frame.origin = CGPoint(x: oneOffset, y: thirdTop)
-        eightButton.frame.origin = CGPoint(x: twoOffset, y: thirdTop)
-        nineButton.frame.origin = CGPoint(x: threeOffset, y: thirdTop)
-        zeroButton.frame.origin = CGPoint(x: oneOffset, y: fourthTop)
-        doubleOButton.frame.origin = CGPoint(x: twoOffset, y: fourthTop)
-        dotButton.frame.origin = CGPoint(x: threeOffset, y: fourthTop)
-        
-        pButton.frame.origin = CGPoint(x: 20, y: screenHeight - cellWidth - tabBarHeight)
-        scanButton.frame.origin = CGPoint(x: screenWidth - cellWidth - 20, y: screenHeight - cellWidth - tabBarHeight - 40)
-        coinButton.frame.origin = CGPoint(x: screenWidth - cellWidth - 20, y: screenHeight - cellWidth - tabBarHeight)
-        insertButton.frame.size = CGSize(width: insertButton.frame.width, height: cellWidth)
-        insertButton.frame.origin = CGPoint(x: screenWidth / 2 - insertButton.frame.width / 2, y: screenHeight - cellWidth - tabBarHeight)
-        
-        setupButton(button: oneButton, size: cellWidth)
-        setupButton(button: twoButton, size: cellWidth)
-        setupButton(button: threeButton, size: cellWidth)
-        setupButton(button: fourButton, size: cellWidth)
-        setupButton(button: fiveButton, size: cellWidth)
-        setupButton(button: sixButton, size: cellWidth)
-        setupButton(button: sevenButton, size: cellWidth)
-        setupButton(button: eightButton, size: cellWidth)
-        setupButton(button: nineButton, size: cellWidth)
-        setupButton(button: zeroButton, size: cellWidth)
-        setupButton(button: doubleOButton, size: cellWidth)
-        setupButton(button: dotButton, size: cellWidth)
+        let buttons:[UIButton] = [oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,sevenButton,eightButton,nineButton,zeroButton,doubleOButton,dotButton]
+        let cellWidth:CGFloat = 70
+        for button in buttons{
+            setupButton(button: button, size: cellWidth)
+        }
     }
     
     func getPlayerIndex() -> Int {
@@ -109,9 +65,9 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     }
     
     private func setupButton(button: UIButton, size: CGFloat){
-        button.frame.size = CGSize(width: size, height: size)
-        button.backgroundColor = UIColor.systemGray6
-        button.layer.cornerRadius = 0.5 * size;
+        button.bounds.size = CGSize(width: size, height: size)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = size/2;
     }
     
     @IBAction func cardInsertPressed(_ sender: Any) {
