@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreNFC
+import ColorCompatibility
 
 class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     
@@ -29,11 +30,23 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var coinButton: UIButton!
     
+    @IBOutlet weak var keypadBackground: UIView!
+    //@IBOutlet weak var keypadStackView: UIStackView!
     var playerOneSelected = true
     
+    var cellWidth:CGFloat = 80
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
+        keypadBackground.backgroundColor = UIColor(named: "KeyPadBackground")
+        keypadBackground.clipsToBounds = true
+        keypadBackground.layer.cornerRadius = cellWidth / 5
+        keypadBackground.layer.borderColor = UIColor.darkGray.cgColor
+        keypadBackground.layer.borderWidth = 3
+        insertButton.clipsToBounds = true
+        insertButton.layer.cornerRadius = insertButton.frame.height / 5
+        insertButton.tintColor = .red
+        
         if(!NFCTagReaderSession.readingAvailable) {
             scanButton.isEnabled = false
             scanButton.isHidden = true
@@ -45,16 +58,19 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
         if SelectedCard.card != nil {
             insertButton.isEnabled = true
             insertButton.tintColor = .red
+            insertButton.backgroundColor = UIColor(named: "InvertWhiteBlack")
         } else {
             insertButton.isEnabled = false
             insertButton.tintColor = .darkGray
+            insertButton.backgroundColor = ColorCompatibility.systemGray6
         }
     }
     
     private func setupButtons(){
         
         let buttons:[UIButton] = [oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,sevenButton,eightButton,nineButton,zeroButton,doubleOButton,dotButton]
-        let cellWidth:CGFloat = 70
+        
+        
         for button in buttons{
             setupButton(button: button, size: cellWidth)
         }
@@ -67,7 +83,10 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     private func setupButton(button: UIButton, size: CGFloat){
         button.bounds.size = CGSize(width: size, height: size)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = size/2;
+        button.layer.cornerRadius = size/5;
+        button.layer.borderColor = ColorCompatibility.systemGray3.cgColor
+        button.layer.borderWidth = 3
+        button.tintColor = .white
     }
     
     @IBAction func cardInsertPressed(_ sender: Any) {
@@ -119,57 +138,92 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     
     
     @IBAction func scanButtonPressed(_ sender: Any) {
-        nfcSession = NFCTagReaderSession.init(pollingOption: .iso18092, delegate: self)
+        nfcSession = NFCTagReaderSession.init(pollingOption: .iso15693, delegate: self)
         nfcSession?.begin()
     }
     
     private var nfcSession: NFCTagReaderSession?
     
     func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
-            //Start Scanning
+        //Start Scanning
+    }
+    
+    func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
+        //Session closed
+    }
+    
+    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
+        
+        if tags.count > 1 {
+            let retryInterval = DispatchTimeInterval.milliseconds(500)
+            session.alertMessage = "More than 1 tag is detected, please remove all tags and try again."
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+                session.restartPolling()
+            })
+            return
         }
         
-        func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
-            //Session closed
-        }
+        //let tag = tags.first!
         
-        func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
-            
-            if tags.count > 1 {
-                let retryInterval = DispatchTimeInterval.milliseconds(500)
-                session.alertMessage = "More than 1 tag is detected, please remove all tags and try again."
-                DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
-                    session.restartPolling()
-                })
-                return
-            }
-            
-            let tag = tags.first!
-            
-            session.connect(to: tag) { (error) in
-                if nil != error {
-                    session.invalidate(errorMessage: "Connection error. Please try again.")
-                    return
-                }
-                guard case .feliCa(let feliCaTag) = tag else {
-                    let retryInterval = DispatchTimeInterval.milliseconds(500)
-                    session.alertMessage = "A tag that is not FeliCa is detected, please try again with tag FeliCa."
-                    DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
-                        session.restartPolling()
-                    })
-                    return
-                }
+        if case let NFCTag.iso15693(tag) = tags.first! {
+            session.connect(to: tags.first!) { (error: Error?) in
+                print(tag.identifier.hexEncodedString())
                 
-                let idm = feliCaTag.currentIDm.map { String(format: "%.2hhx", $0) }.joined()
-    //            let systemCode = feliCaTag.currentSystemCode.map { String(format: "%.2hhx", $0) }.joined()
-                
-                let playerIndex = self.getPlayerIndex()
-                let cardPacket = CardPacket(index: playerIndex, cardID: idm)
-                ConnectionController.get().sendPacket(packet: cardPacket)
-                
-                session.alertMessage = "Card Inserted."
                 session.invalidate()
             }
         }
-
+        if case let NFCTag.feliCa(tag) = tags.first! {
+            session.connect(to: tags.first!) { (error: Error?) in
+                tag.requestResponse() { (mode: Int, error: Error?) in
+                    let idm = tag.currentIDm.map { String(format: "%.2hhx", $0) }.joined()
+                    print(idm)
+                    session.invalidate()
+                }
+            }
+        }
+        
+        if case let NFCTag.miFare(tag) = tags.first! {
+            session.connect(to: tags.first!) { (error: Error?) in
+                print(tag.identifier.hexEncodedString())
+                session.invalidate()
+            }
+        }
+        if case let NFCTag.iso7816(tag) = tags.first!{
+            session.connect(to: tags.first!) { (error: Error?) in
+                print(tag.identifier.hexEncodedString())
+                session.invalidate()
+            }
+        }
+        
+        //            session.connect(to: tag) { (error) in
+        //                if nil != error {
+        //                    //print(error)
+        //                    session.invalidate(errorMessage: "Connection error. Please try again.")
+        //                    return
+        //                }
+        //                guard case .feliCa(let feliCaTag) = tag else {
+        //                    let retryInterval = DispatchTimeInterval.milliseconds(500)
+        //                    session.alertMessage = "A tag that is not FeliCa is detected, please try again with tag FeliCa."
+        //                    DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+        //                        session.restartPolling()
+        //                    })
+        //
+        //                }
+        //
+        //                //guard case .iso15693(let iso15693Tag)
+        //
+        //
+        //                let idm = feliCaTag.currentIDm.map { String(format: "%.2hhx", $0) }.joined()
+        //    //            let systemCode = feliCaTag.currentSystemCode.map { String(format: "%.2hhx", $0) }.joined()
+        //
+        //                let playerIndex = self.getPlayerIndex()
+        //                let cardPacket = CardPacket(index: playerIndex, cardID: idm)
+        //                ConnectionController.get().sendPacket(packet: cardPacket)
+        //
+        //                session.alertMessage = "Card Inserted."
+        //                session.invalidate()
+        //            }
+    }
+    
 }
+

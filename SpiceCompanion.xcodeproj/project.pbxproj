@@ -39,6 +39,7 @@
 		41862F4D2466B4A200F4E5A6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4C2466B4A200F4E5A6 /* Card.swift */; };
 		41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */; };
 		4C90F6A12473EBB600F367D5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90F6A02473EBB600F367D5 /* Server.swift */; };
+		4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */; };
 		B27FAF33263A3742755CC7A0 /* Pods_SpiceCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		41862F4C2466B4A200F4E5A6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 		4C90F6A02473EBB600F367D5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+GetDeviceType.swift"; sourceTree = "<group>"; };
 		A1F97F6F53A78A74F817EEAD /* Pods-Spice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice.release.xcconfig"; path = "Target Support Files/Pods-Spice/Pods-Spice.release.xcconfig"; sourceTree = "<group>"; };
 		BA6906926B31389C1AEA230F /* Pods-Spice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice.debug.xcconfig"; path = "Target Support Files/Pods-Spice/Pods-Spice.debug.xcconfig"; sourceTree = "<group>"; };
 		C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpiceCompanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */,
+				4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */,
 				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
+				4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */,
 				4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */,
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
@@ -507,7 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 468P99X6E7;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,7 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice.beta;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -528,7 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 468P99X6E7;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,7 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice.beta;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
