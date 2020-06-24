@@ -112,7 +112,6 @@ class ServerTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         if(self.isEditing){
             //self.performSegue(withIdentifier: "editServer", sender: self)
             let server = servers[indexPath.row]
@@ -202,7 +201,9 @@ extension ServerTableViewController: EditServerViewControllerDelegate{
         if let selectedIndexPath = tableView.indexPathForSelectedRow{
             servers[selectedIndexPath.row] = server
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
         }
+        
         persistData()
     }
     

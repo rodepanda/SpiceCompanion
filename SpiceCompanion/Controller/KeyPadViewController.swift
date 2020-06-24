@@ -10,7 +10,8 @@ import UIKit
 import CoreNFC
 import ColorCompatibility
 
-class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
+
+class KeyPadViewController: UIViewController{
     
     @IBOutlet weak var oneButton: UIButton!
     @IBOutlet weak var twoButton: UIButton!
@@ -28,9 +29,10 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     @IBOutlet weak var pButton: UIButton!
     @IBOutlet weak var insertButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var scanEPassButton: UIButton!
     @IBOutlet weak var coinButton: UIButton!
     
-    @IBOutlet weak var keypadBackground: UIView!
+    //@IBOutlet weak var keypadBackground: UIView!
     //@IBOutlet weak var keypadStackView: UIStackView!
     var playerOneSelected = true
     
@@ -38,18 +40,20 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
-        keypadBackground.backgroundColor = UIColor(named: "KeyPadBackground")
-        keypadBackground.clipsToBounds = true
-        keypadBackground.layer.cornerRadius = cellWidth / 5
-        keypadBackground.layer.borderColor = UIColor.darkGray.cgColor
-        keypadBackground.layer.borderWidth = 3
+//        keypadBackground.backgroundColor = UIColor(named: "KeyPadBackground")
+//        keypadBackground.clipsToBounds = true
+//        keypadBackground.layer.cornerRadius = cellWidth / 5
+//        keypadBackground.layer.borderColor = UIColor.darkGray.cgColor
+//        keypadBackground.layer.borderWidth = 3
         insertButton.clipsToBounds = true
         insertButton.layer.cornerRadius = insertButton.frame.height / 5
         insertButton.tintColor = .red
         
         if(!NFCTagReaderSession.readingAvailable) {
             scanButton.isEnabled = false
+            scanEPassButton.isEnabled = false
             scanButton.isHidden = true
+            scanEPassButton.isHidden = true
         }
         // Do any additional setup after loading the view.
     }
@@ -136,13 +140,25 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
         }
     }
     
+    private var nfcSession: NFCTagReaderSession?
     
-    @IBAction func scanButtonPressed(_ sender: Any) {
+    @IBAction func scanFelicaButtonPressed(_ sender: Any) {
+        nfcSession = NFCTagReaderSession.init(pollingOption: .iso18092, delegate: self)
+        nfcSession?.begin()
+        
+    }
+    @IBAction func scanEPassButtonPressed(_ sender: Any) {
         nfcSession = NFCTagReaderSession.init(pollingOption: .iso15693, delegate: self)
         nfcSession?.begin()
+        
     }
     
-    private var nfcSession: NFCTagReaderSession?
+    
+    
+}
+
+extension KeyPadViewController:NFCTagReaderSessionDelegate{
+    
     
     func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
         //Start Scanning
@@ -168,30 +184,27 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
         if case let NFCTag.iso15693(tag) = tags.first! {
             session.connect(to: tags.first!) { (error: Error?) in
                 print(tag.identifier.hexEncodedString())
-                
+                let idm = tag.identifier.hexEncodedString()
+                let playerIndex = self.getPlayerIndex()
+                let cardPacket = CardPacket(index: playerIndex, cardID: idm)
+                ConnectionController.get().sendPacket(packet: cardPacket)
+                session.alertMessage = "Card Inserted."
                 session.invalidate()
             }
         }
+        
         if case let NFCTag.feliCa(tag) = tags.first! {
             session.connect(to: tags.first!) { (error: Error?) in
                 tag.requestResponse() { (mode: Int, error: Error?) in
                     let idm = tag.currentIDm.map { String(format: "%.2hhx", $0) }.joined()
                     print(idm)
+                    let playerIndex = self.getPlayerIndex()
+                    let cardPacket = CardPacket(index: playerIndex, cardID: idm)
+                    ConnectionController.get().sendPacket(packet: cardPacket)
+                    
+                    session.alertMessage = "Card Inserted."
                     session.invalidate()
                 }
-            }
-        }
-        
-        if case let NFCTag.miFare(tag) = tags.first! {
-            session.connect(to: tags.first!) { (error: Error?) in
-                print(tag.identifier.hexEncodedString())
-                session.invalidate()
-            }
-        }
-        if case let NFCTag.iso7816(tag) = tags.first!{
-            session.connect(to: tags.first!) { (error: Error?) in
-                print(tag.identifier.hexEncodedString())
-                session.invalidate()
             }
         }
         
@@ -224,6 +237,4 @@ class KeyPadViewController: UIViewController, NFCTagReaderSessionDelegate {
         //                session.invalidate()
         //            }
     }
-    
 }
-

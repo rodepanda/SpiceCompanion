@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Socket
 import Network
 class SpiceClient {
     
@@ -19,6 +20,10 @@ class SpiceClient {
         let connectionPort = NWEndpoint.Port(rawValue: port)
         connection = NWConnection(host: NWEndpoint.Host(host), port: connectionPort!, using: .tcp)
         connection.stateUpdateHandler = self.stateDidChange(to:)
+        
+        //let test = try! Socket.create()
+        
+        
     }
     
     func connect(){
