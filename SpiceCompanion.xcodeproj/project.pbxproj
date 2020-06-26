@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41064C6223A6748500848FB7 /* KeyPadViewController.swift */; };
-		4113E0E424680A010051DBFF /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E324680A010051DBFF /* UIViewControllerExtension.swift */; };
+		4113E0E424680A010051DBFF /* UIViewController+CustomDelegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */; };
 		4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */; };
 		4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E724682E230051DBFF /* PatchReadPacket.swift */; };
 		4113E0EA246843020051DBFF /* CardPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0E9246843020051DBFF /* CardPacket.swift */; };
@@ -38,6 +38,9 @@
 		41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */; };
 		41862F4D2466B4A200F4E5A6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4C2466B4A200F4E5A6 /* Card.swift */; };
 		41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */; };
+		4C90F6A12473EBB600F367D5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90F6A02473EBB600F367D5 /* Server.swift */; };
+		4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */; };
+		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
 		B27FAF33263A3742755CC7A0 /* Pods_SpiceCompanion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +48,7 @@
 		352F52CA0B25264E652091AD /* Pods-SpiceCompanion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpiceCompanion.debug.xcconfig"; path = "Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion.debug.xcconfig"; sourceTree = "<group>"; };
 		3DFF64F2EE1263F58DC474AD /* Pods-SpiceCompanion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpiceCompanion.release.xcconfig"; path = "Target Support Files/Pods-SpiceCompanion/Pods-SpiceCompanion.release.xcconfig"; sourceTree = "<group>"; };
 		41064C6223A6748500848FB7 /* KeyPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadViewController.swift; sourceTree = "<group>"; };
-		4113E0E324680A010051DBFF /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomDelegation.swift"; sourceTree = "<group>"; };
 		4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchTableViewController.swift; sourceTree = "<group>"; };
 		4113E0E724682E230051DBFF /* PatchReadPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchReadPacket.swift; sourceTree = "<group>"; };
 		4113E0E9246843020051DBFF /* CardPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPacket.swift; sourceTree = "<group>"; };
@@ -78,6 +81,9 @@
 		41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardTableViewController.swift; sourceTree = "<group>"; };
 		41862F4C2466B4A200F4E5A6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
+		4C90F6A02473EBB600F367D5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+GetDeviceType.swift"; sourceTree = "<group>"; };
+		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
 		A1F97F6F53A78A74F817EEAD /* Pods-Spice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice.release.xcconfig"; path = "Target Support Files/Pods-Spice/Pods-Spice.release.xcconfig"; sourceTree = "<group>"; };
 		BA6906926B31389C1AEA230F /* Pods-Spice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spice.debug.xcconfig"; path = "Target Support Files/Pods-Spice/Pods-Spice.debug.xcconfig"; sourceTree = "<group>"; };
 		C87494A54428916EBAC38B94 /* Pods_SpiceCompanion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpiceCompanion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,21 +140,14 @@
 				4150D14123A3D5C9006B255A /* Assets.xcassets */,
 				4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */,
 				4150D14623A3D5C9006B255A /* Info.plist */,
-				4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */,
-				4150D15223A43A90006B255A /* EditServerViewController.swift */,
+				4CC34A87246B183300186EC1 /* Controller */,
+				4C90F6A22473EBBE00F367D5 /* Model */,
+				4CC34A88246B184E00186EC1 /* Extension */,
 				4150D15723A504E9006B255A /* Rc4.swift */,
 				4150D15923A515F5006B255A /* SpiceClient.swift */,
 				4150D16223A65E3A006B255A /* ConnectionController.swift */,
-				41064C6223A6748500848FB7 /* KeyPadViewController.swift */,
-				41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */,
-				41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */,
-				41862F4C2466B4A200F4E5A6 /* Card.swift */,
 				4137CFA22466DBB400B85CB2 /* FileTools.swift */,
 				41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */,
-				4113E0E324680A010051DBFF /* UIViewControllerExtension.swift */,
-				4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */,
-				4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */,
-				4113E0F524687EB50051DBFF /* TabBarViewController.swift */,
 			);
 			path = SpiceCompanion;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 				4113E0EB2468480B0051DBFF /* KeyPadPacket.swift */,
 				4113E0ED246852620051DBFF /* PatchWritePacket.swift */,
 				4113E0EF246857940051DBFF /* LauncherPacket.swift */,
+				4CEA4604248273A70082E4AD /* ButtonPacket.swift */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
@@ -175,6 +175,39 @@
 				4177A8A22467635600B695E9 /* PatchManager.swift */,
 			);
 			path = Patches;
+			sourceTree = "<group>";
+		};
+		4C90F6A22473EBBE00F367D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C90F6A02473EBB600F367D5 /* Server.swift */,
+				41862F4C2466B4A200F4E5A6 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CC34A87246B183300186EC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4113E0F524687EB50051DBFF /* TabBarViewController.swift */,
+				4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */,
+				4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */,
+				4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */,
+				4150D15223A43A90006B255A /* EditServerViewController.swift */,
+				41064C6223A6748500848FB7 /* KeyPadViewController.swift */,
+				41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */,
+				41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CC34A88246B184E00186EC1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */,
+				4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		65007332EB131A652F1B9C1C /* Pods */ = {
@@ -307,14 +340,17 @@
 			files = (
 				4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */,
 				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
+				4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */,
 				4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */,
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
-				4113E0E424680A010051DBFF /* UIViewControllerExtension.swift in Sources */,
+				4113E0E424680A010051DBFF /* UIViewController+CustomDelegation.swift in Sources */,
+				4C90F6A12473EBB600F367D5 /* Server.swift in Sources */,
 				4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */,
 				41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */,
 				41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */,
+				4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */,
 				4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */,
 				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
@@ -477,17 +513,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AR7RY9RVJU;
+				DEVELOPMENT_TEAM = 468P99X6E7;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -498,17 +535,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AR7RY9RVJU;
+				DEVELOPMENT_TEAM = 468P99X6E7;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

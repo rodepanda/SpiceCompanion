@@ -21,6 +21,9 @@ class ServerTableViewController: UITableViewController {
     
     var client: ConnectionController?
     
+    
+    @IBOutlet weak var addServerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -30,7 +33,19 @@ class ServerTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        
     }
+    
+    
+    @IBAction func addServerButtonTapped(_ sender: Any) {
+        
+        let editServerNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "EditServerNavigationController") as! UINavigationController
+        
+        let serverEditViewController = editServerNavigationController.topViewController as! EditServerViewController
+        serverEditViewController.delegate = self
+        present(editServerNavigationController, animated: true, completion: nil)
+    }
+    
     
     func persistData(){
         let propertyListEncoder = PropertyListEncoder()
@@ -49,41 +64,39 @@ class ServerTableViewController: UITableViewController {
         }
         
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "editServer"){
-            let indexPath = tableView.indexPathForSelectedRow!
-            let server = servers[indexPath.row]
-            let navController = segue.destination as! UINavigationController
-            let editServerViewController = navController.topViewController as! EditServerViewController
-            editServerViewController.server = server
-        } else if (segue.identifier == "connectToServer") {
-            let dest = segue.destination as UIViewController
-            self.client!.setUIViewController(uiViewController: dest)
-        }
-    }
-    
-    @IBAction
-    func unwindToServerTableView(segue: UIStoryboardSegue){
-        if segue.identifier == "saveUnwind",
-            let sourceViewController = segue.source as? EditServerViewController,
-            let server = sourceViewController.server {
-        
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                servers[selectedIndexPath.row] = server
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-            } else {
-                let newIndexPath = IndexPath(row: servers.count, section: 0)
-                servers.append(server)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
-            persistData()
-            
-        }
-        
-        
-    }
+//
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "editServer"){
+//            let indexPath = tableView.indexPathForSelectedRow!
+//            let server = servers[indexPath.row]
+//            let navController = segue.destination as! UINavigationController
+//            let editServerViewController = navController.topViewController as! EditServerViewController
+//            editServerViewController.server = server
+//        } else if (segue.identifier == "connectToServer") {
+//            let dest = segue.destination as UIViewController
+//            self.client!.setUIViewController(uiViewController: dest)
+//        }
+//    }
+//
+//    @IBAction
+//    func unwindToServerTableView(segue: UIStoryboardSegue){
+//        if segue.identifier == "saveUnwind",
+//            let sourceViewController = segue.source as? EditServerViewController,
+//            let server = sourceViewController.server {
+//
+//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+//                servers[selectedIndexPath.row] = server
+//                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+//            } else {
+//                let newIndexPath = IndexPath(row: servers.count, section: 0)
+//                servers.append(server)
+//                tableView.insertRows(at: [newIndexPath], with: .automatic)
+//            }
+//            persistData()
+//
+//        }
+//    }
 
     // MARK: - Table view data source
 
@@ -100,9 +113,16 @@ class ServerTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(self.isEditing){
-            self.performSegue(withIdentifier: "editServer", sender: self)
+            //self.performSegue(withIdentifier: "editServer", sender: self)
+            let server = servers[indexPath.row]
+            let editServerNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "EditServerNavigationController") as! UINavigationController
+            
+            let serverEditViewController = editServerNavigationController.topViewController as! EditServerViewController
+            serverEditViewController.delegate = self
+            serverEditViewController.server = server
+            present(editServerNavigationController, animated: true, completion: nil)
+            
         } else {
-            tableView.deselectRow(at: indexPath, animated: true)
             showConnectionDialogOverlay(title: "Connecting...")
             let server = servers[indexPath.row]
             client = ConnectionController(uiViewController: self, host: server.host, port: server.port, password: server.password)
@@ -111,12 +131,14 @@ class ServerTableViewController: UITableViewController {
     }
     
     override func connectingSuccess() {
-        dismiss(animated: true, completion: performSegueToTabbar)
+        dismiss(animated: true, completion: {
+            //self.performSegue(withIdentifier: "connectToServer", sender: self)
+            let mainTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! TabBarViewController
+            self.client!.setUIViewController(uiViewController: mainTabBarController)
+            self.present(mainTabBarController, animated: true, completion: nil)
+        })
     }
     
-    func performSegueToTabbar(){
-        performSegue(withIdentifier: "connectToServer", sender: self)
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "serverCell", for: indexPath)
@@ -171,5 +193,27 @@ class ServerTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
-
 }
+
+
+extension ServerTableViewController: EditServerViewControllerDelegate{
+    func saveEditedServer(server: Server) {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow{
+            servers[selectedIndexPath.row] = server
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
+        
+        persistData()
+    }
+    
+    func saveNewServer(server: Server) {
+        let newIndexPath = IndexPath(row: servers.count, section: 0)
+        servers.append(server)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+        persistData()
+    }
+    
+    
+}
+

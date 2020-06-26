@@ -39,7 +39,8 @@ class SettingsTableViewController: UITableViewController {
         
         if(indexPath.section == 2){
             ConnectionController.get().disconnect()
-            performSegue(withIdentifier: "userDisconnect", sender: self)
+            //performSegue(withIdentifier: "userDisconnect", sender: self)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
