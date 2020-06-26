@@ -11,6 +11,8 @@ import CoreNFC
 import ColorCompatibility
 
 
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
 class KeyPadViewController: UIViewController{
     
     @IBOutlet weak var oneButton: UIButton!
