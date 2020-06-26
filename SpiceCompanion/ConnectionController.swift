@@ -79,11 +79,12 @@ class ConnectionController {
     
     func connect(){
         self.spiceClient = SpiceClient(host: host, port: port, controller: self)
-        
+        startTimer()
         self.spiceClient!.connect()
     }
     
     func connectedWithSuccess(){
+        stopTimer()
         let info = AvsPacket()
         sendPacket(packet: info)
     }
@@ -133,7 +134,10 @@ class ConnectionController {
         self.spiceClient = SpiceClient(host: host, port: port, controller: self)
         self.phase = .unknown
         
+        print("RECONNECTING")
         self.spiceClient?.connect()
+        
+        startTimer()
     }
     
     //Used to cancel connection in the event of protocol error, timeout or connection error.
@@ -215,7 +219,7 @@ class ConnectionController {
         self.appInfo?.version = version
         self.phase = .scanning
         
-        if(!usesPassword()) {
+        if(!usesPassword() || self.appInfo?.model == "000") {
             self.phase = .open
             handshakeFinished()
             return

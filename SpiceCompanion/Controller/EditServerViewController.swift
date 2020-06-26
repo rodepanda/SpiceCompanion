@@ -37,7 +37,7 @@ class EditServerViewController: UITableViewController {
             hostNameField.text = server.host
             portField.text = String(server.port)
             passwordField.text = server.password
-            self.navigationController?.title = "Edit server"
+            self.title = "Edit server"
             editFlag = true
         }
         

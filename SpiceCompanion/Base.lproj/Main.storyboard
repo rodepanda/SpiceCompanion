@@ -133,8 +133,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlE-46-zIk">
-                                                    <rect key="frame" x="120" y="11.5" width="80" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Felica Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlE-46-zIk">
+                                                    <rect key="frame" x="95.5" y="11.5" width="129" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -143,6 +143,30 @@
                                             <constraints>
                                                 <constraint firstItem="HlE-46-zIk" firstAttribute="centerY" secondItem="T5Y-d7-wfJ" secondAttribute="centerY" id="WnR-5R-xCO"/>
                                                 <constraint firstItem="HlE-46-zIk" firstAttribute="centerX" secondItem="T5Y-d7-wfJ" secondAttribute="centerX" id="Yo0-Lu-Dhy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="fSP-za-D8h">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Nfc" id="1W9-R6-siO">
+                                        <rect key="frame" x="0.0" y="314" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1W9-R6-siO" id="XOi-bS-EWu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan E-Pass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U7-YW-Y8q">
+                                                    <rect key="frame" x="112" y="11.5" width="96" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8U7-YW-Y8q" firstAttribute="centerY" secondItem="XOi-bS-EWu" secondAttribute="centerY" id="AV6-Vu-M08"/>
+                                                <constraint firstItem="8U7-YW-Y8q" firstAttribute="centerX" secondItem="XOi-bS-EWu" secondAttribute="centerX" id="OzP-z1-fIO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -172,6 +196,8 @@
                         <outlet property="saveButton" destination="QFV-Oq-6b4" id="lMO-h4-RoS"/>
                         <outlet property="scanButton" destination="HlE-46-zIk" id="JHC-Nx-fba"/>
                         <outlet property="scanCell" destination="OTl-r1-tMK" id="qvn-JW-HYM"/>
+                        <outlet property="scanEPassButton" destination="8U7-YW-Y8q" id="hjb-EX-2Ph"/>
+                        <outlet property="scanEPassCell" destination="1W9-R6-siO" id="JIR-KL-xi3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqM-73-Avd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -340,7 +366,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="SpiceCompanionCompanion" id="13t-6f-Kwo">
+                            <tableViewSection headerTitle="SpiceCompanion" id="13t-6f-Kwo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="xT3-sG-Tt2" detailTextLabel="2lD-0d-joW" rowHeight="56" style="IBUITableViewCellStyleSubtitle" id="XpA-Cc-xfr">
                                         <rect key="frame" x="0.0" y="242" width="320" height="56"/>
@@ -356,8 +382,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2lD-0d-joW">
-                                                    <rect key="frame" x="16" y="31.5" width="60.5" height="14.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="version 1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2lD-0d-joW">
+                                                    <rect key="frame" x="16" y="31.5" width="58.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>

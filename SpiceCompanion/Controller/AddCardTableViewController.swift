@@ -20,7 +20,10 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
     
     var hasNFC: Bool?
     @IBOutlet weak var scanButton: UILabel!
+    @IBOutlet weak var scanEPassButton: UILabel!
+    
     @IBOutlet weak var scanCell: UITableViewCell!
+    @IBOutlet weak var scanEPassCell: UITableViewCell!
     
     
     override func viewDidLoad() {
@@ -40,6 +43,8 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
         if(!self.hasNFC!){
             scanButton.isEnabled = false
             scanCell.selectionStyle = .none
+            scanEPassButton.isEnabled = false
+            scanEPassCell.selectionStyle = .none
         }
         
         updateSaveButtonState()
@@ -90,55 +95,62 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        guard indexPath.section == 2 && hasNFC! else {
+        
+        let felicaSelected = indexPath.section == 2;
+        let ePassSelected = indexPath.section == 3;
+        guard (felicaSelected || ePassSelected) && hasNFC! else {
             return
         }
         tableView.deselectRow(at: indexPath, animated: true)
-        nfcSession = NFCTagReaderSession.init(pollingOption: .iso18092, delegate: self)
+        if(felicaSelected){
+            nfcSession = NFCTagReaderSession.init(pollingOption: .iso18092, delegate: self)
+        } else {
+            nfcSession = NFCTagReaderSession.init(pollingOption: .iso15693, delegate: self)
+        }
         nfcSession?.begin()
         
     }
+    
+    private var nfcSession: NFCTagReaderSession?
+    
+    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+            //Start Scanning
+        }
         
-        private var nfcSession: NFCTagReaderSession?
+    func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
+        //Session closed
+    }
+    
+    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
         
-        func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
-                //Start Scanning
-            }
-            
-            func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
-                //Session closed
-            }
-            
-            func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
-                
-                if tags.count > 1 {
-                    let retryInterval = DispatchTimeInterval.milliseconds(500)
-                    session.alertMessage = "More than 1 tag is detected, please remove all tags and try again."
-                    DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
-                        session.restartPolling()
-                    })
-                    return
+        if tags.count > 1 {
+            let retryInterval = DispatchTimeInterval.milliseconds(500)
+            session.alertMessage = "More than 1 tag is detected, please remove all tags and try again."
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+                session.restartPolling()
+            })
+            return
+        }
+        
+        
+        if case let NFCTag.iso15693(tag) = tags.first! {
+            session.connect(to: tags.first!) { (error: Error?) in
+            print(tag.identifier.hexEncodedString())
+            let idm = tag.identifier.hexEncodedString()
+            session.alertMessage = "Card Scanned"
+            session.invalidate()
+            DispatchQueue.main.async {
+                self.numberField.text! = idm
+                self.updateSaveButtonState()
                 }
-                
-                let tag = tags.first!
-                
-                session.connect(to: tag) { (error) in
-                    if nil != error {
-                        session.invalidate(errorMessage: "Connection error. Please try again.")
-                        return
-                    }
-                    guard case .feliCa(let feliCaTag) = tag else {
-                        let retryInterval = DispatchTimeInterval.milliseconds(500)
-                        session.alertMessage = "A tag that is not FeliCa is detected, please try again with tag FeliCa."
-                        DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
-                            session.restartPolling()
-                        })
-                        return
-                    }
-                    
-                    let idm = feliCaTag.currentIDm.map { String(format: "%.2hhx", $0) }.joined()
-                    
+            }
+        }
+        
+        
+        if case let NFCTag.feliCa(tag) = tags.first!{
+            session.connect(to: tags.first!) { (error: Error?) in
+                tag.requestResponse() { (mode: Int, error: Error?) in
+                    let idm = tag.currentIDm.map { String(format: "%.2hhx", $0)}.joined()
                     session.alertMessage = "Card Scanned"
                     session.invalidate()
                     DispatchQueue.main.async {
@@ -147,5 +159,6 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
                     }
                 }
             }
-    
+        }
+    }
 }
