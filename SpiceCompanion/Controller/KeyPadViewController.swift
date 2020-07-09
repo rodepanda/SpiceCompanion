@@ -68,7 +68,7 @@ class KeyPadViewController: UIViewController{
         } else {
             insertButton.isEnabled = false
             insertButton.tintColor = .darkGray
-            insertButton.backgroundColor = ColorCompatibility.systemGray6
+//            insertButton.backgroundColor = ColorCompatibility.systemGray6
         }
     }
     
