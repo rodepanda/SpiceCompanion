@@ -126,6 +126,7 @@ class ServerTableViewController: UITableViewController {
             showConnectionDialogOverlay(title: "Connecting...")
             let server = servers[indexPath.row]
             client = ConnectionController(uiViewController: self, host: server.host, port: server.port, password: server.password)
+            tableView.deselectRow(at: indexPath, animated: true)
             self.client!.connect()
         }
     }

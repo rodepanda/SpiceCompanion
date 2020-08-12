@@ -18,13 +18,20 @@ class TabBarViewController: UITabBarController {
     
     
     override func connectingFailed() {
+        
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Disconnected from server", message: "Connection lost", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
-                self.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alert, animated: true)
+            
+            self.dismiss(animated: true, completion: self.showNoConnectionError)
         }
+    }
+    
+    func showNoConnectionError() {
+        let alert = UIAlertController(title: "Disconnected from server", message: "Connection lost", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
+        
     }
     
     

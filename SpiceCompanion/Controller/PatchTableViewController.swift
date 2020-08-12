@@ -27,7 +27,7 @@ class PatchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(!ConnectionController.get().usesPassword()) {
+        if(!ConnectionController.get().usesPassword() || ConnectionController.get().appInfo?.model == "000") {
             return
         }
         
@@ -54,7 +54,7 @@ class PatchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if(!ConnectionController.get().usesPassword()) {
+        if(!ConnectionController.get().usesPassword() || ConnectionController.get().appInfo?.model == "000") {
             return 1
         }
         
@@ -67,6 +67,13 @@ class PatchTableViewController: UITableViewController {
         if(!ConnectionController.get().usesPassword()){
             cell.textLabel?.text = "Patching Module Disabled!"
             cell.detailTextLabel?.text = "No Password Set."
+            cell.selectionStyle = .none
+            return cell
+        }
+        
+        if(ConnectionController.get().appInfo?.model == "000"){
+            cell.textLabel?.text = "Patching Module Disabled!"
+            cell.detailTextLabel?.text = "No Patches Found."
             cell.selectionStyle = .none
             return cell
         }

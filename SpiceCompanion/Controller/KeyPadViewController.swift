@@ -64,11 +64,11 @@ class KeyPadViewController: UIViewController{
         if SelectedCard.card != nil {
             insertButton.isEnabled = true
             insertButton.tintColor = .red
-            insertButton.backgroundColor = UIColor(named: "InvertWhiteBlack")
+//            insertButton.backgroundColor = UIColor(named: "InvertWhiteBlack")
         } else {
             insertButton.isEnabled = false
             insertButton.tintColor = .darkGray
-            insertButton.backgroundColor = ColorCompatibility.systemGray6
+//            insertButton.backgroundColor = ColorCompatibility.systemGray6
         }
     }
     
@@ -147,12 +147,11 @@ class KeyPadViewController: UIViewController{
     @IBAction func scanFelicaButtonPressed(_ sender: Any) {
         nfcSession = NFCTagReaderSession.init(pollingOption: .iso18092, delegate: self)
         nfcSession?.begin()
-        
     }
+    
     @IBAction func scanEPassButtonPressed(_ sender: Any) {
         nfcSession = NFCTagReaderSession.init(pollingOption: .iso15693, delegate: self)
         nfcSession?.begin()
-        
     }
     
     
