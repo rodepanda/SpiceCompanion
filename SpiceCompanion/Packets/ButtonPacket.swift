@@ -9,7 +9,7 @@
 import Foundation
 
 class ButtonPacket:DataPacket{
-    init(index: Int, cardID: String){
+    init(){
         super.init(module: "buttons", function: "read")
     }
 }

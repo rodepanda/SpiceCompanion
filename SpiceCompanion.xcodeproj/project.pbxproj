@@ -19,6 +19,8 @@
 		4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0F524687EB50051DBFF /* TabBarViewController.swift */; };
 		4113E0F82468A5E70051DBFF /* Notice in Resources */ = {isa = PBXBuildFile; fileRef = 4113E0F72468A5E70051DBFF /* Notice */; };
 		4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137CFA22466DBB400B85CB2 /* FileTools.swift */; };
+		414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */; };
+		414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */; };
 		4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D13823A3D5C5006B255A /* AppDelegate.swift */; };
 		4150D13B23A3D5C5006B255A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D13A23A3D5C5006B255A /* SceneDelegate.swift */; };
 		4150D14023A3D5C5006B255A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4150D13E23A3D5C5006B255A /* Main.storyboard */; };
@@ -31,6 +33,7 @@
 		4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15E23A5244A006B255A /* SendingPacket.swift */; };
 		4150D16123A5271B006B255A /* AvsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D16023A5271B006B255A /* AvsPacket.swift */; };
 		4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D16223A65E3A006B255A /* ConnectionController.swift */; };
+		415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B7F832535AFE400FAB1A0 /* ButtonWritePacket.swift */; };
 		4177A8A32467635600B695E9 /* PatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177A8A22467635600B695E9 /* PatchManager.swift */; };
 		417CD9DD246757B200426294 /* CoinPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CD9DC246757B200426294 /* CoinPacket.swift */; };
 		417CD9E024675E2500426294 /* patches.json in Resources */ = {isa = PBXBuildFile; fileRef = 417CD9DF24675E2500426294 /* patches.json */; };
@@ -59,6 +62,8 @@
 		4113E0F524687EB50051DBFF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4113E0F72468A5E70051DBFF /* Notice */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
 		4137CFA22466DBB400B85CB2 /* FileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTools.swift; sourceTree = "<group>"; };
+		414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonResetPacket.swift; sourceTree = "<group>"; };
+		414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitApplicationPacket.swift; sourceTree = "<group>"; };
 		4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceCompanionCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4150D13823A3D5C5006B255A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4150D13A23A3D5C5006B255A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		4150D15E23A5244A006B255A /* SendingPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingPacket.swift; sourceTree = "<group>"; };
 		4150D16023A5271B006B255A /* AvsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvsPacket.swift; sourceTree = "<group>"; };
 		4150D16223A65E3A006B255A /* ConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
+		415B7F832535AFE400FAB1A0 /* ButtonWritePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWritePacket.swift; sourceTree = "<group>"; };
 		4177A8A22467635600B695E9 /* PatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchManager.swift; sourceTree = "<group>"; };
 		4179C0DD23A6A15800FCA226 /* Spice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spice.entitlements; sourceTree = "<group>"; };
 		417CD9DC246757B200426294 /* CoinPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPacket.swift; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 				4113E0ED246852620051DBFF /* PatchWritePacket.swift */,
 				4113E0EF246857940051DBFF /* LauncherPacket.swift */,
 				4CEA4604248273A70082E4AD /* ButtonPacket.swift */,
+				415B7F832535AFE400FAB1A0 /* ButtonWritePacket.swift */,
+				414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */,
+				414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 				4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */,
 				4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */,
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
+				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
 				4113E0E424680A010051DBFF /* UIViewController+CustomDelegation.swift in Sources */,
@@ -355,8 +365,10 @@
 				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
 				4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */,
+				415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */,
 				4177A8A32467635600B695E9 /* PatchManager.swift in Sources */,
 				4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */,
+				414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */,
 				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
 				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
@@ -513,7 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AR7RY9RVJU;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -521,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
@@ -536,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AR7RY9RVJU;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -544,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
