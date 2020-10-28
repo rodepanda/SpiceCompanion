@@ -41,12 +41,15 @@ class SettingsTableViewController: UITableViewController {
             
             switch indexPath.row{
             case 0:
+                mirrorButtonPressed()
+                break;
+            case 1:
                 self.applicationButtonPressed(button: "Test")
                 break
-            case 1:
+            case 2:
                 self.applicationButtonPressed(button: "Service")
                 break
-            case 2:
+            case 3:
                 self.quitButtonPressed()
             default:
                 break
@@ -60,6 +63,11 @@ class SettingsTableViewController: UITableViewController {
             self.dismiss(animated: true, completion: nil)
             return
         }
+    }
+    
+    func mirrorButtonPressed(){
+        let mirror = self.storyboard?.instantiateViewController(withIdentifier: "MirrorViewController") as! UIViewController
+        present(mirror, animated: true, completion: nil)
     }
     
     func applicationButtonPressed(button: String){

@@ -13,10 +13,10 @@ import Socket
 class SpiceClient {
     
     private var connection: NWConnection
-    private let connectionController: ConnectionController
+    private let connectionController: ConnectionControllerProtocol
     private var rc4: Rc4?
     
-    init(host: String, port: UInt16, controller: ConnectionController){
+    init(host: String, port: UInt16, controller: ConnectionControllerProtocol){
         self.connectionController = controller
         let connectionPort = NWEndpoint.Port(rawValue: port)
         connection = NWConnection(host: NWEndpoint.Host(host), port: connectionPort!, using: .tcp)
@@ -39,7 +39,7 @@ class SpiceClient {
     private func stateDidChange(to state: NWConnection.State){
         switch state {
         case .ready:
-            connection.receive(minimumIncompleteLength: 1, maximumLength: 65536, completion: receive(data:context:complete:error:))
+            connection.receive(minimumIncompleteLength: 1, maximumLength: 10485760, completion: receive(data:context:complete:error:))
             connectionController.connectedWithSuccess()
             break
         case .waiting(_):
@@ -64,7 +64,7 @@ class SpiceClient {
     
     func sendPacket(packet: DataPacket) {
         var packet = packet.encode()
-        printPacket(String(bytes: packet, encoding: .utf8)!)
+//        printPacket(String(bytes: packet, encoding: .utf8)!)
         if let rc4 = self.rc4 {
             packet = rc4.encrypt(text: packet)
         }
@@ -73,7 +73,7 @@ class SpiceClient {
     
     func receive(data: Data?, context: NWConnection.ContentContext?, complete: Bool, error: NWError?){
         if(data == nil) {
-            self.connection.receive(minimumIncompleteLength: 1, maximumLength: 65536, completion: receive(data:context:complete:error:))
+            self.connection.receive(minimumIncompleteLength: 1, maximumLength: 10485760, completion: receive(data:context:complete:error:))
             return
         }
         var data = [UInt8](data!)
@@ -83,17 +83,18 @@ class SpiceClient {
             data = rc4.encrypt(text: data)
         }
         
-        data.removeLast()
+        if(data.last == 0x00){
+            data.removeLast()
+        }
         guard let receivedMessage = String(bytes: data, encoding: .utf8) else {
             disconnect()
             self.connectionController.connectionBroken()
             return
         }
-        
-        printPacket(receivedMessage)
+//        print("PACKET RECEIVED\n")
+//        printPacket(receivedMessage)
         //Open pipeline for new data
-        self.connection.receive(minimumIncompleteLength: 1, maximumLength: 65536, completion: receive(data:context:complete:error:))
-        
+        self.connection.receive(minimumIncompleteLength: 1, maximumLength: 10485760, completion: receive(data:context:complete:error:))
         self.connectionController.packetReceived(message: receivedMessage)
     }
     
