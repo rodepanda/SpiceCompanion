@@ -38,10 +38,49 @@ class SettingsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if(indexPath.section == 2){
+            
+            switch indexPath.row{
+            case 0:
+                mirrorButtonPressed()
+                break;
+            case 1:
+                self.applicationButtonPressed(button: "Test")
+                break
+            case 2:
+                self.applicationButtonPressed(button: "Service")
+                break
+            case 3:
+                self.quitButtonPressed()
+            default:
+                break
+            }
+            return
+        }
+        
+        if(indexPath.section == 3){
             ConnectionController.get().disconnect()
             //performSegue(withIdentifier: "userDisconnect", sender: self)
             self.dismiss(animated: true, completion: nil)
+            return
         }
+    }
+    
+    func mirrorButtonPressed(){
+        let mirror = self.storyboard?.instantiateViewController(withIdentifier: "MirrorViewController") as! UIViewController
+        present(mirror, animated: true, completion: nil)
+    }
+    
+    func applicationButtonPressed(button: String){
+        let packet = ButtonWritePacket(button: button, enable: true)
+        ConnectionController.get().sendPacket(packet: packet)
+        //Make sure the game had at least a frame to detect the keystate.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        ConnectionController.get().sendPacket(packet: ButtonResetPacket(button: button))
+        }
+    }
+    
+    func quitButtonPressed(){
+        ConnectionController.get().sendPacket(packet: QuitApplicationPacket())
     }
     
 }
