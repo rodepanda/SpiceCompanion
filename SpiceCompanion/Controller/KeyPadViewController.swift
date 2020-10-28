@@ -34,6 +34,9 @@ class KeyPadViewController: UIViewController{
     @IBOutlet weak var scanEPassButton: UIButton!
     @IBOutlet weak var coinButton: UIButton!
     
+    @IBOutlet weak var mainMirrorButton: UIBarButtonItem!
+    @IBOutlet weak var subMirrorButton: UIBarButtonItem!
+    
     //@IBOutlet weak var keypadBackground: UIView!
     //@IBOutlet weak var keypadStackView: UIStackView!
     var playerOneSelected = true
@@ -70,6 +73,9 @@ class KeyPadViewController: UIViewController{
             insertButton.tintColor = .darkGray
 //            insertButton.backgroundColor = ColorCompatibility.systemGray6
         }
+        
+        self.mainMirrorButton.isEnabled = ConnectionController.get().screens.count > 0
+        self.subMirrorButton.isEnabled =  ConnectionController.get().screens.count > 1
     }
     
     private func setupButtons(){
@@ -154,6 +160,19 @@ class KeyPadViewController: UIViewController{
         nfcSession?.begin()
     }
     
+    @IBAction func mainMirrorButtonPressed(_ sender: Any) {
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "MirrorViewController") as! UINavigationController
+        let mirror = navigationController.viewControllers[0] as! MirrorViewController
+        mirror.activeScreen = ConnectionController.get().screens[0]
+        present(navigationController, animated: true, completion: nil)
+    }
+    
+    @IBAction func subMirrorButtonPressed(_ sender: Any) {
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "MirrorViewController") as! UINavigationController
+        let mirror = navigationController.viewControllers[0] as! MirrorViewController
+        mirror.activeScreen = ConnectionController.get().screens[1]
+        present(navigationController, animated: true, completion: nil)
+    }
     
     
 }

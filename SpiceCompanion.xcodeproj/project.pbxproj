@@ -18,6 +18,7 @@
 		4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */; };
 		4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0F524687EB50051DBFF /* TabBarViewController.swift */; };
 		4113E0F82468A5E70051DBFF /* Notice in Resources */ = {isa = PBXBuildFile; fileRef = 4113E0F72468A5E70051DBFF /* Notice */; };
+		411D34F725499927006BC85E /* GetScreensPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D34F625499927006BC85E /* GetScreensPacket.swift */; };
 		4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137CFA22466DBB400B85CB2 /* FileTools.swift */; };
 		414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */; };
 		414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */; };
@@ -69,6 +70,7 @@
 		4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4113E0F524687EB50051DBFF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4113E0F72468A5E70051DBFF /* Notice */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
+		411D34F625499927006BC85E /* GetScreensPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScreensPacket.swift; sourceTree = "<group>"; };
 		4137CFA22466DBB400B85CB2 /* FileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTools.swift; sourceTree = "<group>"; };
 		414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonResetPacket.swift; sourceTree = "<group>"; };
 		414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitApplicationPacket.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				41E6A3EE25486E9E00408144 /* MirrorPacket.swift */,
 				41E6A3F82548CBDC00408144 /* TouchWritePacket.swift */,
 				41E6A3FB2548CBEA00408144 /* TouchResetPacket.swift */,
+				411D34F625499927006BC85E /* GetScreensPacket.swift */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
 				41E6A3F92548CBDC00408144 /* TouchWritePacket.swift in Sources */,
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
+				411D34F725499927006BC85E /* GetScreensPacket.swift in Sources */,
 				4113E0E424680A010051DBFF /* UIViewController+CustomDelegation.swift in Sources */,
 				4C90F6A12473EBB600F367D5 /* Server.swift in Sources */,
 				4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */,
@@ -565,7 +569,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
@@ -588,7 +592,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;

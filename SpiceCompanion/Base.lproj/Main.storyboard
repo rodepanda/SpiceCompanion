@@ -60,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haS-7h-h2q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="2425"/>
+            <point key="canvasLocation" x="879" y="2424"/>
         </scene>
         <!--Add Card-->
         <scene sceneID="25K-et-4j5">
@@ -205,7 +205,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqM-73-Avd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="84q-VG-VrX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="850" y="3966"/>
+            <point key="canvasLocation" x="1819" y="3176"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IVg-FS-kPS">
@@ -222,7 +222,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfD-T6-kJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="3211"/>
+            <point key="canvasLocation" x="1819" y="2421"/>
         </scene>
         <!--Patches-->
         <scene sceneID="98L-hI-vQI">
@@ -267,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ai8-jj-udl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="2425"/>
+            <point key="canvasLocation" x="-930" y="2422"/>
         </scene>
         <!--Patches-->
         <scene sceneID="UbA-KF-EAl">
@@ -301,7 +301,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5q-69-KfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="1674"/>
+            <point key="canvasLocation" x="878" y="1672"/>
         </scene>
         <!--Settings-->
         <scene sceneID="KKu-Of-WQR">
@@ -373,7 +373,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Version: 1.2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cem-9I-D6Q">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="App Version: 1.3.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cem-9I-D6Q">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -425,25 +425,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Application Settings" id="bpK-C1-3nA">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="070-cK-njP" style="IBUITableViewCellStyleDefault" id="BpZ-ER-4p6">
-                                        <rect key="frame" x="0.0" y="453.5" width="320" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BpZ-ER-4p6" id="cS7-j2-JuO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mirror" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="070-cK-njP">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="linkColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="md5-17-FIK" style="IBUITableViewCellStyleDefault" id="0fd-Sr-cQC">
-                                        <rect key="frame" x="0.0" y="497" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="453.5" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fd-Sr-cQC" id="Bth-3D-xyw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -460,7 +443,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="xot-fb-vHd" style="IBUITableViewCellStyleDefault" id="mGw-lj-tNd">
-                                        <rect key="frame" x="0.0" y="540.5" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="497" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mGw-lj-tNd" id="aHD-5u-XkL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -477,7 +460,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="gqu-Fc-w3O" style="IBUITableViewCellStyleDefault" id="2GT-6y-S0q">
-                                        <rect key="frame" x="0.0" y="584" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="540.5" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2GT-6y-S0q" id="J8v-Mz-gqt">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -498,7 +481,7 @@
                             <tableViewSection headerTitle="Disconnect" id="I6I-B8-fAg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="H8y-vS-7ZC" style="IBUITableViewCellStyleDefault" id="cgQ-nw-LMW">
-                                        <rect key="frame" x="0.0" y="683.5" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="640" width="320" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgQ-nw-LMW" id="MxL-rL-jRI">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -533,7 +516,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNv-wl-h3s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5y1-mp-xCi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="2425"/>
+            <point key="canvasLocation" x="-32" y="2423"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Sch-g0-hNM">
@@ -550,7 +533,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lw9-0a-qoB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="1673"/>
+            <point key="canvasLocation" x="-32" y="1671"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="mzG-3C-Xvk">
@@ -564,17 +547,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="e1P-pA-IKc" kind="unwind" identifier="serverDisconnect" unwindAction="unwindToServerTableViewWithSegue:" id="7X3-Ij-M4T"/>
                         <segue destination="Gl4-gW-lqm" kind="relationship" relationship="viewControllers" id="hM2-W2-v94"/>
-                        <segue destination="BHJ-vI-zcs" kind="relationship" relationship="viewControllers" id="iRj-6j-amf"/>
+                        <segue destination="4yA-y2-Kao" kind="relationship" relationship="viewControllers" id="x5H-Ec-sAN"/>
                         <segue destination="r3z-hi-w1T" kind="relationship" relationship="viewControllers" id="wLl-SX-ut3"/>
                         <segue destination="8jV-4N-I0v" kind="relationship" relationship="viewControllers" id="xZT-xd-HIG"/>
-                        <segue destination="e1P-pA-IKc" kind="unwind" identifier="serverDisconnect" unwindAction="unwindToServerTableViewWithSegue:" id="7X3-Ij-M4T"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6e-5I-brT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="e1P-pA-IKc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="903"/>
+            <point key="canvasLocation" x="-930" y="901"/>
         </scene>
         <!--Keypad-->
         <scene sceneID="3dB-JM-Jmy">
@@ -585,10 +568,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LII-WJ-Etf">
-                                <rect key="frame" x="0.0" y="14" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="-8" width="320" height="464"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vxG-rT-eep">
-                                        <rect key="frame" x="20" y="20" width="280" height="80"/>
+                                        <rect key="frame" x="20" y="64" width="280" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0R-zI-paA">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -629,7 +612,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mSe-cH-uz8">
-                                        <rect key="frame" x="20" y="120" width="280" height="80"/>
+                                        <rect key="frame" x="20" y="164" width="280" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E4-qA-gKl">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -670,7 +653,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9FC-nc-LMa">
-                                        <rect key="frame" x="20" y="220" width="280" height="80"/>
+                                        <rect key="frame" x="20" y="264" width="280" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxN-EZ-u9a">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -711,7 +694,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hhd-PM-Py7">
-                                        <rect key="frame" x="20" y="320" width="280" height="80"/>
+                                        <rect key="frame" x="20" y="364" width="280" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYm-BZ-x3l">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -856,6 +839,18 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Keypad" image="circle.grid.3x3" catalog="system" selectedImage="circle.grid.3x3.fill" id="o8v-Qk-pkq"/>
+                    <navigationItem key="navigationItem" title="Keypad" id="wEs-Td-Bea">
+                        <barButtonItem key="leftBarButtonItem" title="Mirror Main" id="59T-DN-nyU">
+                            <connections>
+                                <action selector="mainMirrorButtonPressed:" destination="BHJ-vI-zcs" id="dYx-Hw-JWk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Mirror Sub" id="b45-47-Px1">
+                            <connections>
+                                <action selector="subMirrorButtonPressed:" destination="BHJ-vI-zcs" id="c06-PI-PHX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="coinButton" destination="oKD-0u-znM" id="AGv-1a-cnB"/>
                         <outlet property="dotButton" destination="o8f-6a-xFa" id="ZwG-gV-4y3"/>
@@ -864,6 +859,7 @@
                         <outlet property="fiveButton" destination="ujm-sg-iSW" id="pDp-gp-HTm"/>
                         <outlet property="fourButton" destination="5E4-qA-gKl" id="ZoQ-jr-rbr"/>
                         <outlet property="insertButton" destination="zjl-oe-aGr" id="UFZ-RO-hmO"/>
+                        <outlet property="mainMirrorButton" destination="59T-DN-nyU" id="yvo-hN-pxO"/>
                         <outlet property="nineButton" destination="f5u-BF-PN1" id="3nn-pe-dUq"/>
                         <outlet property="oneButton" destination="gxN-EZ-u9a" id="giW-q7-fdc"/>
                         <outlet property="pButton" destination="pmf-MR-Leb" id="LuF-Jn-9lA"/>
@@ -871,6 +867,7 @@
                         <outlet property="scanEPassButton" destination="9so-lC-bOz" id="90k-s2-x8I"/>
                         <outlet property="sevenButton" destination="I0R-zI-paA" id="bEP-t7-R34"/>
                         <outlet property="sixButton" destination="kri-0i-NZn" id="jRV-WZ-qbR"/>
+                        <outlet property="subMirrorButton" destination="b45-47-Px1" id="cdN-PT-Cei"/>
                         <outlet property="threeButton" destination="2WN-HI-2Bz" id="OS3-VO-jid"/>
                         <outlet property="twoButton" destination="6u4-09-lrc" id="zMP-kE-bUk"/>
                         <outlet property="zeroButton" destination="tYm-BZ-x3l" id="BfM-PZ-soe"/>
@@ -878,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFx-8i-HtD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31.199999999999999" y="902.69865067466276"/>
+            <point key="canvasLocation" x="879" y="902"/>
         </scene>
         <!--Mirror-->
         <scene sceneID="Wv3-EW-cCf">
@@ -889,16 +886,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5t-B9-fsR">
-                                <rect key="frame" x="107" y="120" width="157" height="165"/>
+                                <rect key="frame" x="82" y="180" width="157" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRh-sJ-CFA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="p3F-w5-eQA">
+                        <barButtonItem key="leftBarButtonItem" image="square.and.arrow.up" catalog="system" id="MI4-RW-cPl">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="2D5-wQ-qg0" id="Uoz-ck-n0s"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="p3F-w5-eQA">
                             <connections>
                                 <action selector="CancelButtonPressed:" destination="2D5-wQ-qg0" id="ZG9-WX-ttB"/>
                             </connections>
@@ -911,7 +912,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP5-0X-nhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721.25" y="901.05633802816908"/>
+            <point key="canvasLocation" x="1819" y="1672"/>
+        </scene>
+        <!--Keypad-->
+        <scene sceneID="5Hr-Xv-tQl">
+            <objects>
+                <navigationController id="4yA-y2-Kao" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Keypad" image="circle.grid.3x3" catalog="system" selectedImage="circle.grid.3x3.fill" id="eOF-Qq-aSO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gOQ-Mr-FxS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BHJ-vI-zcs" kind="relationship" relationship="rootViewController" id="WMk-hE-146"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bv5-c4-e4a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="901"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RhE-YN-T5m">
@@ -927,7 +945,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgJ-ht-X03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="849" y="902"/>
+            <point key="canvasLocation" x="1819" y="900"/>
         </scene>
         <!--Add Server-->
         <scene sceneID="AdV-zm-PxM">
@@ -1080,7 +1098,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XX1-0f-xnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879.71014492753625" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1819" y="131"/>
         </scene>
         <!--Servers-->
         <scene sceneID="2a0-T6-Cn0">
@@ -1131,7 +1149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="plB-4R-OBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-930" y="137"/>
+            <point key="canvasLocation" x="-34" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U8U-OO-Xvd">
@@ -1147,7 +1165,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEd-jO-nqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1846" y="138"/>
+            <point key="canvasLocation" x="-930" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S0d-zP-PRo">
@@ -1165,7 +1183,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2t-yb-exj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30.434782608695656" y="137.94642857142856"/>
+            <point key="canvasLocation" x="849" y="131"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1178,6 +1196,7 @@
         <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="creditcard.fill" catalog="system" width="128" height="88"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="yensign.circle" catalog="system" width="128" height="121"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

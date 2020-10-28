@@ -24,6 +24,8 @@
 	<true/>
 	<key>NFCReaderUsageDescription</key>
 	<string>Scan card for authentication</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save images of the screen to the camera roll.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

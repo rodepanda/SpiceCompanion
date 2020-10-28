@@ -107,13 +107,9 @@ class MirrorConnectionController: ConnectionControllerProtocol {
             self.uiViewController.reconnect()
         }
         self.spiceClient?.disconnect()
-        self.spiceClient = SpiceClient(host: host, port: port, controller: self)
-        self.phase = .unknown
-        
-        print("RECONNECTING")
-        self.spiceClient?.connect()
-        
-        startTimer()
+        DispatchQueue.main.async {
+            self.uiViewController.dismiss(animated: true, completion: nil)
+        }
     }
     
     //Used to cancel connection in the event of protocol error, timeout or connection error.
@@ -154,18 +150,13 @@ class MirrorConnectionController: ConnectionControllerProtocol {
         self.canSendPacket = true
         
         switch self.phase {
-        case .info:
-            break
-        case .scanning:
-            break
-        case .unknown:
-//            parseApplicationInfo(data: data)
-            break
-        case.open:
+        case .open:
             guard let handler = self.packetHandler else {
                 break
             }
             handler.handlePacket(data: data)
+            break
+        default:
             break
         }
     }

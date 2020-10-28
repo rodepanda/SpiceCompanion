@@ -9,9 +9,9 @@
 import Foundation
 
 class MirrorPacket : DataPacket {
-    init(){
+    init(screen: Int){
         super.init(module: "capture", function: "get_jpg")
-        addParam(param: "1")
+        addParam(param: "\(screen)")
         addParam(param: "40")
         addParam(param: "1")
     }

@@ -42,6 +42,7 @@ class ConnectionController : ConnectionControllerProtocol {
     private var phase: ProtocolPhase
     
     var appInfo: ApplicationInfo?
+    var screens: [Int] = []
     
     var patchStates: [PatchState]
     
@@ -184,6 +185,9 @@ class ConnectionController : ConnectionControllerProtocol {
         case .info:
             parseInfo(data: data)
             break
+        case .screeninfo:
+            scanScreens(data: data)
+            break
         case .scanning:
             scannedPatch(data: data)
             break
@@ -242,9 +246,28 @@ class ConnectionController : ConnectionControllerProtocol {
             return
         }
         self.appInfo?.version = version
-        self.phase = .scanning
+        self.phase = .screeninfo
         
-        if(!usesPassword() || self.appInfo?.model == "000") {
+        if(self.appInfo?.model == "000"){
+            self.phase = .open
+            handshakeFinished()
+            return
+        }
+        
+        let screenPacket = GetScreensPacket()
+        sendPacket(packet: screenPacket)
+        
+    }
+    
+    private func scanScreens(data: [JSON]){
+        
+        
+        self.phase = .scanning
+        for screenId in data {
+            self.screens.append(screenId.int!)
+        }
+        
+        if(!usesPassword()) {
             self.phase = .open
             handshakeFinished()
             return
@@ -253,6 +276,7 @@ class ConnectionController : ConnectionControllerProtocol {
         self.patchScanQueue = PatchManager.get().getPatches(model: self.appInfo!.model, dateCode: self.appInfo!.ext)
         self.patchStates = [PatchState]()
         scanPatch()
+        
     }
     
     private func scanPatch(){
@@ -302,6 +326,9 @@ enum ProtocolPhase {
     
     //Scanning patches
     case scanning
+    
+    //Scanning amount of screens
+    case screeninfo
     
     //Ready to send packets
     case open
