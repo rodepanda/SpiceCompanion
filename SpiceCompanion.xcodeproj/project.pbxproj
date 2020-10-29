@@ -558,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AR7RY9RVJU;
+				DEVELOPMENT_TEAM = 468P99X6E7;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -566,7 +566,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice.beta;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -581,7 +581,7 @@
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AR7RY9RVJU;
+				DEVELOPMENT_TEAM = 468P99X6E7;
 				INFOPLIST_FILE = "$(SRCROOT)/SpiceCompanion/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -589,7 +589,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice.beta;
 				PRODUCT_NAME = SpiceCompanionCompanion;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

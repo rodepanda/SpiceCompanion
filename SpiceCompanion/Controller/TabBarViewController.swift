@@ -34,6 +34,8 @@ class TabBarViewController: UITabBarController {
         
     }
     
-    
+    override var shouldAutorotate: Bool{
+        return false
+    }
 
 }

@@ -92,7 +92,9 @@ class EditServerViewController: UITableViewController {
 
 //    }
     
-    
+    override var shouldAutorotate: Bool{
+        return false
+    }
 
 }
 

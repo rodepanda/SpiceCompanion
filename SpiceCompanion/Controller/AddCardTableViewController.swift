@@ -24,7 +24,9 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
     
     @IBOutlet weak var scanCell: UITableViewCell!
     @IBOutlet weak var scanEPassCell: UITableViewCell!
-    
+    override var shouldAutorotate: Bool{
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

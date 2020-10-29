@@ -39,6 +39,10 @@ class KeyPadViewController: UIViewController{
     var playerOneSelected = true
     
     var cellWidth:CGFloat = 80
+    
+    override var shouldAutorotate: Bool{
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()

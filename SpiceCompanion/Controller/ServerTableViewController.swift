@@ -21,7 +21,9 @@ class ServerTableViewController: UITableViewController {
     
     var client: ConnectionController?
     
-    
+    override var shouldAutorotate: Bool{
+        return false
+    }
     @IBOutlet weak var addServerButton: UIButton!
     
     override func viewDidLoad() {

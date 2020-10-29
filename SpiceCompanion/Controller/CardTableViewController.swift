@@ -18,7 +18,9 @@ class CardTableViewController: UITableViewController {
     
     var cards: [Card] = [
     ]
-    
+    override var shouldAutorotate: Bool{
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()

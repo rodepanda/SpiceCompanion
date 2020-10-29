@@ -83,4 +83,7 @@ class SettingsTableViewController: UITableViewController {
         ConnectionController.get().sendPacket(packet: QuitApplicationPacket())
     }
     
+    override var shouldAutorotate: Bool{
+        return false
+    }
 }

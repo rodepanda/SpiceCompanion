@@ -14,6 +14,8 @@ class MirrorViewController: UIViewController, PacketHandler {
     @IBOutlet weak var mirror: UIImageView!
     private var mirrorCC: MirrorConnectionController?
     
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,6 +26,24 @@ class MirrorViewController: UIViewController, PacketHandler {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mirrorTouched(sender:)))
         mirror.isUserInteractionEnabled = true
         mirror.addGestureRecognizer(tapGestureRecognizer)
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightDetected(sender:)))
+        swipeGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.right
+        mirror.addGestureRecognizer(swipeGestureRecognizer)
+        
+//        let value = UIInterfaceOrientation.landscapeRight.rawValue
+//        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        if(UIDevice.current.orientation == .portrait){
+            
+        }
+    }
+    
+  
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     private var screenAspectSet = false
@@ -75,7 +95,8 @@ class MirrorViewController: UIViewController, PacketHandler {
 //        https://stackoverflow.com/questions/6565703/math-algorithm-fit-image-to-screen-retain-aspect-ratio
         
         let screenSize = UIScreen.main.bounds
-        let screenHeight = screenSize.height - self.topbarHeight
+        let screenHeight = screenSize.height
+        
         if(screenSize.width / imageWidth > screenHeight / imageHeight){
             
             self.mirrorWidth = imageHeight * screenHeight / imageWidth
@@ -88,7 +109,7 @@ class MirrorViewController: UIViewController, PacketHandler {
             self.mirrorWidth = screenSize.width
             //Offset to center mirror
             let offset = (screenHeight - self.mirrorHeight) / 2
-            return CGRect(x: 0, y: self.topbarHeight + offset, width: self.mirrorWidth, height: self.mirrorHeight)
+            return CGRect(x: 0, y:  offset, width: self.mirrorWidth, height: self.mirrorHeight)
         }
     }
     
@@ -97,6 +118,12 @@ class MirrorViewController: UIViewController, PacketHandler {
         let imagePointX = Int(touchPoint.x / self.mirrorHeight * CGFloat(self.imageWidth))
         let imagePointY = Int(touchPoint.y / self.mirrorWidth * CGFloat(self.imageHeight))
         sendTouchEvent(x: imagePointX, y: imagePointY)
+        
+        //print("\(touchPoint.x) \(touchPoint.y)")
+    }
+    
+    @objc func swipeRightDetected(sender: UISwipeGestureRecognizer){
+        self.dismiss(animated: true, completion: nil)
     }
     
     private var touchCounter = 1
@@ -105,6 +132,7 @@ class MirrorViewController: UIViewController, PacketHandler {
         
         let touchWritePacket = TouchWritePacket(id: self.touchCounter, x: x, y: y)
         ConnectionController.get().sendPacket(packet: touchWritePacket)
+        
         let resetPacket = TouchResetPacket(id: self.touchCounter)
         
         //Yes this is janky but for now it works. I want to replace this with hold gestures in the futture.
@@ -129,5 +157,5 @@ class MirrorViewController: UIViewController, PacketHandler {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
