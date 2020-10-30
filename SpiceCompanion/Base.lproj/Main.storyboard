@@ -883,7 +883,7 @@
         <!--Mirror-->
         <scene sceneID="Wv3-EW-cCf">
             <objects>
-                <viewController storyboardIdentifier="MirrorViewController" title="Mirror" modalPresentationStyle="fullScreen" id="2D5-wQ-qg0" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mirror" modalPresentationStyle="fullScreen" id="2D5-wQ-qg0" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Qg-bD-2ed">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -898,20 +898,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs">
+                        <barButtonItem key="leftBarButtonItem" title="Share" id="peE-jr-M9y">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="2D5-wQ-qg0" id="wCZ-dY-r8r"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="p3F-w5-eQA">
                             <connections>
                                 <action selector="CancelButtonPressed:" destination="2D5-wQ-qg0" id="ZG9-WX-ttB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mirror" destination="Q5t-B9-fsR" id="lmk-SI-MKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP5-0X-nhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721.25" y="901.05633802816908"/>
+            <point key="canvasLocation" x="2630.434782608696" y="900.66964285714278"/>
         </scene>
         <!--Add Server-->
         <scene sceneID="AdV-zm-PxM">
@@ -1151,18 +1155,36 @@
             </objects>
             <point key="canvasLocation" x="-30.434782608695656" y="137.94642857142856"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LEM-Si-x3F">
+            <objects>
+                <navigationController storyboardIdentifier="MirrorViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" id="56N-Ja-WIR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JMb-Xi-tCv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2D5-wQ-qg0" kind="relationship" relationship="rootViewController" id="mQW-Cu-kJa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9D-Ud-BPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720.289855072464" y="900.66964285714278"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rxo-Iu-pXo"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="chevron.left.slash.chevron.right" catalog="system" width="32" height="32"/>
-        <image name="circle.grid.3x3" catalog="system" width="32" height="32"/>
-        <image name="circle.grid.3x3.fill" catalog="system" width="32" height="32"/>
-        <image name="creditcard" catalog="system" width="32" height="32"/>
-        <image name="creditcard.fill" catalog="system" width="32" height="32"/>
-        <image name="gear" catalog="system" width="32" height="32"/>
-        <image name="yensign.circle" catalog="system" width="32" height="32"/>
+        <image name="chevron.left.slash.chevron.right" catalog="system" width="128" height="94"/>
+        <image name="circle.grid.3x3" catalog="system" width="128" height="110"/>
+        <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
+        <image name="creditcard" catalog="system" width="128" height="88"/>
+        <image name="creditcard.fill" catalog="system" width="128" height="88"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="yensign.circle" catalog="system" width="128" height="121"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

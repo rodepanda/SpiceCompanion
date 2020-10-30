@@ -49,6 +49,7 @@
 		41E6A3FF2548DC0000408144 /* MirrorConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */; };
 		41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */; };
 		41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */; };
+		4C234B7E254BD94A00AC40EC /* UIView+TakeSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C234B7D254BD94A00AC40EC /* UIView+TakeSnapshot.swift */; };
 		4C90F6A12473EBB600F367D5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90F6A02473EBB600F367D5 /* Server.swift */; };
 		4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */; };
 		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
@@ -103,6 +104,7 @@
 		41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorConnectionController.swift; sourceTree = "<group>"; };
 		41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionControllerProtocol.swift; sourceTree = "<group>"; };
 		41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
+		4C234B7D254BD94A00AC40EC /* UIView+TakeSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TakeSnapshot.swift"; sourceTree = "<group>"; };
 		4C90F6A02473EBB600F367D5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+GetDeviceType.swift"; sourceTree = "<group>"; };
 		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */,
 				4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */,
 				41E6A3F52548A5FF00408144 /* UIViewController+TopBarHeight.swift */,
+				4C234B7D254BD94A00AC40EC /* UIView+TakeSnapshot.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */,
 				4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */,
 				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
+				4C234B7E254BD94A00AC40EC /* UIView+TakeSnapshot.swift in Sources */,
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
 				41E6A3F22548938700408144 /* PacketHandler.swift in Sources */,
 				4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */,

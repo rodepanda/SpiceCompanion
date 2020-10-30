@@ -148,6 +148,16 @@ class MirrorViewController: UIViewController, PacketHandler {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        var temp:UIImage?
+        temp = self.mirror.takeSnapshot()
+        if(temp != nil){
+            let activityController = UIActivityViewController(activityItems: [temp!], applicationActivities: nil)
+            activityController.popoverPresentationController?.sourceView = self.view
+            self.present(activityController, animated: true, completion: nil)
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
