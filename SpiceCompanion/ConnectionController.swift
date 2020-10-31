@@ -244,7 +244,7 @@ class ConnectionController : ConnectionControllerProtocol {
     
     private func scanScreens(data: [JSON]){
         
-        
+        self.screens.removeAll()
         self.phase = .scanning
         for screenId in data {
             self.screens.append(screenId.int!)
