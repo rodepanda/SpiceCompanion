@@ -108,6 +108,7 @@ class MirrorConnectionController: ConnectionControllerProtocol {
         }
         self.spiceClient?.disconnect()
         DispatchQueue.main.async {
+            UIApplication.shared.isIdleTimerDisabled = false
             self.uiViewController.dismiss(animated: true, completion: nil)
         }
     }

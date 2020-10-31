@@ -25,6 +25,7 @@ class MirrorViewController: UIViewController, PacketHandler {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mirrorTouched(sender:)))
         mirror.isUserInteractionEnabled = true
         mirror.addGestureRecognizer(tapGestureRecognizer)
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     private var screenAspectSet = false
@@ -146,6 +147,7 @@ class MirrorViewController: UIViewController, PacketHandler {
     @IBAction func CancelButtonPressed(_ sender: Any) {
         self.mirrorCC?.resetPacketHandler()
         self.mirrorCC?.disconnect()
+        UIApplication.shared.isIdleTimerDisabled = false
         self.dismiss(animated: true, completion: nil)
     }
 
