@@ -95,24 +95,3 @@ public struct AugmentedIntervalTree<T: Comparable> {
         return res
     }
 }
-
-//print("--- Tree ---")
-//var ait = AugmentedIntervalTree<Int>()
-//ait.insert(Interval<Int>(start: 5, end: 10))
-//ait.insert(Interval<Int>(start: 15, end: 25))
-//ait.insert(Interval<Int>(start: 1, end: 12))
-//ait.insert(Interval<Int>(start: 8, end: 16))
-//ait.insert(Interval<Int>(start: 14, end: 20))
-//ait.insert(Interval<Int>(start: 18, end: 21))
-//ait.insert(Interval<Int>(start: 2, end: 8))
-//ait.printTree()
-//
-//print("--- Intersection ---")
-//let queries = [Interval<Int>(start: 8, end: 10), Interval<Int>(start: 20, end: 22)]
-//
-//var overlaps = [Interval<Int>]()
-//
-//for query in queries {
-//    print("Intersections with \(query): \(ait.overlaps(with:query))")
-//}
-//print(overlaps)
