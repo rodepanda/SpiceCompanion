@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import UIKit
 
 struct Patch {
     
@@ -59,10 +60,11 @@ class PatchManager {
     }
     
     private func loadPatches() {
-        let mainBundle = Bundle.main
-        let path = mainBundle.path(forResource: "patches", ofType: "json")
-        let fileContents = try! String(contentsOfFile: path!)
-        let json = JSON(parseJSON: fileContents)
+        guard let asset = NSDataAsset(name: "Patches"), let json = try? JSON(data: asset.data) else {
+            models = [:]
+            return
+        }
+
         parseAndInsertPatches(json: json)
     }
     

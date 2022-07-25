@@ -37,7 +37,6 @@
 		415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B7F832535AFE400FAB1A0 /* ButtonWritePacket.swift */; };
 		4177A8A32467635600B695E9 /* PatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4177A8A22467635600B695E9 /* PatchManager.swift */; };
 		417CD9DD246757B200426294 /* CoinPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CD9DC246757B200426294 /* CoinPacket.swift */; };
-		417CD9E024675E2500426294 /* patches.json in Resources */ = {isa = PBXBuildFile; fileRef = 417CD9DF24675E2500426294 /* patches.json */; };
 		41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */; };
 		41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */; };
 		41862F4D2466B4A200F4E5A6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41862F4C2466B4A200F4E5A6 /* Card.swift */; };
@@ -90,7 +89,6 @@
 		4177A8A22467635600B695E9 /* PatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchManager.swift; sourceTree = "<group>"; };
 		4179C0DD23A6A15800FCA226 /* Spice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spice.entitlements; sourceTree = "<group>"; };
 		417CD9DC246757B200426294 /* CoinPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPacket.swift; sourceTree = "<group>"; };
-		417CD9DF24675E2500426294 /* patches.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = patches.json; sourceTree = "<group>"; };
 		41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardTableViewController.swift; sourceTree = "<group>"; };
 		41862F4C2466B4A200F4E5A6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		417CD9DE24675E1000426294 /* Patches */ = {
 			isa = PBXGroup;
 			children = (
-				417CD9DF24675E2500426294 /* patches.json */,
 				4177A8A22467635600B695E9 /* PatchManager.swift */,
 			);
 			path = Patches;
@@ -296,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4113E0F82468A5E70051DBFF /* Notice in Resources */,
-				417CD9E024675E2500426294 /* patches.json in Resources */,
 				4150D14523A3D5C9006B255A /* LaunchScreen.storyboard in Resources */,
 				4150D14223A3D5C9006B255A /* Assets.xcassets in Resources */,
 				4150D14023A3D5C5006B255A /* Main.storyboard in Resources */,
