@@ -31,7 +31,7 @@
 		4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15223A43A90006B255A /* EditServerViewController.swift */; };
 		4150D15823A504E9006B255A /* Rc4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15723A504E9006B255A /* Rc4.swift */; };
 		4150D15A23A515F5006B255A /* SpiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15923A515F5006B255A /* SpiceClient.swift */; };
-		4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15E23A5244A006B255A /* SendingPacket.swift */; };
+		4150D15F23A5244A006B255A /* DataPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15E23A5244A006B255A /* DataPacket.swift */; };
 		4150D16123A5271B006B255A /* AvsPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D16023A5271B006B255A /* AvsPacket.swift */; };
 		4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D16223A65E3A006B255A /* ConnectionController.swift */; };
 		415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415B7F832535AFE400FAB1A0 /* ButtonWritePacket.swift */; };
@@ -43,16 +43,14 @@
 		41E6A3EC25486E7200408144 /* MirrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3EB25486E7200408144 /* MirrorViewController.swift */; };
 		41E6A3EF25486E9E00408144 /* MirrorPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3EE25486E9E00408144 /* MirrorPacket.swift */; };
 		41E6A3F22548938700408144 /* PacketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3F12548938700408144 /* PacketHandler.swift */; };
-		41E6A3F62548A5FF00408144 /* UIViewController+TopBarHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3F52548A5FF00408144 /* UIViewController+TopBarHeight.swift */; };
+		41E6A3F62548A5FF00408144 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3F52548A5FF00408144 /* UIViewController.swift */; };
 		41E6A3F92548CBDC00408144 /* TouchWritePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3F82548CBDC00408144 /* TouchWritePacket.swift */; };
 		41E6A3FC2548CBEA00408144 /* TouchResetPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3FB2548CBEA00408144 /* TouchResetPacket.swift */; };
 		41E6A3FF2548DC0000408144 /* MirrorConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */; };
 		41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */; };
-		41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */; };
-		4C90F6A12473EBB600F367D5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C90F6A02473EBB600F367D5 /* Server.swift */; };
-		4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */; };
 		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
+		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +80,7 @@
 		4150D15223A43A90006B255A /* EditServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServerViewController.swift; sourceTree = "<group>"; };
 		4150D15723A504E9006B255A /* Rc4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rc4.swift; sourceTree = "<group>"; };
 		4150D15923A515F5006B255A /* SpiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiceClient.swift; sourceTree = "<group>"; };
-		4150D15E23A5244A006B255A /* SendingPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingPacket.swift; sourceTree = "<group>"; };
+		4150D15E23A5244A006B255A /* DataPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPacket.swift; sourceTree = "<group>"; };
 		4150D16023A5271B006B255A /* AvsPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvsPacket.swift; sourceTree = "<group>"; };
 		4150D16223A65E3A006B255A /* ConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionController.swift; sourceTree = "<group>"; };
 		415B7F832535AFE400FAB1A0 /* ButtonWritePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWritePacket.swift; sourceTree = "<group>"; };
@@ -95,15 +93,13 @@
 		41E6A3EB25486E7200408144 /* MirrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorViewController.swift; sourceTree = "<group>"; };
 		41E6A3EE25486E9E00408144 /* MirrorPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorPacket.swift; sourceTree = "<group>"; };
 		41E6A3F12548938700408144 /* PacketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketHandler.swift; sourceTree = "<group>"; };
-		41E6A3F52548A5FF00408144 /* UIViewController+TopBarHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopBarHeight.swift"; sourceTree = "<group>"; };
+		41E6A3F52548A5FF00408144 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		41E6A3F82548CBDC00408144 /* TouchWritePacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchWritePacket.swift; sourceTree = "<group>"; };
 		41E6A3FB2548CBEA00408144 /* TouchResetPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchResetPacket.swift; sourceTree = "<group>"; };
 		41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorConnectionController.swift; sourceTree = "<group>"; };
 		41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionControllerProtocol.swift; sourceTree = "<group>"; };
-		41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
-		4C90F6A02473EBB600F367D5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+GetDeviceType.swift"; sourceTree = "<group>"; };
 		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
+		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,26 +134,17 @@
 		4150D13723A3D5C5006B255A /* SpiceCompanion */ = {
 			isa = PBXGroup;
 			children = (
-				417CD9DE24675E1000426294 /* Patches */,
-				4179C0DD23A6A15800FCA226 /* Spice.entitlements */,
-				4150D15B23A51CB8006B255A /* Packets */,
 				4150D13823A3D5C5006B255A /* AppDelegate.swift */,
 				4150D13A23A3D5C5006B255A /* SceneDelegate.swift */,
-				4150D13E23A3D5C5006B255A /* Main.storyboard */,
-				4150D14123A3D5C9006B255A /* Assets.xcassets */,
-				4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */,
-				4150D14623A3D5C9006B255A /* Info.plist */,
-				4CC34A87246B183300186EC1 /* Controller */,
-				4C90F6A22473EBBE00F367D5 /* Model */,
-				4CC34A88246B184E00186EC1 /* Extension */,
-				4150D15723A504E9006B255A /* Rc4.swift */,
-				4150D15923A515F5006B255A /* SpiceClient.swift */,
-				4150D16223A65E3A006B255A /* ConnectionController.swift */,
+				4179C0DD23A6A15800FCA226 /* Spice.entitlements */,
+				89DC731D288F669C00B15158 /* Storyboards */,
 				4137CFA22466DBB400B85CB2 /* FileTools.swift */,
-				41ECC2FB246768780075195E /* AugmentedIntervalTree.swift */,
-				41E6A3F12548938700408144 /* PacketHandler.swift */,
-				41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */,
-				41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */,
+				4C90F6A22473EBBE00F367D5 /* Models */,
+				4CC34A87246B183300186EC1 /* Controllers */,
+				4CC34A88246B184E00186EC1 /* Extensions */,
+				89DC731E288F66FC00B15158 /* Client */,
+				4150D14123A3D5C9006B255A /* Assets.xcassets */,
+				4150D14623A3D5C9006B255A /* Info.plist */,
 			);
 			path = SpiceCompanion;
 			sourceTree = "<group>";
@@ -165,7 +152,6 @@
 		4150D15B23A51CB8006B255A /* Packets */ = {
 			isa = PBXGroup;
 			children = (
-				4150D15E23A5244A006B255A /* SendingPacket.swift */,
 				4150D16023A5271B006B255A /* AvsPacket.swift */,
 				417CD9DC246757B200426294 /* CoinPacket.swift */,
 				4113E0E724682E230051DBFF /* PatchReadPacket.swift */,
@@ -189,20 +175,20 @@
 			isa = PBXGroup;
 			children = (
 				4177A8A22467635600B695E9 /* PatchManager.swift */,
+				89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */,
 			);
 			path = Patches;
 			sourceTree = "<group>";
 		};
-		4C90F6A22473EBBE00F367D5 /* Model */ = {
+		4C90F6A22473EBBE00F367D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4C90F6A02473EBB600F367D5 /* Server.swift */,
 				41862F4C2466B4A200F4E5A6 /* Card.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		4CC34A87246B183300186EC1 /* Controller */ = {
+		4CC34A87246B183300186EC1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				41E6A3EB25486E7200408144 /* MirrorViewController.swift */,
@@ -215,17 +201,49 @@
 				41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */,
 				41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		4CC34A88246B184E00186EC1 /* Extension */ = {
+		4CC34A88246B184E00186EC1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */,
-				4CCB4ABF247D4775003654B9 /* UIDevice+GetDeviceType.swift */,
-				41E6A3F52548A5FF00408144 /* UIViewController+TopBarHeight.swift */,
+				41E6A3F52548A5FF00408144 /* UIViewController.swift */,
 			);
-			path = Extension;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89DC731D288F669C00B15158 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4150D13E23A3D5C5006B255A /* Main.storyboard */,
+				4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		89DC731E288F66FC00B15158 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				4150D15923A515F5006B255A /* SpiceClient.swift */,
+				4150D15723A504E9006B255A /* Rc4.swift */,
+				4150D16223A65E3A006B255A /* ConnectionController.swift */,
+				41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */,
+				89DC7322288F68F900B15158 /* Protocols */,
+				4150D15B23A51CB8006B255A /* Packets */,
+				417CD9DE24675E1000426294 /* Patches */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		89DC7322288F68F900B15158 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				41E6A3F12548938700408144 /* PacketHandler.swift */,
+				4150D15E23A5244A006B255A /* DataPacket.swift */,
+				41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +326,6 @@
 			files = (
 				4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */,
 				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
-				4CCB4AC0247D4775003654B9 /* UIDevice+GetDeviceType.swift in Sources */,
 				4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */,
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
@@ -317,17 +334,16 @@
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
 				411D34F725499927006BC85E /* GetScreensPacket.swift in Sources */,
 				4113E0E424680A010051DBFF /* UIViewController+CustomDelegation.swift in Sources */,
-				4C90F6A12473EBB600F367D5 /* Server.swift in Sources */,
 				4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */,
-				41ECC2FC246768780075195E /* AugmentedIntervalTree.swift in Sources */,
 				41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */,
+				89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */,
 				41E6A3FF2548DC0000408144 /* MirrorConnectionController.swift in Sources */,
 				4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */,
 				4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */,
 				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
 				41E6A3F22548938700408144 /* PacketHandler.swift in Sources */,
-				4150D15F23A5244A006B255A /* SendingPacket.swift in Sources */,
+				4150D15F23A5244A006B255A /* DataPacket.swift in Sources */,
 				415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */,
 				41E6A3FC2548CBEA00408144 /* TouchResetPacket.swift in Sources */,
 				41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */,
@@ -342,7 +358,7 @@
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
 				4150D14F23A3DEAF006B255A /* ServerTableViewController.swift in Sources */,
 				4113E0EC2468480B0051DBFF /* KeyPadPacket.swift in Sources */,
-				41E6A3F62548A5FF00408144 /* UIViewController+TopBarHeight.swift in Sources */,
+				41E6A3F62548A5FF00408144 /* UIViewController.swift in Sources */,
 				4150D13B23A3D5C5006B255A /* SceneDelegate.swift in Sources */,
 				4150D15A23A515F5006B255A /* SpiceClient.swift in Sources */,
 				417CD9DD246757B200426294 /* CoinPacket.swift in Sources */,
