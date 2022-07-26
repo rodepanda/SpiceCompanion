@@ -30,6 +30,9 @@ class MirrorViewController: UIViewController, PacketHandler {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.isMultipleTouchEnabled = true
+        UIApplication.shared.isIdleTimerDisabled = true
+
         let parentController = ConnectionController.get()
         mirrorController = MirrorConnectionController(
             uiViewController: self,
@@ -40,7 +43,6 @@ class MirrorViewController: UIViewController, PacketHandler {
 
         mirrorController.setPacketHandler(packetHandler: self)
         mirrorController.connect()
-        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     // MARK: - Networking
@@ -100,6 +102,43 @@ class MirrorViewController: UIViewController, PacketHandler {
 
     // MARK: - Touch
 
+    /// The unique identifiers of all the currently ongoing touches within this controller's mirror, keyed by said touches.
+    private var ongoingTouchIds = [UITouch : Int]()
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            // register an id for the touch, if it has not been done already
+            if ongoingTouchIds[touch] == nil {
+                ongoingTouchIds[touch] = ongoingTouchIds.count
+            }
+
+            let id = ongoingTouchIds[touch]!
+            let point = getScreenLocation(of: touch)
+            let packet = TouchWritePacket(id: id, x: Int(point.x), y: Int(point.y))
+            ConnectionController.get().sendPacket(packet: packet)
+        }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchesBegan(touches, with: event)
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            guard let id = ongoingTouchIds[touch] else {
+                continue
+            }
+
+            let packet = TouchResetPacket(id: id)
+            ConnectionController.get().sendPacket(packet: packet)
+            ongoingTouchIds.removeValue(forKey: touch)
+        }
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchesEnded(touches, with: event)
+    }
+
     /// Get the touch point of the given touch within this controller's mirror.
     /// - Parameter touch: The touch to get the location of.
     /// - Returns: The top-left oriented, mirror-spaced point of the given touch.
@@ -141,31 +180,10 @@ class MirrorViewController: UIViewController, PacketHandler {
             imagePoint =  CGPoint(x: x, y: y)
         }
 
+        // limit touches to the bounds of the display, else the server will freak out
+        imagePoint.x = min(max(imagePoint.x, 0), imageWidth)
+        imagePoint.y = min(max(imagePoint.y, 0), imageHeight)
+
         return imagePoint
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let id = touch.hash
-            let point = getScreenLocation(of: touch)
-            let packet = TouchWritePacket(id: id, x: Int(point.x), y: Int(point.y))
-            ConnectionController.get().sendPacket(packet: packet)
-        }
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchesBegan(touches, with: event)
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let id = touch.hash
-            let packet = TouchResetPacket(id: id)
-            ConnectionController.get().sendPacket(packet: packet)
-        }
-    }
-
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        touchesEnded(touches, with: event)
     }
 }
