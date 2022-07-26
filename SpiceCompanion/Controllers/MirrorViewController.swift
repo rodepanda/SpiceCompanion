@@ -9,188 +9,163 @@
 import UIKit
 import SwiftyJSON
 
+/// The view controller for presenting a "mirror" projection of a screen present on the server.
 class MirrorViewController: UIViewController, PacketHandler {
-    
-    @IBOutlet weak var mirror: UIImageView!
-    private var mirrorCC: MirrorConnectionController?
-    var activeScreen: Int = 0
-    
+
+    private var mirrorController: MirrorConnectionController!
+
+    /// The index of the screen that this controller is currently presenting.
+    var activeScreen = 0
+
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var mirrorImageView: UIImageView!
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        let cc = ConnectionController.get()
-        self.mirrorCC = MirrorConnectionController(uiViewController: self, host: cc.host, port: cc.port, password: cc.getPassword())
-        self.mirrorCC?.connect()
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mirrorTouched(sender:)))
-        mirror.isUserInteractionEnabled = true
-        mirror.addGestureRecognizer(tapGestureRecognizer)
+        let parentController = ConnectionController.get()
+        mirrorController = MirrorConnectionController(
+            uiViewController: self,
+            host: parentController.host,
+            port: parentController.port,
+            password: parentController.getPassword()
+        )
+
+        mirrorController.setPacketHandler(packetHandler: self)
+        mirrorController.connect()
         UIApplication.shared.isIdleTimerDisabled = true
     }
-    
-    private var screenAspectSet = false
-    private var imageWidth: Int = 0
-    private var imageHeight: Int = 0
-    
-    func projectToMirror(){
-        self.mirrorCC?.sendPacket(packet: MirrorPacket(screen: self.activeScreen))
-        self.mirrorCC?.setPacketHandler(packetHandler: self)
+
+    // MARK: - Networking
+
+    /// Request the next frame of the currently mirrored screen from the server.
+    func requestFrame() {
+        mirrorController.sendPacket(packet: MirrorPacket(screen: activeScreen))
     }
-    
+
     func handlePacket(data: Array<JSON>) {
         DispatchQueue.main.async {
-            if(self.view.window == nil){
+            guard data.count == 4, let encodedImage = data[3].string else {
                 return
             }
-            if(data.count < 3){
+
+            guard let data = Data(base64Encoded: encodedImage), var image = UIImage(data: data) else {
                 return
             }
-            guard let imageString = data[3].string else {
-                return
+
+            // rotate the image to force landscape on phones
+            // ugly hack but its functional until full rotation support can be added throughout the interface
+            if let cgImage = image.cgImage, UIDevice.current.userInterfaceIdiom == .phone {
+                image = UIImage(cgImage: cgImage, scale: 1, orientation: .right)
             }
-            if(!self.screenAspectSet){
-                self.imageWidth = data[1].int!
-                self.imageHeight = data[2].int!
-                self.setMirrorSize(width: self.imageWidth, height: self.imageHeight)
-                if(UIDevice.current.userInterfaceIdiom == .pad){
-                    //Add a rotation event for ipads to recalc the mirror size
-                    NotificationCenter.default.addObserver(self, selector: #selector(self.rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
-                }
-                self.screenAspectSet = true
-            }
-            
-            let imageData = Data(base64Encoded: imageString)
-            let image = UIImage(data: imageData!)
-            self.mirror.image = image
-            
-            self.projectToMirror()
+
+            self.mirrorImageView.image = image
+
+            // the share button is disabled until frames begin displaying
+            self.shareButton.isEnabled = true
+
+            // request the next frame
+            self.requestFrame()
         }
     }
-    
-    @objc func rotated() {
-        DispatchQueue.main.async {
-            self.setMirrorSize(width: self.imageWidth, height: self.imageHeight)
-        }
-    }
-    
-    var isPortrait = false
-    
-    func setMirrorSize(width: Int, height: Int){
-        self.isPortrait = width <= height
-        
-        if(self.isPortrait) {
-            self.mirror.frame = getMostFittingMirrorSize(imageWidth: CGFloat(height), imageHeight: CGFloat(width))
-        } else {
-            if(UIDevice.current.userInterfaceIdiom != .pad){
-                self.mirror.transform = self.mirror.transform.rotated(by: CGFloat(Double.pi / 2))
-            }
-            self.mirror.frame = getMostFittingMirrorSize(imageWidth: CGFloat(width), imageHeight: CGFloat(height))
-        }
-    }
-    
-    private var mirrorWidth = CGFloat(0)
-    private var mirrorHeight = CGFloat(0)
-    
-    //I do not know why this works. But I do know it's black magic and that touching anything will break it.
-    func getMostFittingMirrorSize(imageWidth: CGFloat, imageHeight: CGFloat) -> CGRect{
-        
-//        rs > ri ? (wi * hs/hi, hs) : (ws, hi * ws/wi)
-//        https://stackoverflow.com/questions/6565703/math-algorithm-fit-image-to-screen-retain-aspect-ratio
-        
-        let screenSize = UIScreen.main.bounds
-        let screenHeight = screenSize.height - self.topbarHeight
-        if(screenSize.width / screenHeight >  imageWidth / imageHeight || (self.isPortrait && UIDevice.current.userInterfaceIdiom == .pad)){
-            self.mirrorWidth = imageHeight * screenHeight / imageWidth
-            self.mirrorHeight = screenHeight
-            let offset = (screenSize.width - self.mirrorWidth) / 2
-            return CGRect(x: offset, y: self.topbarHeight, width: self.mirrorWidth, height: self.mirrorHeight)
-        }  else {
-            //Screen fits in full screen width
-            self.mirrorHeight = imageWidth * screenSize.width / imageHeight
-            
-            if(UIDevice.current.userInterfaceIdiom == .pad){
-                self.mirrorHeight = imageHeight * screenSize.width / imageWidth
-            }
-            self.mirrorWidth = screenSize.width
-            //Offset to center mirror
-            let offset = (screenHeight - self.mirrorHeight) / 2
-            return CGRect(x: 0, y: self.topbarHeight + offset, width: self.mirrorWidth, height: self.mirrorHeight)
-        }
-    }
-    
-    @objc func mirrorTouched(sender : UITapGestureRecognizer){
-        let touchPoint = sender.location(in: self.mirror)
-        var imagePointX = Int(touchPoint.x / self.mirrorHeight * CGFloat(self.imageWidth))
-        var imagePointY = Int(touchPoint.y / self.mirrorWidth * CGFloat(self.imageHeight))
-        if(UIDevice.current.userInterfaceIdiom == .pad){
-            imagePointX = Int(touchPoint.x / self.mirrorWidth * CGFloat(self.imageWidth))
-            imagePointY = Int(touchPoint.y / self.mirrorHeight * CGFloat(self.imageHeight))
-        }
-        sendTouchEvent(x: imagePointX, y: imagePointY)
-    }
-    
-    private var touchCounter = 1
-    
-    func sendTouchEvent(x: Int, y: Int){
-        
-        let touchWritePacket = TouchWritePacket(id: self.touchCounter, x: x, y: y)
-        ConnectionController.get().sendPacket(packet: touchWritePacket)
-        let resetPacket = TouchResetPacket(id: self.touchCounter)
-        
-        //Yes this is janky but for now it works. I want to replace this with hold gestures in the futture.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            ConnectionController.get().sendPacket(packet: resetPacket)
-        }
-        self.touchCounter += 1
-    }
-    
-    @IBAction func CancelButtonPressed(_ sender: Any) {
-        self.mirrorCC?.resetPacketHandler()
-        self.mirrorCC?.disconnect()
+
+    // MARK: - Navigation
+
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        mirrorController.resetPacketHandler()
+        mirrorController.disconnect()
+
         UIApplication.shared.isIdleTimerDisabled = false
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
-        let image : UIImage = self.mirror.image!
-        let activityViewController : UIActivityViewController = UIActivityViewController(
-            activityItems: [image], applicationActivities: nil)
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            if activityViewController.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
-                activityViewController.popoverPresentationController?.barButtonItem = sender
-            }
+        guard let screenshot = mirrorImageView.image else {
+            return
         }
-//           activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
-//           activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
-           activityViewController.activityItemsConfiguration = [
-           UIActivity.ActivityType.message
-           ] as? UIActivityItemsConfigurationReading
-           
-           activityViewController.excludedActivityTypes = [
-                UIActivity.ActivityType.addToReadingList,
-                UIActivity.ActivityType.postToVimeo,
-           ]
-           
-           activityViewController.isModalInPresentation = true
-           self.present(activityViewController, animated: true, completion: nil)
+
+        let activityController = UIActivityViewController.init(activityItems: [screenshot], applicationActivities: nil)
+        let configuration = [UIActivity.ActivityType.message] as? UIActivityItemsConfigurationReading
+        activityController.activityItemsConfiguration = configuration
+
+        self.present(activityController, animated: true, completion: nil)
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if(UIDevice.current.userInterfaceIdiom == .pad){
-            NotificationCenter.default.removeObserver(self)
+
+    // MARK: - Touch
+
+    /// Get the touch point of the given touch within this controller's mirror.
+    /// - Parameter touch: The touch to get the location of.
+    /// - Returns: The top-left oriented, mirror-spaced point of the given touch.
+    func getScreenLocation(of touch: UITouch) -> CGPoint {
+        // calculate the displayed bounds of the mirrored image for touch translation
+        var imageSize: CGSize
+        let imageWidth = mirrorImageView.image?.size.width ?? 0
+        let imageHeight = mirrorImageView.image?.size.height ?? 0
+        let widthDifference = mirrorImageView.bounds.width / imageWidth
+        let heightDifference = mirrorImageView.bounds.height / imageHeight
+        if widthDifference > heightDifference {
+            imageSize = CGSize(width: mirrorImageView.bounds.height / imageHeight * imageWidth, height: mirrorImageView.bounds.height)
+        }
+        else if heightDifference > widthDifference {
+            imageSize = CGSize(width: mirrorImageView.bounds.width, height: mirrorImageView.bounds.width / imageWidth * imageHeight)
+        }
+        else {
+            imageSize = mirrorImageView.bounds.size
+        }
+
+        let imageBounds = CGRect(
+            x: (mirrorImageView.bounds.width - imageSize.width) / 2,
+            y: (mirrorImageView.bounds.height - imageSize.height) / 2,
+            width: imageSize.width,
+            height: imageSize.height
+        )
+
+        // translate the touch point to mirror image coordinates
+        var imagePoint = touch.location(in: self.mirrorImageView)
+        imagePoint.x -= imageBounds.origin.x
+        imagePoint.y -= imageBounds.origin.y
+        imagePoint.x *= imageWidth / imageBounds.width
+        imagePoint.y *= imageHeight / imageBounds.height
+
+        // translate from forced landscape coordinates to mirror coordinates
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            let x = imagePoint.y
+            let y = (imagePoint.x * -1) + imageWidth
+            imagePoint =  CGPoint(x: x, y: y)
+        }
+
+        return imagePoint
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let id = touch.hash
+            let point = getScreenLocation(of: touch)
+            let packet = TouchWritePacket(id: id, x: Int(point.x), y: Int(point.y))
+            ConnectionController.get().sendPacket(packet: packet)
         }
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchesBegan(touches, with: event)
     }
-    */
 
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let id = touch.hash
+            let packet = TouchResetPacket(id: id)
+            ConnectionController.get().sendPacket(packet: packet)
+        }
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchesEnded(touches, with: event)
+    }
 }

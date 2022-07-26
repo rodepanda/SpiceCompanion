@@ -62,7 +62,7 @@ class MirrorConnectionController: ConnectionControllerProtocol {
         stopTimer()
         self.phase = .open
         let mvc = self.uiViewController as! MirrorViewController
-        mvc.projectToMirror()
+        mvc.requestFrame()
     }
     
     private var packetQueue: [DataPacket] = [DataPacket]()
