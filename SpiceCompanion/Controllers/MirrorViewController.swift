@@ -28,6 +28,10 @@ class MirrorViewController: UIViewController, PacketHandler {
         return true
     }
 
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return .all
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.isMultipleTouchEnabled = true
@@ -113,7 +117,10 @@ class MirrorViewController: UIViewController, PacketHandler {
             }
 
             let id = ongoingTouchIds[touch]!
-            let point = getScreenLocation(of: touch)
+            guard let point = getScreenLocation(of: touch) else {
+                continue
+            }
+
             let packet = TouchWritePacket(id: id, x: Int(point.x), y: Int(point.y))
             ConnectionController.get().sendPacket(packet: packet)
         }
@@ -141,12 +148,12 @@ class MirrorViewController: UIViewController, PacketHandler {
 
     /// Get the touch point of the given touch within this controller's mirror.
     /// - Parameter touch: The touch to get the location of.
-    /// - Returns: The top-left oriented, mirror-spaced point of the given touch.
-    func getScreenLocation(of touch: UITouch) -> CGPoint {
+    /// - Returns: The top-left oriented, mirror-spaced point of the given touch, if any.
+    func getScreenLocation(of touch: UITouch) -> CGPoint? {
         // calculate the displayed bounds of the mirrored image for touch translation
         var imageSize: CGSize
-        let imageWidth = mirrorImageView.image?.size.width ?? 0
-        let imageHeight = mirrorImageView.image?.size.height ?? 0
+        var imageWidth = mirrorImageView.image?.size.width ?? 0
+        var imageHeight = mirrorImageView.image?.size.height ?? 0
         let widthDifference = mirrorImageView.bounds.width / imageWidth
         let heightDifference = mirrorImageView.bounds.height / imageHeight
         if widthDifference > heightDifference {
@@ -178,11 +185,17 @@ class MirrorViewController: UIViewController, PacketHandler {
             let x = imagePoint.y
             let y = (imagePoint.x * -1) + imageWidth
             imagePoint =  CGPoint(x: x, y: y)
+
+            let width = imageHeight
+            let height = imageWidth
+            imageWidth = width
+            imageHeight = height
         }
 
         // limit touches to the bounds of the display, else the server will freak out
-        imagePoint.x = min(max(imagePoint.x, 0), imageWidth)
-        imagePoint.y = min(max(imagePoint.y, 0), imageHeight)
+        guard (imagePoint.x >= 0 && imagePoint.x <= imageWidth) && (imagePoint.y >= 0 && imagePoint.y <= imageHeight) else {
+            return nil
+        }
 
         return imagePoint
     }
