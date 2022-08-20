@@ -50,6 +50,7 @@
 		41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */; };
 		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
+		89947CFB28B0F3320078A255 /* TouchDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* TouchDisplay.swift */; };
 		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorConnectionController.swift; sourceTree = "<group>"; };
 		41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionControllerProtocol.swift; sourceTree = "<group>"; };
 		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
+		89947CFA28B0F3320078A255 /* TouchDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDisplay.swift; sourceTree = "<group>"; };
 		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 				89DC731D288F669C00B15158 /* Storyboards */,
 				4137CFA22466DBB400B85CB2 /* FileTools.swift */,
 				4C90F6A22473EBBE00F367D5 /* Models */,
+				89947CF728B0DD960078A255 /* Views */,
 				4CC34A87246B183300186EC1 /* Controllers */,
 				4CC34A88246B184E00186EC1 /* Extensions */,
 				89DC731E288F66FC00B15158 /* Client */,
@@ -211,6 +214,14 @@
 				41E6A3F52548A5FF00408144 /* UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89947CF728B0DD960078A255 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89947CFA28B0F3320078A255 /* TouchDisplay.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		89DC731D288F669C00B15158 /* Storyboards */ = {
@@ -330,6 +341,7 @@
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
+				89947CFB28B0F3320078A255 /* TouchDisplay.swift in Sources */,
 				41E6A3F92548CBDC00408144 /* TouchWritePacket.swift in Sources */,
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
 				411D34F725499927006BC85E /* GetScreensPacket.swift in Sources */,

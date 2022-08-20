@@ -37,6 +37,10 @@ class MirrorViewController: UIViewController, PacketHandler {
         view.isMultipleTouchEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
 
+        let touchDisplay = TouchDisplay(frame: view.frame)
+        touchDisplay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(touchDisplay)
+
         let parentController = ConnectionController.get()
         mirrorController = MirrorConnectionController(
             uiViewController: self,
