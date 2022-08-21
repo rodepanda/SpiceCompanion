@@ -12,6 +12,7 @@ import SwiftyJSON
 /// The view controller for presenting a "mirror" projection of a screen present on the server.
 class MirrorViewController: UIViewController, PacketHandler {
 
+    private var touchDisplay: TouchDisplay!
     private var mirrorController: MirrorConnectionController!
 
     /// The index of the screen that this controller is currently presenting.
@@ -19,6 +20,7 @@ class MirrorViewController: UIViewController, PacketHandler {
 
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var mirrorImageView: UIImageView!
+    @IBOutlet weak var mirrorAspectRatioConstraint: NSLayoutConstraint!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -34,12 +36,13 @@ class MirrorViewController: UIViewController, PacketHandler {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .dark
         view.isMultipleTouchEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
 
-        let touchDisplay = TouchDisplay(frame: view.frame)
+        touchDisplay = TouchDisplay(frame: mirrorImageView.frame)
         touchDisplay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(touchDisplay)
+        mirrorImageView.addSubview(touchDisplay)
 
         let parentController = ConnectionController.get()
         mirrorController = MirrorConnectionController(
@@ -78,6 +81,23 @@ class MirrorViewController: UIViewController, PacketHandler {
 
             self.mirrorImageView.image = image
 
+            // update the mirrors aspect ratio constraint
+            let aspectRatio = image.size.width / image.size.height
+            if self.mirrorAspectRatioConstraint.multiplier != aspectRatio {
+                let newConstraint = NSLayoutConstraint(item: self.mirrorAspectRatioConstraint.firstItem!,
+                                                       attribute: self.mirrorAspectRatioConstraint.firstAttribute,
+                                                       relatedBy: self.mirrorAspectRatioConstraint.relation,
+                                                       toItem: self.mirrorAspectRatioConstraint.secondItem,
+                                                       attribute: self.mirrorAspectRatioConstraint.secondAttribute,
+                                                       multiplier: aspectRatio,
+                                                       constant: self.mirrorAspectRatioConstraint.constant)
+
+                self.mirrorImageView.removeConstraint(self.mirrorAspectRatioConstraint)
+                self.mirrorImageView.addConstraint(newConstraint)
+                self.mirrorImageView.layoutIfNeeded()
+                self.mirrorAspectRatioConstraint = newConstraint
+            }
+
             // the share button is disabled until frames begin displaying
             self.shareButton.isEnabled = true
 
@@ -114,6 +134,13 @@ class MirrorViewController: UIViewController, PacketHandler {
     private var ongoingTouchIds = [UITouch : Int]()
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // defer touches to the touch display
+        // since touchesMoved defers here, ensure that this is a new touch as to
+        // not spam indicators on the display when dragging
+        if !touches.contains(where: { ongoingTouchIds[$0] != nil }) {
+            touchDisplay.touchesBegan(touches, with: event)
+        }
+
         for touch in touches {
             // register an id for the touch, if it has not been done already
             if ongoingTouchIds[touch] == nil {

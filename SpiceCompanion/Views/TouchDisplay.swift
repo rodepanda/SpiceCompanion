@@ -17,8 +17,6 @@ class TouchDisplay: UIView {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-
         // add indicators for each touch
         // each indicator will automatically remove itself when it is finished
         for touch in touches {

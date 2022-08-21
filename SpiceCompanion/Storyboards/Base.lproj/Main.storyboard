@@ -880,38 +880,55 @@
         <!--Mirror-->
         <scene sceneID="Wv3-EW-cCf">
             <objects>
-                <viewController title="Mirror" modalPresentationStyle="fullScreen" id="2D5-wQ-qg0" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mirror" modalPresentationStyle="fullScreen" interfaceStyle="dark" id="2D5-wQ-qg0" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Qg-bD-2ed">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q5t-B9-fsR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Q5t-B9-fsR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Q5t-B9-fsR" secondAttribute="height" multiplier="16:9" id="2of-aI-omT"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRh-sJ-CFA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="leading" secondItem="hRh-sJ-CFA" secondAttribute="leading" id="0Fd-9R-QzY"/>
-                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="trailing" secondItem="Q5t-B9-fsR" secondAttribute="trailing" id="92A-Gf-RhE"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" id="One-y1-eJQ"/>
-                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="bottom" secondItem="Q5t-B9-fsR" secondAttribute="bottom" id="rLd-w9-4Iy"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0Qg-bD-2ed" secondAttribute="top" id="5dN-48-7z3"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="trailing" secondItem="hRh-sJ-CFA" secondAttribute="trailing" priority="250" id="Feo-U9-LeI"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="bottom" secondItem="hRh-sJ-CFA" secondAttribute="bottom" priority="250" id="L76-3j-XRI"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q5t-B9-fsR" secondAttribute="trailing" id="ODq-6A-XU0"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="centerY" secondItem="0Qg-bD-2ed" secondAttribute="centerY" id="dhH-XI-8Cm"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" priority="250" id="n16-hH-OoL"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q5t-B9-fsR" secondAttribute="bottom" id="qbR-zk-o7Y"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" id="r5R-BY-1f3"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="centerX" secondItem="0Qg-bD-2ed" secondAttribute="centerX" id="rBi-cm-Edb"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="leading" secondItem="hRh-sJ-CFA" secondAttribute="leading" priority="250" id="rf6-Ck-Sxe"/>
+                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Qg-bD-2ed" secondAttribute="leading" id="wD8-Eb-KsE"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dhH-XI-8Cm"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="square.and.arrow.up" catalog="system" id="MI4-RW-cPl">
+                    <toolbarItems>
+                        <barButtonItem enabled="NO" image="square.and.arrow.up" catalog="system" id="MI4-RW-cPl">
                             <connections>
                                 <action selector="shareButtonPressed:" destination="2D5-wQ-qg0" id="Uoz-ck-n0s"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="p3F-w5-eQA">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ddf-gx-YAq"/>
+                        <barButtonItem title="Close" id="p3F-w5-eQA">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="2D5-wQ-qg0" id="Fzt-rn-LRo"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs"/>
                     <connections>
+                        <outlet property="mirrorAspectRatioConstraint" destination="2of-aI-omT" id="AI5-fK-g9O"/>
                         <outlet property="mirrorImageView" destination="Q5t-B9-fsR" id="lmk-SI-MKU"/>
                         <outlet property="shareButton" destination="MI4-RW-cPl" id="sqv-8P-iaP"/>
                     </connections>
@@ -940,11 +957,14 @@
         <!--Navigation Controller-->
         <scene sceneID="RhE-YN-T5m">
             <objects>
-                <navigationController storyboardIdentifier="MirrorViewController" modalPresentationStyle="fullScreen" id="Z5N-Hb-cj0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MirrorViewController" modalPresentationStyle="fullScreen" interfaceStyle="dark" navigationBarHidden="YES" toolbarHidden="NO" id="Z5N-Hb-cj0" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QtH-OH-Xor">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vi3-wn-FNb">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="2D5-wQ-qg0" kind="relationship" relationship="rootViewController" id="eie-AN-9kJ"/>
                     </connections>
