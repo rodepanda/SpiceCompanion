@@ -1,5 +1,5 @@
 //
-//  MirrorView.swift
+//  MirrorRenderView.swift
 //  SpiceCompanion
 //
 //  Created by marika on 2022-08-21.
@@ -10,11 +10,11 @@ import UIKit
 import Metal
 import MetalKit
 
-/// A view for displaying a rapid sequence of images from a source display in `MirrorViewController`.
+/// A view for displaying a rapid sequence of images from a `MirrorView`.
 ///
 /// Note that this view stretches the images it displays to its full bounds, so the parent is responsible for
 /// managing proper sizing of it.
-class MirrorView: MTKView {
+class MirrorRenderView: MTKView {
 
     /// The Metal command queue that this view is using for rendering.
     private let commandQueue: MTLCommandQueue
@@ -32,7 +32,7 @@ class MirrorView: MTKView {
         }
     }
 
-    required init(coder: NSCoder) {
+    init() {
         guard let device = MTLCreateSystemDefaultDevice() else {
             fatalError("MirrorView: unable to create system metal device")
         }
@@ -42,12 +42,14 @@ class MirrorView: MTKView {
         }
 
         self.commandQueue = commandQueue
-        context = CIContext(mtlDevice: device)
-
-        super.init(coder: coder)
-        self.device = device
+        self.context = CIContext(mtlDevice: device)
+        super.init(frame: .zero, device: device)
         framebufferOnly = false
         enableSetNeedsDisplay = true
+    }
+
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     /// Draw this view's image to the current frame.

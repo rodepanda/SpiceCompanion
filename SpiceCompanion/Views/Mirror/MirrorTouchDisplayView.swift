@@ -1,5 +1,5 @@
 //
-//  TouchDisplayView.swift
+//  MirrorTouchDisplayView.swift
 //  SpiceCompanion
 //
 //  Created by marika on 2022-08-20.
@@ -9,15 +9,18 @@
 import UIKit
 import SwiftUI
 
-/// A view which displays touches performed on it in a stylized manner.
-class TouchDisplayView: UIView {
+/// A view which displays touches performed on a `MirrorView` in a stylized manner.
+class MirrorTouchDisplayView: UIView {
+
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         isMultipleTouchEnabled = true
-        clipsToBounds = true
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // passthrough touches
+        super.touchesBegan(touches, with: event)
+
         // add indicators for each touch
         // each indicator will automatically remove itself when it is finished
         for touch in touches {
@@ -35,8 +38,8 @@ class TouchDisplayView: UIView {
 
 // MARK: - Indicator
 
-extension TouchDisplayView {
-    /// An indicator for a single touch within a `TouchDisplayView`.
+extension MirrorTouchDisplayView {
+    /// An indicator for a single touch within a `MirrorTouchDisplayView`.
     ///
     /// This view will automatically play its animation and remove itself from the view hierarchy upon being
     /// added to said view heirarchy.
@@ -75,7 +78,7 @@ extension TouchDisplayView {
         }
 
         required init?(coder: NSCoder) {
-            fatalError("init(coder:) is not supported")
+            fatalError("init(coder:) has not been implemented")
         }
 
         override func didMoveToSuperview() {

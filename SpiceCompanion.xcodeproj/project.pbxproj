@@ -49,9 +49,10 @@
 		41E6A3FF2548DC0000408144 /* MirrorConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */; };
 		41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */; };
 		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
-		8938553128B2081F0005BF43 /* MirrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938553028B2081F0005BF43 /* MirrorView.swift */; };
+		8938553128B2081F0005BF43 /* MirrorRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938553028B2081F0005BF43 /* MirrorRenderView.swift */; };
+		8938553328B21B8C0005BF43 /* MirrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938553228B21B8C0005BF43 /* MirrorView.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
-		89947CFB28B0F3320078A255 /* TouchDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* TouchDisplayView.swift */; };
+		89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */; };
 		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,8 +102,9 @@
 		41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorConnectionController.swift; sourceTree = "<group>"; };
 		41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionControllerProtocol.swift; sourceTree = "<group>"; };
 		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
-		8938553028B2081F0005BF43 /* MirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorView.swift; sourceTree = "<group>"; };
-		89947CFA28B0F3320078A255 /* TouchDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDisplayView.swift; sourceTree = "<group>"; };
+		8938553028B2081F0005BF43 /* MirrorRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorRenderView.swift; sourceTree = "<group>"; };
+		8938553228B21B8C0005BF43 /* MirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorView.swift; sourceTree = "<group>"; };
+		89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTouchDisplayView.swift; sourceTree = "<group>"; };
 		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,11 +220,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8938553528B2296B0005BF43 /* Mirror */ = {
+			isa = PBXGroup;
+			children = (
+				89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */,
+				8938553028B2081F0005BF43 /* MirrorRenderView.swift */,
+				8938553228B21B8C0005BF43 /* MirrorView.swift */,
+			);
+			path = Mirror;
+			sourceTree = "<group>";
+		};
 		89947CF728B0DD960078A255 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				89947CFA28B0F3320078A255 /* TouchDisplayView.swift */,
-				8938553028B2081F0005BF43 /* MirrorView.swift */,
+				8938553528B2296B0005BF43 /* Mirror */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,7 +355,7 @@
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
-				89947CFB28B0F3320078A255 /* TouchDisplayView.swift in Sources */,
+				89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */,
 				41E6A3F92548CBDC00408144 /* TouchWritePacket.swift in Sources */,
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
 				411D34F725499927006BC85E /* GetScreensPacket.swift in Sources */,
@@ -358,6 +369,7 @@
 				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
 				41E6A3F22548938700408144 /* PacketHandler.swift in Sources */,
+				8938553328B21B8C0005BF43 /* MirrorView.swift in Sources */,
 				4150D15F23A5244A006B255A /* DataPacket.swift in Sources */,
 				415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */,
 				41E6A3FC2548CBEA00408144 /* TouchResetPacket.swift in Sources */,
@@ -368,7 +380,7 @@
 				41E6A3EF25486E9E00408144 /* MirrorPacket.swift in Sources */,
 				414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */,
 				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
-				8938553128B2081F0005BF43 /* MirrorView.swift in Sources */,
+				8938553128B2081F0005BF43 /* MirrorRenderView.swift in Sources */,
 				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
