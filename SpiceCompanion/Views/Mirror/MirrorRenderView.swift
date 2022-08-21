@@ -61,12 +61,20 @@ class MirrorRenderView: MTKView {
         }
 
         // scale and render the image to the full bounds of the drawable
-        // cicontext.render likes to render the image upside down, so scale the
-        // image in reverse and offset it accordingly when rendering
         let scaleX = drawableSize.width / image.extent.width
         let scaleY = drawableSize.height / image.extent.height
+
+        // cicontext.render likes to render the image upside down in the
+        // simulator, so scale the image in reverse and offset it accordingly
+        // when rendering
+        #if targetEnvironment(simulator)
         let scaledImage = image.transformed(by: .init(scaleX: scaleX, y: -scaleY))
         let bounds = CGRect(x: 0, y: -drawableSize.height, width: drawableSize.width, height: drawableSize.height)
+        #else
+        let scaledImage = image.transformed(by: .init(scaleX: scaleX, y: scaleY))
+        let bounds = CGRect(x: 0, y: 0, width: drawableSize.width, height: drawableSize.height)
+        #endif
+
         context.render(scaledImage, to: drawable.texture, commandBuffer: commandBuffer, bounds: bounds, colorSpace: colorSpace)
 
         commandBuffer.present(drawable)
