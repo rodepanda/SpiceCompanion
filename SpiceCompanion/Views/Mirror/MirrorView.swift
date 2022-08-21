@@ -158,8 +158,10 @@ class MirrorView: UIView {
         }
 
         // calculate the scale of the displayed mirror frame
-        let frameScaleX = frameImage.extent.width / bounds.width
-        let frameScaleY = frameImage.extent.height / bounds.height
+        var frameWidth = frameImage.extent.width
+        var frameHeight = frameImage.extent.height
+        let frameScaleX = frameWidth / bounds.width
+        let frameScaleY = frameHeight / bounds.height
         let screenLocation = touch.location(in: self)
         var frameLocation = CGPoint(x: screenLocation.x * frameScaleX,
                                     y: screenLocation.y * frameScaleY)
@@ -167,12 +169,16 @@ class MirrorView: UIView {
         // translate from forced landscape coordinates to mirror coordinates
         if UIDevice.current.userInterfaceIdiom == .phone {
             let x = frameLocation.y
-            let y = (frameLocation.x * -1) + frameImage.extent.width
+            let y = (frameLocation.x * -1) + frameWidth
             frameLocation =  CGPoint(x: x, y: y)
+
+            let width = frameWidth
+            frameWidth = frameHeight
+            frameHeight = width
         }
 
         // ensure the frame location is within the mirrored displays bounds
-        guard CGRect(x: 0, y: 0, width: frameImage.extent.width, height: frameImage.extent.height).contains(frameLocation) else {
+        guard CGRect(x: 0, y: 0, width: frameWidth, height: frameHeight).contains(frameLocation) else {
             return nil
         }
 
