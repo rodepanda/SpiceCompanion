@@ -49,6 +49,7 @@
 		41E6A3FF2548DC0000408144 /* MirrorConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */; };
 		41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */; };
 		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
+		8938553128B2081F0005BF43 /* MirrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938553028B2081F0005BF43 /* MirrorView.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
 		89947CFB28B0F3320078A255 /* TouchDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* TouchDisplay.swift */; };
 		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
@@ -100,6 +101,7 @@
 		41E6A3FE2548DC0000408144 /* MirrorConnectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorConnectionController.swift; sourceTree = "<group>"; };
 		41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionControllerProtocol.swift; sourceTree = "<group>"; };
 		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
+		8938553028B2081F0005BF43 /* MirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorView.swift; sourceTree = "<group>"; };
 		89947CFA28B0F3320078A255 /* TouchDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDisplay.swift; sourceTree = "<group>"; };
 		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				89947CFA28B0F3320078A255 /* TouchDisplay.swift */,
+				8938553028B2081F0005BF43 /* MirrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				41E6A3EF25486E9E00408144 /* MirrorPacket.swift in Sources */,
 				414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */,
 				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
+				8938553128B2081F0005BF43 /* MirrorView.swift in Sources */,
 				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,

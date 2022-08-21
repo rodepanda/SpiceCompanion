@@ -885,33 +885,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Q5t-B9-fsR">
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="8Zk-5X-9PV" customClass="MirrorView" customModule="SpiceCompanionCompanion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Q5t-B9-fsR" secondAttribute="height" multiplier="16:9" id="2of-aI-omT"/>
+                                    <constraint firstAttribute="width" secondItem="8Zk-5X-9PV" secondAttribute="height" multiplier="16:9" id="uHR-8D-NLO"/>
                                 </constraints>
-                            </imageView>
+                            </mtkView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-su-3he" customClass="TouchDisplay" customModule="SpiceCompanionCompanion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRh-sJ-CFA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0Qg-bD-2ed" secondAttribute="top" id="5dN-48-7z3"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="trailing" secondItem="hRh-sJ-CFA" secondAttribute="trailing" priority="250" id="Feo-U9-LeI"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="bottom" secondItem="hRh-sJ-CFA" secondAttribute="bottom" priority="250" id="L76-3j-XRI"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q5t-B9-fsR" secondAttribute="trailing" id="ODq-6A-XU0"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="centerY" secondItem="0Qg-bD-2ed" secondAttribute="centerY" id="dhH-XI-8Cm"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" priority="250" id="n16-hH-OoL"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q5t-B9-fsR" secondAttribute="bottom" id="qbR-zk-o7Y"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" id="r5R-BY-1f3"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="centerX" secondItem="0Qg-bD-2ed" secondAttribute="centerX" id="rBi-cm-Edb"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="leading" secondItem="hRh-sJ-CFA" secondAttribute="leading" priority="250" id="rf6-Ck-Sxe"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Qg-bD-2ed" secondAttribute="leading" id="wD8-Eb-KsE"/>
+                            <constraint firstItem="8Zk-5X-9PV" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" id="2gJ-bK-fIg"/>
+                            <constraint firstItem="8Zk-5X-9PV" firstAttribute="centerX" secondItem="hRh-sJ-CFA" secondAttribute="centerX" id="5nj-x6-KSO"/>
+                            <constraint firstItem="gQt-su-3he" firstAttribute="leading" secondItem="8Zk-5X-9PV" secondAttribute="leading" id="5pj-JZ-ioB"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8Zk-5X-9PV" secondAttribute="bottom" id="66X-FN-83u"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="trailing" secondItem="8Zk-5X-9PV" secondAttribute="trailing" priority="250" id="Dd7-NJ-KQD"/>
+                            <constraint firstItem="8Zk-5X-9PV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hRh-sJ-CFA" secondAttribute="leading" id="Fm8-E5-iTO"/>
+                            <constraint firstItem="8Zk-5X-9PV" firstAttribute="leading" secondItem="hRh-sJ-CFA" secondAttribute="leading" priority="250" id="X1A-wQ-1gt"/>
+                            <constraint firstItem="gQt-su-3he" firstAttribute="top" secondItem="8Zk-5X-9PV" secondAttribute="top" id="aZI-oA-46G"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="bottom" secondItem="8Zk-5X-9PV" secondAttribute="bottom" priority="250" id="dcI-Go-uy4"/>
+                            <constraint firstItem="8Zk-5X-9PV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hRh-sJ-CFA" secondAttribute="top" id="k32-Eu-dGc"/>
+                            <constraint firstItem="gQt-su-3he" firstAttribute="bottom" secondItem="8Zk-5X-9PV" secondAttribute="bottom" id="l9q-nI-8L1"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Zk-5X-9PV" secondAttribute="trailing" id="mXP-fX-JAT"/>
+                            <constraint firstItem="gQt-su-3he" firstAttribute="trailing" secondItem="8Zk-5X-9PV" secondAttribute="trailing" id="zb9-Ug-ee1"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="dhH-XI-8Cm"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem enabled="NO" image="square.and.arrow.up" catalog="system" id="MI4-RW-cPl">
@@ -928,9 +928,10 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs"/>
                     <connections>
-                        <outlet property="mirrorAspectRatioConstraint" destination="2of-aI-omT" id="AI5-fK-g9O"/>
-                        <outlet property="mirrorImageView" destination="Q5t-B9-fsR" id="lmk-SI-MKU"/>
+                        <outlet property="mirrorAspectRatioConstraint" destination="uHR-8D-NLO" id="s1j-01-aUp"/>
+                        <outlet property="mirrorView" destination="8Zk-5X-9PV" id="dcR-2w-Odl"/>
                         <outlet property="shareButton" destination="MI4-RW-cPl" id="sqv-8P-iaP"/>
+                        <outlet property="touchDisplay" destination="gQt-su-3he" id="pxZ-Mh-HAi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP5-0X-nhg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

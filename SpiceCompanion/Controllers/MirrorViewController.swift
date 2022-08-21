@@ -12,14 +12,15 @@ import SwiftyJSON
 /// The view controller for presenting a "mirror" projection of a screen present on the server.
 class MirrorViewController: UIViewController, PacketHandler {
 
-    private var touchDisplay: TouchDisplay!
     private var mirrorController: MirrorConnectionController!
 
     /// The index of the screen that this controller is currently presenting.
     var activeScreen = 0
 
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    @IBOutlet weak var mirrorImageView: UIImageView!
+
+    @IBOutlet weak var mirrorView: MirrorView!
+    @IBOutlet weak var touchDisplay: TouchDisplay!
     @IBOutlet weak var mirrorAspectRatioConstraint: NSLayoutConstraint!
 
     override var prefersStatusBarHidden: Bool {
@@ -39,10 +40,6 @@ class MirrorViewController: UIViewController, PacketHandler {
         overrideUserInterfaceStyle = .dark
         view.isMultipleTouchEnabled = true
         UIApplication.shared.isIdleTimerDisabled = true
-
-        touchDisplay = TouchDisplay(frame: mirrorImageView.frame)
-        touchDisplay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mirrorImageView.addSubview(touchDisplay)
 
         let parentController = ConnectionController.get()
         mirrorController = MirrorConnectionController(
@@ -69,20 +66,20 @@ class MirrorViewController: UIViewController, PacketHandler {
                 return
             }
 
-            guard let data = Data(base64Encoded: encodedImage), var image = UIImage(data: data) else {
+            guard let data = Data(base64Encoded: encodedImage), var image = CIImage(data: data) else {
                 return
             }
 
             // rotate the image to force landscape on phones
             // ugly hack but its functional until full rotation support can be added throughout the interface
-            if let cgImage = image.cgImage, UIDevice.current.userInterfaceIdiom == .phone {
-                image = UIImage(cgImage: cgImage, scale: 1, orientation: .right)
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                image = image.oriented(.right)
             }
 
-            self.mirrorImageView.image = image
+            self.mirrorView.image = image
 
             // update the mirrors aspect ratio constraint
-            let aspectRatio = image.size.width / image.size.height
+            let aspectRatio = image.extent.width / image.extent.height
             if self.mirrorAspectRatioConstraint.multiplier != aspectRatio {
                 let newConstraint = NSLayoutConstraint(item: self.mirrorAspectRatioConstraint.firstItem!,
                                                        attribute: self.mirrorAspectRatioConstraint.firstAttribute,
@@ -92,9 +89,9 @@ class MirrorViewController: UIViewController, PacketHandler {
                                                        multiplier: aspectRatio,
                                                        constant: self.mirrorAspectRatioConstraint.constant)
 
-                self.mirrorImageView.removeConstraint(self.mirrorAspectRatioConstraint)
-                self.mirrorImageView.addConstraint(newConstraint)
-                self.mirrorImageView.layoutIfNeeded()
+                self.mirrorView.removeConstraint(self.mirrorAspectRatioConstraint)
+                self.mirrorView.addConstraint(newConstraint)
+                self.mirrorView.layoutIfNeeded()
                 self.mirrorAspectRatioConstraint = newConstraint
             }
 
@@ -117,7 +114,7 @@ class MirrorViewController: UIViewController, PacketHandler {
     }
 
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
-        guard let screenshot = mirrorImageView.image else {
+        guard let screenshot = mirrorView.image else {
             return
         }
 
@@ -185,29 +182,29 @@ class MirrorViewController: UIViewController, PacketHandler {
     func getScreenLocation(of touch: UITouch) -> CGPoint? {
         // calculate the displayed bounds of the mirrored image for touch translation
         var imageSize: CGSize
-        var imageWidth = mirrorImageView.image?.size.width ?? 0
-        var imageHeight = mirrorImageView.image?.size.height ?? 0
-        let widthDifference = mirrorImageView.bounds.width / imageWidth
-        let heightDifference = mirrorImageView.bounds.height / imageHeight
+        var imageWidth = mirrorView.image?.extent.width ?? 0
+        var imageHeight = mirrorView.image?.extent.height ?? 0
+        let widthDifference = mirrorView.bounds.width / imageWidth
+        let heightDifference = mirrorView.bounds.height / imageHeight
         if widthDifference > heightDifference {
-            imageSize = CGSize(width: mirrorImageView.bounds.height / imageHeight * imageWidth, height: mirrorImageView.bounds.height)
+            imageSize = CGSize(width: mirrorView.bounds.height / imageHeight * imageWidth, height: mirrorView.bounds.height)
         }
         else if heightDifference > widthDifference {
-            imageSize = CGSize(width: mirrorImageView.bounds.width, height: mirrorImageView.bounds.width / imageWidth * imageHeight)
+            imageSize = CGSize(width: mirrorView.bounds.width, height: mirrorView.bounds.width / imageWidth * imageHeight)
         }
         else {
-            imageSize = mirrorImageView.bounds.size
+            imageSize = mirrorView.bounds.size
         }
 
         let imageBounds = CGRect(
-            x: (mirrorImageView.bounds.width - imageSize.width) / 2,
-            y: (mirrorImageView.bounds.height - imageSize.height) / 2,
+            x: (mirrorView.bounds.width - imageSize.width) / 2,
+            y: (mirrorView.bounds.height - imageSize.height) / 2,
             width: imageSize.width,
             height: imageSize.height
         )
 
         // translate the touch point to mirror image coordinates
-        var imagePoint = touch.location(in: self.mirrorImageView)
+        var imagePoint = touch.location(in: self.mirrorView)
         imagePoint.x -= imageBounds.origin.x
         imagePoint.y -= imageBounds.origin.y
         imagePoint.x *= imageWidth / imageBounds.width

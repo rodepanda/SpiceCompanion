@@ -14,6 +14,7 @@ class TouchDisplay: UIView {
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         isMultipleTouchEnabled = true
+        clipsToBounds = true
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
