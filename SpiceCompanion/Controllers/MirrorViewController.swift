@@ -117,7 +117,9 @@ class MirrorViewController: UIViewController, PacketHandler {
         for touch in touches {
             // register an id for the touch, if it has not been done already
             if ongoingTouchIds[touch] == nil {
-                ongoingTouchIds[touch] = ongoingTouchIds.count
+                // there is a bug in spice where id 0 will direct to the wrong display
+                // counter this by starting ids at 1
+                ongoingTouchIds[touch] = ongoingTouchIds.count + 1
             }
 
             let id = ongoingTouchIds[touch]!
