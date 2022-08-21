@@ -17,11 +17,10 @@ class MirrorViewController: UIViewController, PacketHandler {
     /// The index of the screen that this controller is currently presenting.
     var activeScreen = 0
 
-    @IBOutlet weak var shareButton: UIBarButtonItem!
-
     @IBOutlet weak var mirrorView: MirrorView!
-    @IBOutlet weak var touchDisplay: TouchDisplay!
+    @IBOutlet weak var touchDisplayView: TouchDisplayView!
     @IBOutlet weak var mirrorAspectRatioConstraint: NSLayoutConstraint!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -135,7 +134,7 @@ class MirrorViewController: UIViewController, PacketHandler {
         // since touchesMoved defers here, ensure that this is a new touch as to
         // not spam indicators on the display when dragging
         if !touches.contains(where: { ongoingTouchIds[$0] != nil }) {
-            touchDisplay.touchesBegan(touches, with: event)
+            touchDisplayView.touchesBegan(touches, with: event)
         }
 
         for touch in touches {

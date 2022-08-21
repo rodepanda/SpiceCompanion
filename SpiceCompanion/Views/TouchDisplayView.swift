@@ -1,5 +1,5 @@
 //
-//  TouchDisplay.swift
+//  TouchDisplayView.swift
 //  SpiceCompanion
 //
 //  Created by marika on 2022-08-20.
@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 /// A view which displays touches performed on it in a stylized manner.
-class TouchDisplay: UIView {
+class TouchDisplayView: UIView {
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         isMultipleTouchEnabled = true
@@ -35,8 +35,8 @@ class TouchDisplay: UIView {
 
 // MARK: - Indicator
 
-extension TouchDisplay {
-    /// An indicator for a single touch within a `TouchDisplay`.
+extension TouchDisplayView {
+    /// An indicator for a single touch within a `TouchDisplayView`.
     ///
     /// This view will automatically play its animation and remove itself from the view hierarchy upon being
     /// added to said view heirarchy.

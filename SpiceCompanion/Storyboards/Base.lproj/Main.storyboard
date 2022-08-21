@@ -891,7 +891,7 @@
                                     <constraint firstAttribute="width" secondItem="8Zk-5X-9PV" secondAttribute="height" multiplier="16:9" id="uHR-8D-NLO"/>
                                 </constraints>
                             </mtkView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-su-3he" customClass="TouchDisplay" customModule="SpiceCompanionCompanion" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQt-su-3he" customClass="TouchDisplayView" customModule="SpiceCompanionCompanion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                             </view>
                         </subviews>
