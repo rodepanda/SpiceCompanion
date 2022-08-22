@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct Server: Codable {
-    var name: String
-    var host: String
-    var port: UInt16
-    var password: String?
-}
-
 class ServerTableViewController: UITableViewController {
 
     var servers: [Server] = [Server]()

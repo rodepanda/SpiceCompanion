@@ -51,6 +51,7 @@
 		4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA4604248273A70082E4AD /* ButtonPacket.swift */; };
 		8938553128B2081F0005BF43 /* MirrorRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938553028B2081F0005BF43 /* MirrorRenderView.swift */; };
 		8938553328B21B8C0005BF43 /* MirrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938553228B21B8C0005BF43 /* MirrorView.swift */; };
+		895F337628B35F52002AAEC0 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337528B35F52002AAEC0 /* Server.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
 		89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */; };
 		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
@@ -105,6 +106,7 @@
 		8938553028B2081F0005BF43 /* MirrorRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorRenderView.swift; sourceTree = "<group>"; };
 		8938553228B21B8C0005BF43 /* MirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorView.swift; sourceTree = "<group>"; };
 		89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTouchDisplayView.swift; sourceTree = "<group>"; };
+		895F337528B35F52002AAEC0 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				41862F4C2466B4A200F4E5A6 /* Card.swift */,
+				895F337528B35F52002AAEC0 /* Server.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
 				8938553128B2081F0005BF43 /* MirrorRenderView.swift in Sources */,
 				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
+				895F337628B35F52002AAEC0 /* Server.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
 				4150D14F23A3DEAF006B255A /* ServerTableViewController.swift in Sources */,
