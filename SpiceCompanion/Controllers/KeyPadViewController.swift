@@ -105,7 +105,7 @@ class KeyPadViewController: UIViewController{
         }
 
         let playerIndex = getPlayerIndex()
-        let cardPacket = CardPacket(index: playerIndex, cardID: card.cardNumber)
+        let cardPacket = CardPacket(index: playerIndex, cardID: card.id)
         ConnectionController.get().sendPacket(packet: cardPacket)
     }
     

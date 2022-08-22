@@ -8,17 +8,22 @@
 
 import Foundation
 
-struct Card : Equatable, Codable {
+/// A digital NFC card that can be used to login to Spice.
+struct Card: Identifiable, Equatable, Codable {
+
+    /// The unique internal identifier of this card.
+    ///
+    /// This is typically formatted as `E004` followed by 12 hexadecimal characters, but several newer and
+    /// older formats exist that can be used.
+    var id: String
+
+    /// The human-readable display name of this card.
     var name: String
-    var cardNumber: String
-    
-    init(name: String, number: String){
-        self.name = name
-        self.cardNumber = number
+
+    // MARK: - Enumerations
+
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case id = "cardNumber" //backwards compatibility
     }
-    
-    static func == (lhs: Card, rhs: Card) -> Bool {
-        return lhs.name == rhs.name && lhs.cardNumber == rhs.cardNumber
-    }
-    
 }

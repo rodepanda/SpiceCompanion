@@ -110,7 +110,7 @@ class CardTableViewController: UITableViewController {
         
         let card = cards[indexPath.row]
         cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = card.cardNumber.uppercased()
+        cell.detailTextLabel?.text = card.id.uppercased()
         
         cell.accessoryType = (indexPath.row == selectedCardRow) ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
         return cell
