@@ -15,9 +15,15 @@ struct SelectedCard {
 class CardTableViewController: UITableViewController {
 
     var selectedCardRow: Int = -1
-    
-    var cards: [Card] = [
-    ]
+
+    private var cards: [Card] {
+        get {
+            return SettingsStore.shared.settings.cards
+        }
+        set {
+            SettingsStore.shared.settings.cards = newValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +47,7 @@ class CardTableViewController: UITableViewController {
     }
     
     func persistData(){
-        let propertyListEncoder = PropertyListEncoder()
-        if let encodedCards = try? propertyListEncoder.encode(cards) {
-            savePlist(fileName: "cards", data: encodedCards)
-        }
+        try? SettingsStore.shared.save()
         persistCardRow()
     }
     
@@ -54,14 +57,6 @@ class CardTableViewController: UITableViewController {
     }
     
     func loadData(){
-        guard let cardData = getPlist(fileName: "cards") else {
-            return
-        }
-        let propertyListDecoder = PropertyListDecoder()
-        if let decodedData = try? propertyListDecoder.decode([Card].self, from: cardData) {
-            cards = decodedData
-        }
-        
         let defaults = UserDefaults.standard
         
         guard let selectedCardRow = defaults.object(forKey: "selectedCardRow") as? Int else {

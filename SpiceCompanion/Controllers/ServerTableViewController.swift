@@ -10,7 +10,14 @@ import UIKit
 
 class ServerTableViewController: UITableViewController {
 
-    var servers: [Server] = [Server]()
+    var servers: [Server] {
+        get {
+            return SettingsStore.shared.settings.servers
+        }
+        set {
+            SettingsStore.shared.settings.servers = newValue
+        }
+    }
     
     var client: ConnectionController?
     
@@ -19,7 +26,6 @@ class ServerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,21 +47,7 @@ class ServerTableViewController: UITableViewController {
     
     
     func persistData(){
-        let propertyListEncoder = PropertyListEncoder()
-        if let encodedServers = try? propertyListEncoder.encode(servers) {
-            savePlist(fileName: "servers", data: encodedServers)
-        }
-    }
-    
-    func loadData(){
-        guard let serverData = getPlist(fileName: "servers") else {
-            return
-        }
-        let propertyListDecoder = PropertyListDecoder()
-        if let decodedData = try? propertyListDecoder.decode([Server].self, from: serverData) {
-            servers = decodedData
-        }
-        
+        try? SettingsStore.shared.save()
     }
 //
 //

@@ -19,7 +19,6 @@
 		4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4113E0F524687EB50051DBFF /* TabBarViewController.swift */; };
 		4113E0F82468A5E70051DBFF /* Notice in Resources */ = {isa = PBXBuildFile; fileRef = 4113E0F72468A5E70051DBFF /* Notice */; };
 		411D34F725499927006BC85E /* GetScreensPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D34F625499927006BC85E /* GetScreensPacket.swift */; };
-		4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4137CFA22466DBB400B85CB2 /* FileTools.swift */; };
 		414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */; };
 		414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */; };
 		4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D13823A3D5C5006B255A /* AppDelegate.swift */; };
@@ -72,7 +71,6 @@
 		4113E0F524687EB50051DBFF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4113E0F72468A5E70051DBFF /* Notice */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
 		411D34F625499927006BC85E /* GetScreensPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScreensPacket.swift; sourceTree = "<group>"; };
-		4137CFA22466DBB400B85CB2 /* FileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTools.swift; sourceTree = "<group>"; };
 		414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonResetPacket.swift; sourceTree = "<group>"; };
 		414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitApplicationPacket.swift; sourceTree = "<group>"; };
 		4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceCompanionCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +148,6 @@
 				4150D13A23A3D5C5006B255A /* SceneDelegate.swift */,
 				4179C0DD23A6A15800FCA226 /* Spice.entitlements */,
 				89DC731D288F669C00B15158 /* Storyboards */,
-				4137CFA22466DBB400B85CB2 /* FileTools.swift */,
 				4C90F6A22473EBBE00F367D5 /* Models */,
 				89947CF728B0DD960078A255 /* Views */,
 				4CC34A87246B183300186EC1 /* Controllers */,
@@ -368,7 +365,6 @@
 			files = (
 				4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */,
 				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
-				4137CFA32466DBB400B85CB2 /* FileTools.swift in Sources */,
 				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
