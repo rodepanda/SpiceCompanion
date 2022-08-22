@@ -19,6 +19,11 @@ class SettingsStore {
         .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         .appendingPathComponent("Settings.plist")
 
+    /// The globally shared instance of this store.
+    ///
+    /// Note that this will be deprecated in the future in favour of proper lifetime management.
+    static let shared = SettingsStore()
+
     /// The settings currently within this store.
     var settings = Settings()
 
