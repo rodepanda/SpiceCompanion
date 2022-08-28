@@ -8,8 +8,6 @@
 
 import UIKit
 import CoreNFC
-import ColorCompatibility
-
 
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
@@ -96,7 +94,7 @@ class KeyPadViewController: UIViewController{
         button.bounds.size = CGSize(width: size, height: size)
         button.backgroundColor = .darkGray
         button.layer.cornerRadius = size/5;
-        button.layer.borderColor = ColorCompatibility.systemGray3.cgColor
+        button.layer.borderColor = UIColor.systemGray3.cgColor
         button.layer.borderWidth = 3
         button.tintColor = .white
     }
