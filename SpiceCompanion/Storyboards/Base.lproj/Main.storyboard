@@ -880,39 +880,49 @@
         <!--Mirror-->
         <scene sceneID="Wv3-EW-cCf">
             <objects>
-                <viewController title="Mirror" modalPresentationStyle="fullScreen" id="2D5-wQ-qg0" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mirror" modalPresentationStyle="fullScreen" interfaceStyle="dark" id="2D5-wQ-qg0" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Qg-bD-2ed">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q5t-B9-fsR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLW-7f-zoi" customClass="MirrorView" customModule="SpiceCompanionCompanion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wLW-7f-zoi" secondAttribute="height" multiplier="16:9" placeholder="YES" id="6ha-Vn-egH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRh-sJ-CFA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="leading" secondItem="hRh-sJ-CFA" secondAttribute="leading" id="0Fd-9R-QzY"/>
-                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="trailing" secondItem="Q5t-B9-fsR" secondAttribute="trailing" id="92A-Gf-RhE"/>
-                            <constraint firstItem="Q5t-B9-fsR" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" id="One-y1-eJQ"/>
-                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="bottom" secondItem="Q5t-B9-fsR" secondAttribute="bottom" id="rLd-w9-4Iy"/>
+                            <constraint firstItem="wLW-7f-zoi" firstAttribute="top" secondItem="hRh-sJ-CFA" secondAttribute="top" id="2gJ-bK-fIg"/>
+                            <constraint firstItem="wLW-7f-zoi" firstAttribute="centerX" secondItem="hRh-sJ-CFA" secondAttribute="centerX" id="5nj-x6-KSO"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wLW-7f-zoi" secondAttribute="bottom" id="66X-FN-83u"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="trailing" secondItem="wLW-7f-zoi" secondAttribute="trailing" priority="250" id="Dd7-NJ-KQD"/>
+                            <constraint firstItem="wLW-7f-zoi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hRh-sJ-CFA" secondAttribute="leading" id="Fm8-E5-iTO"/>
+                            <constraint firstItem="wLW-7f-zoi" firstAttribute="leading" secondItem="hRh-sJ-CFA" secondAttribute="leading" priority="250" id="X1A-wQ-1gt"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="bottom" secondItem="wLW-7f-zoi" secondAttribute="bottom" priority="250" id="dcI-Go-uy4"/>
+                            <constraint firstItem="wLW-7f-zoi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hRh-sJ-CFA" secondAttribute="top" id="k32-Eu-dGc"/>
+                            <constraint firstItem="hRh-sJ-CFA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wLW-7f-zoi" secondAttribute="trailing" id="mXP-fX-JAT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" image="square.and.arrow.up" catalog="system" id="MI4-RW-cPl">
+                    <toolbarItems>
+                        <barButtonItem enabled="NO" image="square.and.arrow.up" catalog="system" id="MI4-RW-cPl">
                             <connections>
                                 <action selector="shareButtonPressed:" destination="2D5-wQ-qg0" id="Uoz-ck-n0s"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="p3F-w5-eQA">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Ddf-gx-YAq"/>
+                        <barButtonItem title="Close" id="p3F-w5-eQA">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="2D5-wQ-qg0" id="Fzt-rn-LRo"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Mirror" id="ffG-0D-4zs"/>
                     <connections>
-                        <outlet property="mirrorImageView" destination="Q5t-B9-fsR" id="lmk-SI-MKU"/>
+                        <outlet property="mirrorView" destination="wLW-7f-zoi" id="Msy-46-fUC"/>
                         <outlet property="shareButton" destination="MI4-RW-cPl" id="sqv-8P-iaP"/>
                     </connections>
                 </viewController>
@@ -940,11 +950,14 @@
         <!--Navigation Controller-->
         <scene sceneID="RhE-YN-T5m">
             <objects>
-                <navigationController storyboardIdentifier="MirrorViewController" modalPresentationStyle="fullScreen" id="Z5N-Hb-cj0" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MirrorViewController" modalPresentationStyle="fullScreen" interfaceStyle="dark" navigationBarHidden="YES" toolbarHidden="NO" id="Z5N-Hb-cj0" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QtH-OH-Xor">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vi3-wn-FNb">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="2D5-wQ-qg0" kind="relationship" relationship="rootViewController" id="eie-AN-9kJ"/>
                     </connections>
