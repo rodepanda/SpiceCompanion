@@ -23,6 +23,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var applicationLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var serviceLabel: UILabel!
+    @IBOutlet weak var appVersionLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         guard let appInfo = ConnectionController.get().appInfo else {
@@ -32,6 +33,9 @@ class SettingsTableViewController: UITableViewController {
         applicationLabel.text = application
         versionLabel.text = "Spice Version: \(appInfo.version)"
         serviceLabel.text = "Services: \(appInfo.services)"
+        
+        let appVersion: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        appVersionLabel.text = "SpiceCompanion Version: " + appVersion
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
