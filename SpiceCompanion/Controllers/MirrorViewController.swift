@@ -63,14 +63,8 @@ class MirrorViewController: UIViewController, MirrorViewDelegate, PacketHandler 
                 return
             }
 
-            guard let data = Data(base64Encoded: encodedImage), var image = CIImage(data: data) else {
+            guard let data = Data(base64Encoded: encodedImage), let image = CIImage(data: data) else {
                 return
-            }
-
-            // rotate the image to force landscape on phones
-            // ugly hack but its functional until full rotation support can be added throughout the interface
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                image = image.oriented(.right)
             }
 
             self.mirrorView.frameImage = image
