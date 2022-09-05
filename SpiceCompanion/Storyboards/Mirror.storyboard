@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z91-xq-Ijn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mirror-->
+        <scene sceneID="pFD-tX-Gpn">
+            <objects>
+                <viewController title="Mirror" modalPresentationStyle="fullScreen" id="yiq-Jk-zy4" customClass="MirrorViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="25e-sw-oek">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgf-pD-SR0" customClass="MirrorView" customModule="SpiceCompanionCompanion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bgf-pD-SR0" secondAttribute="height" multiplier="16:9" placeholder="YES" id="j84-av-rOU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gfa-DF-pdM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bgf-pD-SR0" firstAttribute="top" secondItem="gfa-DF-pdM" secondAttribute="top" id="0Sw-NY-NIw"/>
+                            <constraint firstItem="Bgf-pD-SR0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gfa-DF-pdM" secondAttribute="top" id="0YA-IX-UVm"/>
+                            <constraint firstItem="Bgf-pD-SR0" firstAttribute="centerX" secondItem="gfa-DF-pdM" secondAttribute="centerX" id="7kK-um-gLR"/>
+                            <constraint firstItem="gfa-DF-pdM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bgf-pD-SR0" secondAttribute="trailing" id="UXx-PC-syM"/>
+                            <constraint firstItem="gfa-DF-pdM" firstAttribute="bottom" secondItem="Bgf-pD-SR0" secondAttribute="bottom" priority="250" id="UpD-8D-7ew"/>
+                            <constraint firstItem="Bgf-pD-SR0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gfa-DF-pdM" secondAttribute="leading" id="Wov-B1-Q5C"/>
+                            <constraint firstItem="gfa-DF-pdM" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bgf-pD-SR0" secondAttribute="bottom" id="Ynz-vm-6ic"/>
+                            <constraint firstItem="gfa-DF-pdM" firstAttribute="trailing" secondItem="Bgf-pD-SR0" secondAttribute="trailing" priority="250" id="tkf-R3-M9f"/>
+                            <constraint firstItem="Bgf-pD-SR0" firstAttribute="leading" secondItem="gfa-DF-pdM" secondAttribute="leading" priority="250" id="zwR-p8-oiB"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem enabled="NO" image="square.and.arrow.up" catalog="system" id="J9h-cV-PuA">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="yiq-Jk-zy4" id="OzT-T6-juK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="UGb-jb-m33"/>
+                        <barButtonItem title="Close" id="rjn-C2-oyl">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="yiq-Jk-zy4" id="uHr-5V-LPj"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Mirror" id="gX4-rk-fsD"/>
+                    <connections>
+                        <outlet property="mirrorView" destination="Bgf-pD-SR0" id="W6L-Ah-mmU"/>
+                        <outlet property="shareButton" destination="J9h-cV-PuA" id="OKP-Zq-jNt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSE-1b-gZ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="443"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wv7-Dh-iwt">
+            <objects>
+                <navigationController storyboardIdentifier="MirrorViewController" modalPresentationStyle="fullScreen" interfaceStyle="dark" navigationBarHidden="YES" toolbarHidden="NO" id="z91-xq-Ijn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wgW-q9-m4R">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IIU-3g-c8j">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="yiq-Jk-zy4" kind="relationship" relationship="rootViewController" id="wjU-I0-HDk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pv-dS-32G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-875" y="443"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="AccentColor"/>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
