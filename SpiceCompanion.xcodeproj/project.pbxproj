@@ -241,8 +241,8 @@
 				8938553528B2296B0005BF43 /* Mirror */,
 			);
 			path = Views;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		895F337428B35F36002AAEC0 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
