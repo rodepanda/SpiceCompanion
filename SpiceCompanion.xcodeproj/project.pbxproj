@@ -72,7 +72,7 @@
 		4137CFA22466DBB400B85CB2 /* FileTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTools.swift; sourceTree = "<group>"; };
 		414A94D52535C13400DDDE31 /* ButtonResetPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonResetPacket.swift; sourceTree = "<group>"; };
 		414A94D82535C67900DDDE31 /* QuitApplicationPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitApplicationPacket.swift; sourceTree = "<group>"; };
-		4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceCompanionCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4150D13523A3D5C5006B255A /* SpiceCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4150D13823A3D5C5006B255A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4150D13A23A3D5C5006B255A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4150D13F23A3D5C5006B255A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		4150D13623A3D5C5006B255A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */,
+				4150D13523A3D5C5006B255A /* SpiceCompanion.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				8978A958288F3F7600ED1585 /* SwiftyJSON */,
 			);
 			productName = Spice;
-			productReference = 4150D13523A3D5C5006B255A /* SpiceCompanionCompanion.app */;
+			productReference = 4150D13523A3D5C5006B255A /* SpiceCompanion.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -548,7 +548,7 @@
 				);
 				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
-				PRODUCT_NAME = SpiceCompanionCompanion;
+				PRODUCT_NAME = SpiceCompanion;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -570,7 +570,7 @@
 				);
 				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.rodepanda.Spice;
-				PRODUCT_NAME = SpiceCompanionCompanion;
+				PRODUCT_NAME = SpiceCompanion;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
