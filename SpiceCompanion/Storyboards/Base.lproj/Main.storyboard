@@ -1029,12 +1029,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
-                            <tableViewSection headerTitle="Name" id="Ae0-6H-jTR">
+                            <tableViewSection id="Ae0-6H-jTR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="X18-ok-scm">
-                                        <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
+                                        <rect key="frame" x="16" y="18" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X18-ok-scm" id="1Ay-fc-0UT">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
@@ -1062,7 +1061,7 @@
                             <tableViewSection headerTitle="Host" id="bcA-L3-8BH">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oYn-N9-QHT">
-                                        <rect key="frame" x="16" y="142.33333396911621" width="343" height="43.666667938232422"/>
+                                        <rect key="frame" x="16" y="111.33333396911621" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oYn-N9-QHT" id="Oag-hr-5zl">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
@@ -1086,7 +1085,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WZM-Hz-CDg">
-                                        <rect key="frame" x="16" y="186.00000190734863" width="343" height="43.666667938232422"/>
+                                        <rect key="frame" x="16" y="155.00000190734863" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZM-Hz-CDg" id="Y3O-h9-mma">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
@@ -1111,10 +1110,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Password" id="3qd-YG-qga">
+                            <tableViewSection headerTitle="Security" footerTitle="Some features are unavailable without using a password." id="3qd-YG-qga">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wWs-a2-Qtn">
-                                        <rect key="frame" x="16" y="279.33333587646484" width="343" height="43.666667938232422"/>
+                                        <rect key="frame" x="16" y="255.66666984558105" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wWs-a2-Qtn" id="jyc-aM-sdG">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
