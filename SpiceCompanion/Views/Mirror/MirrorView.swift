@@ -36,9 +36,17 @@ class MirrorView: UIView {
             return renderView.image
         }
         set {
-            renderView.image = newValue
+            // rotate the image to force landscape orientation
+            // ugly hack but its functional until full rotation support can be
+            // added throughout the interface
+            var image = newValue
+            if shouldUseForcedLandscape(for: image?.extent ?? .zero) {
+                image = image?.oriented(.right)
+            }
+
+            renderView.image = image
             updateAspectRatio()
-            lastFrameExtent = newValue?.extent
+            lastFrameExtent = image?.extent
         }
     }
 
@@ -76,7 +84,6 @@ class MirrorView: UIView {
         // only update the constraint if it needs to be changed
         if aspectRatioConstraint == nil || frameImage?.extent != lastFrameExtent {
             let aspectRatio = frameExtent.width / frameExtent.height
-            print(aspectRatio)
             let newConstraint = NSLayoutConstraint(item: self,
                                                    attribute: .width,
                                                    relatedBy: .equal,
@@ -93,6 +100,14 @@ class MirrorView: UIView {
             layoutIfNeeded()
             aspectRatioConstraint = newConstraint
         }
+    }
+
+    /// Get whether or not a frame should be displayed in forced lanscape orientation.
+    /// - Parameter extent: The extent of the frame to check.
+    /// - Returns: Whether or not the frame should be displayed in forced lanscape orientation, based
+    /// on the given extent of said frame.
+    private func shouldUseForcedLandscape(for extent: CGRect) -> Bool {
+        return UIDevice.current.userInterfaceIdiom == .phone && extent.width > extent.height
     }
 
     // MARK: - Touch
@@ -167,7 +182,7 @@ class MirrorView: UIView {
                                     y: screenLocation.y * frameScaleY)
 
         // translate from forced landscape coordinates to mirror coordinates
-        if UIDevice.current.userInterfaceIdiom == .phone {
+        if shouldUseForcedLandscape(for: frameImage.extent) {
             let x = frameLocation.y
             let y = (frameLocation.x * -1) + frameWidth
             frameLocation =  CGPoint(x: x, y: y)
