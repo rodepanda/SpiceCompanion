@@ -54,6 +54,7 @@
 		895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337728B36526002AAEC0 /* SettingsStore.swift */; };
 		895F337A28B371C2002AAEC0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337928B371C2002AAEC0 /* Settings.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
+		899054A528C598F100966CFC /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899054A428C598F100966CFC /* FormTextField.swift */; };
 		89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */; };
 		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
 /* End PBXBuildFile section */
@@ -105,10 +106,11 @@
 		4CEA4604248273A70082E4AD /* ButtonPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPacket.swift; sourceTree = "<group>"; };
 		8938553028B2081F0005BF43 /* MirrorRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorRenderView.swift; sourceTree = "<group>"; };
 		8938553228B21B8C0005BF43 /* MirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorView.swift; sourceTree = "<group>"; };
-		89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTouchDisplayView.swift; sourceTree = "<group>"; };
 		895F337528B35F52002AAEC0 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		895F337728B36526002AAEC0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		895F337928B371C2002AAEC0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		899054A428C598F100966CFC /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTouchDisplayView.swift; sourceTree = "<group>"; };
 		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,14 +237,6 @@
 			path = Mirror;
 			sourceTree = "<group>";
 		};
-		89947CF728B0DD960078A255 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8938553528B2296B0005BF43 /* Mirror */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		895F337428B35F36002AAEC0 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +244,24 @@
 				895F337728B36526002AAEC0 /* SettingsStore.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		899054A328C5950C00966CFC /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				8990549F28C582F800966CFC /* ServerListController.swift */,
+				899054A128C586A900966CFC /* ServerFormController.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		89947CF728B0DD960078A255 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				899054A428C598F100966CFC /* FormTextField.swift */,
+				8938553528B2296B0005BF43 /* Mirror */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		89DC731D288F669C00B15158 /* Storyboards */ = {
@@ -393,6 +405,7 @@
 				4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */,
 				41E6A3EF25486E9E00408144 /* MirrorPacket.swift in Sources */,
 				414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */,
+				899054A528C598F100966CFC /* FormTextField.swift in Sources */,
 				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
 				8938553128B2081F0005BF43 /* MirrorRenderView.swift in Sources */,
 				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
