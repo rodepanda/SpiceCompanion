@@ -1135,14 +1135,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mef-m7-uh2">
-                                            <rect key="frame" x="16" y="7.6666666666666643" width="30" height="17"/>
+                                            <rect key="frame" x="16" y="6.9999999999999982" width="35" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5S-F4-TPH">
-                                            <rect key="frame" x="15.999999999999996" y="26.999999999999996" width="32.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="16.000000000000004" y="27.333333333333329" width="39.333333333333336" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" systemColor="secondaryLabelColor"/>

@@ -18,6 +18,12 @@ class ServerListController: UITableViewController {
     /// The unique reuse identifier of the view controller for editing a server.
     private let formControllerIdentifier = "ServerFormController"
 
+    /// The unique reuse identifier of the view controller to present when a successful connection is made.
+    private let mainControllerIdentifier = "MainTabBarController"
+
+    /// The currently connected Spice client of this controller, if any.
+    private var client: ConnectionController?
+
     /// All the servers displayed by this controller.
     private var servers: [Server] {
         get {
@@ -101,6 +107,17 @@ extension ServerListController {
         let server = servers[indexPath.row]
         presentForm(context: .edit(server: server))
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        // begin connecting to the selected server
+        let server = servers[indexPath.row]
+        let client = ConnectionController(uiViewController: self, host: server.host, port: server.port, password: server.password)
+        showConnectionDialogOverlay(title: "Connecting...")
+        client.connect()
+        self.client = client
+    }
 }
 
 // MARK: - ServerFormDelegate
@@ -117,5 +134,34 @@ extension ServerListController: ServerFormDelegate {
         }
 
         try? SettingsStore.shared.save()
+    }
+}
+
+// MARK: - UIViewController+CustomDelegation
+
+extension ServerListController {
+
+    override func connectingSuccess() {
+        // instantiate the new main controller and pass the client to it
+        dismiss(animated: true) {
+            guard let client = self.client, let storyboard = self.storyboard else {
+                return
+            }
+
+            let mainController = storyboard.instantiateViewController(withIdentifier: self.mainControllerIdentifier) as! TabBarViewController
+            client.setUIViewController(uiViewController: mainController)
+            self.present(mainController, animated: true)
+        }
+    }
+
+    override func connectingFailed() {
+        // present an error message to the user
+        DispatchQueue.main.async {
+            self.dismiss(animated: true) {
+                let alert = UIAlertController(title: "Error", message: "Could not connect to server", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
 }
