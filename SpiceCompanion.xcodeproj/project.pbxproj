@@ -26,8 +26,6 @@
 		4150D14023A3D5C5006B255A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4150D13E23A3D5C5006B255A /* Main.storyboard */; };
 		4150D14223A3D5C9006B255A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4150D14123A3D5C9006B255A /* Assets.xcassets */; };
 		4150D14523A3D5C9006B255A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */; };
-		4150D14F23A3DEAF006B255A /* ServerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */; };
-		4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15223A43A90006B255A /* EditServerViewController.swift */; };
 		4150D15823A504E9006B255A /* Rc4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15723A504E9006B255A /* Rc4.swift */; };
 		4150D15A23A515F5006B255A /* SpiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15923A515F5006B255A /* SpiceClient.swift */; };
 		4150D15F23A5244A006B255A /* DataPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4150D15E23A5244A006B255A /* DataPacket.swift */; };
@@ -84,8 +82,6 @@
 		4150D14123A3D5C9006B255A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4150D14423A3D5C9006B255A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4150D14623A3D5C9006B255A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewController.swift; sourceTree = "<group>"; };
-		4150D15223A43A90006B255A /* EditServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServerViewController.swift; sourceTree = "<group>"; };
 		4150D15723A504E9006B255A /* Rc4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rc4.swift; sourceTree = "<group>"; };
 		4150D15923A515F5006B255A /* SpiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiceClient.swift; sourceTree = "<group>"; };
 		4150D15E23A5244A006B255A /* DataPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPacket.swift; sourceTree = "<group>"; };
@@ -216,8 +212,6 @@
 				4113E0F524687EB50051DBFF /* TabBarViewController.swift */,
 				4113E0F124686FC10051DBFF /* SettingsTableViewController.swift */,
 				4113E0E524681BAF0051DBFF /* PatchTableViewController.swift */,
-				4150D14E23A3DEAF006B255A /* ServerTableViewController.swift */,
-				4150D15223A43A90006B255A /* EditServerViewController.swift */,
 				41064C6223A6748500848FB7 /* KeyPadViewController.swift */,
 				41862F482465FE8D00F4E5A6 /* CardTableViewController.swift */,
 				41862F4A2466030000F4E5A6 /* AddCardTableViewController.swift */,
@@ -385,7 +379,6 @@
 			files = (
 				4113E0EE246852620051DBFF /* PatchWritePacket.swift in Sources */,
 				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
-				4150D15323A43A90006B255A /* EditServerViewController.swift in Sources */,
 				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
 				89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */,
@@ -424,7 +417,6 @@
 				895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
-				4150D14F23A3DEAF006B255A /* ServerTableViewController.swift in Sources */,
 				4113E0EC2468480B0051DBFF /* KeyPadPacket.swift in Sources */,
 				41E6A3F62548A5FF00408144 /* UIViewController.swift in Sources */,
 				4150D13B23A3D5C5006B255A /* SceneDelegate.swift in Sources */,
