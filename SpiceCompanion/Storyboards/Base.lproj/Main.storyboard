@@ -275,7 +275,7 @@
         <scene sceneID="UbA-KF-EAl">
             <objects>
                 <navigationController id="r3z-hi-w1T" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Patches" image="chevron.left.slash.chevron.right" catalog="system" id="Q4i-39-Kr9"/>
+                    <tabBarItem key="tabBarItem" title="Patches" image="chevron.left.forwardslash.chevron.right" catalog="system" id="Q4i-39-Kr9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wQY-YG-Xjc">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -982,14 +982,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mef-m7-uh2">
-                                            <rect key="frame" x="54.166666666666671" y="7.6666666666666643" width="30" height="17"/>
+                                            <rect key="frame" x="54.166666666666671" y="6.9999999999999982" width="35" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h5S-F4-TPH">
-                                            <rect key="frame" x="54.166666666666671" y="26.999999999999996" width="32.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="54.166666666666671" y="27.333333333333329" width="39.333333333333336" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -1191,7 +1191,7 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
-        <image name="chevron.left.slash.chevron.right" catalog="system" width="128" height="83"/>
+        <image name="chevron.left.forwardslash.chevron.right" catalog="system" width="128" height="83"/>
         <image name="circle.grid.3x3" catalog="system" width="128" height="110"/>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
