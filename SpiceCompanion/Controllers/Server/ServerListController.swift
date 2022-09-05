@@ -78,6 +78,16 @@ extension ServerListController {
         let server = servers[indexPath.row]
         cell.textLabel?.text = server.name
         cell.detailTextLabel?.text = "\(server.host):\(server.port)"
+
+        let image: UIImage?
+        if server.password != nil {
+            image = UIImage(systemName: "network.badge.shield.half.filled")
+        }
+        else {
+            image = UIImage(systemName: "network")
+        }
+
+        cell.imageView?.image = image?.applyingSymbolConfiguration(.init(scale: .large))
         return cell
     }
 
