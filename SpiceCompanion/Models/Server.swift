@@ -40,6 +40,6 @@ struct Server: Identifiable, Codable {
         name = try container.decode(String.self, forKey: .name)
         host = try container.decode(String.self, forKey: .host)
         port = try container.decode(UInt16.self, forKey: .port)
-        password = try container.decode(String.self, forKey: .password)
+        password = try? container.decode(String.self, forKey: .password)
     }
 }

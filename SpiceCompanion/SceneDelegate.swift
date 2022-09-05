@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         do {
             try SettingsStore.shared.load()
         }
-        catch {
-            print("failed to load settings, reverting to defaults")
+        catch let error {
+            print("failed to load settings with error \(error), reverting to defaults")
             SettingsStore.shared.settings = Settings()
         }
 
@@ -31,8 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         do {
             try SettingsStore.shared.save()
         }
-        catch {
-            print("failed to save settings")
+        catch let error {
+            print("failed to save settings with error \(error)")
         }
     }
 }
