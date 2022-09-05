@@ -159,6 +159,7 @@ extension ServerListController {
         DispatchQueue.main.async {
             self.dismiss(animated: true) {
                 let alert = UIAlertController(title: "Error", message: "Could not connect to server", preferredStyle: .alert)
+                alert.view.tintColor = .accentColor
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
             }

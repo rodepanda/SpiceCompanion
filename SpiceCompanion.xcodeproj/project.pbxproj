@@ -51,6 +51,7 @@
 		895F337628B35F52002AAEC0 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337528B35F52002AAEC0 /* Server.swift */; };
 		895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337728B36526002AAEC0 /* SettingsStore.swift */; };
 		895F337A28B371C2002AAEC0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337928B371C2002AAEC0 /* Settings.swift */; };
+		897676AD28C5BE7000B9467B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897676AC28C5BE7000B9467B /* UIColor.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
 		899054A028C582F800966CFC /* ServerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990549F28C582F800966CFC /* ServerListController.swift */; };
 		899054A228C586A900966CFC /* ServerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899054A128C586A900966CFC /* ServerFormController.swift */; };
@@ -108,6 +109,7 @@
 		895F337528B35F52002AAEC0 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		895F337728B36526002AAEC0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		895F337928B371C2002AAEC0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		897676AC28C5BE7000B9467B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8990549F28C582F800966CFC /* ServerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListController.swift; sourceTree = "<group>"; };
 		899054A128C586A900966CFC /* ServerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFormController.swift; sourceTree = "<group>"; };
 		899054A428C598F100966CFC /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				4113E0E324680A010051DBFF /* UIViewController+CustomDelegation.swift */,
 				41E6A3F52548A5FF00408144 /* UIViewController.swift */,
+				897676AC28C5BE7000B9467B /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				41E6A3EC25486E7200408144 /* MirrorViewController.swift in Sources */,
 				4113E0F624687EB60051DBFF /* TabBarViewController.swift in Sources */,
 				41E6A3EF25486E9E00408144 /* MirrorPacket.swift in Sources */,
+				897676AD28C5BE7000B9467B /* UIColor.swift in Sources */,
 				414A94D62535C13400DDDE31 /* ButtonResetPacket.swift in Sources */,
 				899054A528C598F100966CFC /* FormTextField.swift in Sources */,
 				41862F492465FE8D00F4E5A6 /* CardTableViewController.swift in Sources */,
@@ -568,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -590,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/Spice.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
