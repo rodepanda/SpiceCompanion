@@ -154,11 +154,12 @@ extension ServerListController {
     override func connectingSuccess() {
         // instantiate the new main controller and pass the client to it
         dismiss(animated: true) {
-            guard let client = self.client, let storyboard = self.storyboard else {
+            guard let client = self.client else {
                 return
             }
 
-            let mainController = storyboard.instantiateViewController(withIdentifier: self.mainControllerIdentifier) as! TabBarViewController
+            let mainController = MainController()
+            mainController.modalPresentationStyle = .fullScreen
             client.setUIViewController(uiViewController: mainController)
             self.present(mainController, animated: true)
         }

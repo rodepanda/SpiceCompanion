@@ -64,6 +64,9 @@
 		899054A728C5A0AB00966CFC /* ServerFormDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899054A628C5A0AB00966CFC /* ServerFormDelegate.swift */; };
 		89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */; };
 		89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */; };
+		89E526AE28C6B5FC009E8282 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526AD28C6B5FC009E8282 /* MainController.swift */; };
+		89E526B028C6B680009E8282 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526AF28C6B680009E8282 /* TabsController.swift */; };
+		89E526B428C6B775009E8282 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B328C6B775009E8282 /* MainTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +129,9 @@
 		899054A628C5A0AB00966CFC /* ServerFormDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFormDelegate.swift; sourceTree = "<group>"; };
 		89947CFA28B0F3320078A255 /* MirrorTouchDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorTouchDisplayView.swift; sourceTree = "<group>"; };
 		89DC731F288F673F00B15158 /* AugmentedIntervalTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugmentedIntervalTree.swift; sourceTree = "<group>"; };
+		89E526AD28C6B5FC009E8282 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		89E526AF28C6B680009E8282 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
+		89E526B328C6B775009E8282 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,7 @@
 		4CC34A87246B183300186EC1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				89E526AC28C6B5EA009E8282 /* Navigation */,
 				899054A328C5950C00966CFC /* Server */,
 				41E6A3EB25486E7200408144 /* MirrorViewController.swift */,
 				4113E0F524687EB50051DBFF /* TabBarViewController.swift */,
@@ -315,6 +322,16 @@
 				41E6A4012548DD8E00408144 /* ConnectionControllerProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		89E526AC28C6B5EA009E8282 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				89E526AD28C6B5FC009E8282 /* MainController.swift */,
+				89E526B328C6B775009E8282 /* MainTab.swift */,
+				89E526AF28C6B680009E8282 /* TabsController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,9 +431,11 @@
 				4150D13923A3D5C5006B255A /* AppDelegate.swift in Sources */,
 				41862F4B2466030000F4E5A6 /* AddCardTableViewController.swift in Sources */,
 				89DC7320288F679100B15158 /* AugmentedIntervalTree.swift in Sources */,
+				89E526B028C6B680009E8282 /* TabsController.swift in Sources */,
 				41E6A3FF2548DC0000408144 /* MirrorConnectionController.swift in Sources */,
 				4CEA4605248273A70082E4AD /* ButtonPacket.swift in Sources */,
 				4113E0E824682E230051DBFF /* PatchReadPacket.swift in Sources */,
+				89E526B428C6B775009E8282 /* MainTab.swift in Sources */,
 				4113E0EA246843020051DBFF /* CardPacket.swift in Sources */,
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
 				895F337A28B371C2002AAEC0 /* Settings.swift in Sources */,
@@ -440,6 +459,7 @@
 				895F337628B35F52002AAEC0 /* Server.swift in Sources */,
 				895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
+				89E526AE28C6B5FC009E8282 /* MainController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
 				4113E0EC2468480B0051DBFF /* KeyPadPacket.swift in Sources */,
 				41E6A3F62548A5FF00408144 /* UIViewController.swift in Sources */,
