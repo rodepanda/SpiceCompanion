@@ -54,6 +54,7 @@
 		895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337728B36526002AAEC0 /* SettingsStore.swift */; };
 		895F337A28B371C2002AAEC0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337928B371C2002AAEC0 /* Settings.swift */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
+		899054A028C582F800966CFC /* ServerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990549F28C582F800966CFC /* ServerListController.swift */; };
 		899054A228C586A900966CFC /* ServerFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899054A128C586A900966CFC /* ServerFormController.swift */; };
 		899054A528C598F100966CFC /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899054A428C598F100966CFC /* FormTextField.swift */; };
 		899054A728C5A0AB00966CFC /* ServerFormDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899054A628C5A0AB00966CFC /* ServerFormDelegate.swift */; };
@@ -111,6 +112,7 @@
 		895F337528B35F52002AAEC0 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		895F337728B36526002AAEC0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		895F337928B371C2002AAEC0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8990549F28C582F800966CFC /* ServerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListController.swift; sourceTree = "<group>"; };
 		899054A128C586A900966CFC /* ServerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFormController.swift; sourceTree = "<group>"; };
 		899054A428C598F100966CFC /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		899054A628C5A0AB00966CFC /* ServerFormDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFormDelegate.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				41064C6323A6748500848FB7 /* KeyPadViewController.swift in Sources */,
 				895F337A28B371C2002AAEC0 /* Settings.swift in Sources */,
 				41E6A3F22548938700408144 /* PacketHandler.swift in Sources */,
+				899054A028C582F800966CFC /* ServerListController.swift in Sources */,
 				8938553328B21B8C0005BF43 /* MirrorView.swift in Sources */,
 				4150D15F23A5244A006B255A /* DataPacket.swift in Sources */,
 				415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */,

@@ -62,7 +62,7 @@ class ServerFormController: UITableViewController {
 
     /// Validate all the currently entered properties of this controller and enable or disable the save button
     /// accordingly.
-    @IBAction private func validateEntries() {
+    @IBAction private func validateProperties() {
         saveButton.isEnabled =
             !(nameTextField.text ?? "").isEmpty &&
             !(hostnameTextField.text ?? "").isEmpty &&
