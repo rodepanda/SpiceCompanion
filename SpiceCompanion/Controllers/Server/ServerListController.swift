@@ -123,7 +123,7 @@ extension ServerListController {
 
         // begin connecting to the selected server
         let server = servers[indexPath.row]
-        let client = ConnectionController(uiViewController: self, host: server.host, port: server.port, password: server.password)
+        let client = ConnectionController(uiViewController: self, server: server)
         showConnectionDialogOverlay(title: "Connecting...")
         client.connect()
         self.client = client

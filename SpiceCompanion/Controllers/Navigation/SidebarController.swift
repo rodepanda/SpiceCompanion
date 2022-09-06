@@ -65,7 +65,7 @@ class SidebarController: UICollectionViewController {
 
         let layout = UICollectionViewCompositionalLayout.list(using: layoutConfiguration)
         super.init(collectionViewLayout: layout)
-        navigationItem.title = "Deep Space 9" //TODO: name
+        navigationItem.title = ConnectionController.get().server.name
         clearsSelectionOnViewWillAppear = false
 
         // apply the sidebar model

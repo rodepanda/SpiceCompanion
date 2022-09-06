@@ -35,9 +35,7 @@ class ConnectionController : ConnectionControllerProtocol {
     
     private var uiViewController: UIViewController
     
-    let host: String
-    let port: UInt16
-    private let password: String?
+    let server: Server
     private var spiceClient: SpiceClient?
     private var phase: ProtocolPhase
     
@@ -52,18 +50,12 @@ class ConnectionController : ConnectionControllerProtocol {
         return ConnectionController.instance!
     }
     
-    init(uiViewController: UIViewController, host: String, port: UInt16, password: String?){
+    init(uiViewController: UIViewController, server: Server){
         self.uiViewController = uiViewController
-        self.host = host
-        self.port = port
-        self.password = password
+        self.server = server
         self.phase = .unknown
         self.patchStates = [PatchState]()
         ConnectionController.instance = self
-    }
-    
-    convenience init(uiViewController: UIViewController, host: String, port: UInt16){
-        self.init(uiViewController: uiViewController, host: host, port: port, password: nil)
     }
     
     func setUIViewController(uiViewController: UIViewController){
@@ -71,15 +63,15 @@ class ConnectionController : ConnectionControllerProtocol {
     }
     
     func getPassword() -> String? {
-        return self.password
+        return self.server.password
     }
     
     func usesPassword() -> Bool {
-        return self.password != nil
+        return self.server.password != nil
     }
     
     func connect(){
-        self.spiceClient = SpiceClient(host: host, port: port, controller: self)
+        self.spiceClient = SpiceClient(host: server.host, port: server.port, controller: self)
         startTimer()
         self.spiceClient!.connect()
     }
@@ -132,7 +124,7 @@ class ConnectionController : ConnectionControllerProtocol {
             self.uiViewController.reconnect()
         }
         self.spiceClient?.disconnect()
-        self.spiceClient = SpiceClient(host: host, port: port, controller: self)
+        self.spiceClient = SpiceClient(host: server.host, port: server.port, controller: self)
         self.phase = .unknown
         
         print("RECONNECTING")

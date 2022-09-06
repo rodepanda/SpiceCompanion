@@ -41,8 +41,8 @@ class MirrorViewController: UIViewController, MirrorViewDelegate, PacketHandler 
         let parentController = ConnectionController.get()
         mirrorController = MirrorConnectionController(
             uiViewController: self,
-            host: parentController.host,
-            port: parentController.port,
+            host: parentController.server.host,
+            port: parentController.server.port,
             password: parentController.getPassword()
         )
 
