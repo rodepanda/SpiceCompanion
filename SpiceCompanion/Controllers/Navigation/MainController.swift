@@ -45,20 +45,50 @@ class MainController: UISplitViewController {
         ),
     ]
 
-    init() {
-        super.init(style: .doubleColumn)
+    /// The sidebar of this controller.
+    private let sidebarController: SidebarController
 
-        let sidebar = SidebarController(tabs: tabs)
-        let sidebarNavigationController = UINavigationController(rootViewController: sidebar)
+    /// The tabs of this controller.
+    private let tabsController: TabsController
+
+    init() {
+        sidebarController = SidebarController(tabs: tabs)
+        tabsController = TabsController(tabs: tabs)
+        super.init(style: .doubleColumn)
+        sidebarController.navigationSourceDelegate = self
+        tabsController.navigationSourceDelegate = self
+
+        // wrap the sidebar in a navigation controller for a navigation bar
+        let sidebarNavigationController = UINavigationController(rootViewController: sidebarController)
         sidebarNavigationController.navigationBar.prefersLargeTitles = true
 
-        let tabs = TabsController(tabs: tabs)
         setViewController(sidebarNavigationController, for: .primary)
-        setViewController(tabs, for: .secondary)
-        setViewController(tabs, for: .compact)
+        setViewController(tabsController, for: .secondary)
+        setViewController(tabsController, for: .compact)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        // toggle the tab bar depending on if the sidebar is available
+        tabsController.tabBar.isHidden = traitCollection.horizontalSizeClass != .compact
+    }
+}
+
+// MARK: - NavigationSourceDelegate
+
+extension MainController: NavigationSourceDelegate {
+    func navigationSource(_ navigationSource: UIViewController, didSelectTab tab: MainTab) {
+        // sync selection between the tabs and sidebar
+        if navigationSource == sidebarController {
+            tabsController.selectTab(tab)
+        }
+        else if navigationSource == tabsController {
+            sidebarController.selectTab(tab)
+        }
     }
 }

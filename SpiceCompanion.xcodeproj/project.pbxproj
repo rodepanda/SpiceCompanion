@@ -68,6 +68,7 @@
 		89E526B028C6B680009E8282 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526AF28C6B680009E8282 /* TabsController.swift */; };
 		89E526B228C6B6CE009E8282 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B128C6B6CE009E8282 /* SidebarController.swift */; };
 		89E526B428C6B775009E8282 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B328C6B775009E8282 /* MainTab.swift */; };
+		89E526B628C6D505009E8282 /* NavigationSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B528C6D505009E8282 /* NavigationSourceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		89E526AF28C6B680009E8282 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
 		89E526B128C6B6CE009E8282 /* SidebarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		89E526B328C6B775009E8282 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		89E526B528C6D505009E8282 /* NavigationSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSourceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 				89E526B328C6B775009E8282 /* MainTab.swift */,
 				89E526AF28C6B680009E8282 /* TabsController.swift */,
 				89E526B128C6B6CE009E8282 /* SidebarController.swift */,
+				89E526B528C6D505009E8282 /* NavigationSourceDelegate.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				4113E0F0246857940051DBFF /* LauncherPacket.swift in Sources */,
 				895F337628B35F52002AAEC0 /* Server.swift in Sources */,
 				895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */,
+				89E526B628C6D505009E8282 /* NavigationSourceDelegate.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
 				89E526AE28C6B5FC009E8282 /* MainController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
