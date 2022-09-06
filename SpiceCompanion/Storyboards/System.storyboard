@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--System-->
         <scene sceneID="jfT-gj-12e">
             <objects>
                 <tableViewController id="CAR-sq-kV3" customClass="SettingsTableViewController" customModule="SpiceCompanionCompanion" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,7 +210,7 @@
                             <outlet property="delegate" destination="CAR-sq-kV3" id="yVu-to-qq2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="eBZ-1F-0Jr"/>
+                    <navigationItem key="navigationItem" title="System" id="eBZ-1F-0Jr"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="g7L-M2-aOv" id="KW2-XI-F9u"/>
                         <outlet property="applicationLabel" destination="GhM-HY-6e6" id="EIV-ad-gzk"/>

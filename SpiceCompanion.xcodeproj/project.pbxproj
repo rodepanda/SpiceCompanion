@@ -55,7 +55,7 @@
 		897676B428C5DE0200B9467B /* Keypad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897676B328C5DE0200B9467B /* Keypad.storyboard */; };
 		897676B628C5DE3800B9467B /* Patches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897676B528C5DE3800B9467B /* Patches.storyboard */; };
 		897676B828C5DE7900B9467B /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897676B728C5DE7900B9467B /* Cards.storyboard */; };
-		897676BA28C5DEFA00B9467B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897676B928C5DEFA00B9467B /* Settings.storyboard */; };
+		897676BA28C5DEFA00B9467B /* System.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897676B928C5DEFA00B9467B /* System.storyboard */; };
 		897676BC28C5DF2000B9467B /* Mirror.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897676BB28C5DF2000B9467B /* Mirror.storyboard */; };
 		8978A959288F3F7600ED1585 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8978A958288F3F7600ED1585 /* SwiftyJSON */; };
 		899054A028C582F800966CFC /* ServerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8990549F28C582F800966CFC /* ServerListController.swift */; };
@@ -124,7 +124,7 @@
 		897676B328C5DE0200B9467B /* Keypad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keypad.storyboard; sourceTree = "<group>"; };
 		897676B528C5DE3800B9467B /* Patches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Patches.storyboard; sourceTree = "<group>"; };
 		897676B728C5DE7900B9467B /* Cards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cards.storyboard; sourceTree = "<group>"; };
-		897676B928C5DEFA00B9467B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		897676B928C5DEFA00B9467B /* System.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = System.storyboard; sourceTree = "<group>"; };
 		897676BB28C5DF2000B9467B /* Mirror.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mirror.storyboard; sourceTree = "<group>"; };
 		8990549F28C582F800966CFC /* ServerListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListController.swift; sourceTree = "<group>"; };
 		899054A128C586A900966CFC /* ServerFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerFormController.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 				897676B728C5DE7900B9467B /* Cards.storyboard */,
 				897676B328C5DE0200B9467B /* Keypad.storyboard */,
 				897676B528C5DE3800B9467B /* Patches.storyboard */,
-				897676B928C5DEFA00B9467B /* Settings.storyboard */,
+				897676B928C5DEFA00B9467B /* System.storyboard */,
 				897676BB28C5DF2000B9467B /* Mirror.storyboard */,
 				4150D14323A3D5C9006B255A /* LaunchScreen.storyboard */,
 			);
@@ -414,7 +414,7 @@
 				897676B228C5DDC400B9467B /* Servers.storyboard in Resources */,
 				897676BC28C5DF2000B9467B /* Mirror.storyboard in Resources */,
 				897676B828C5DE7900B9467B /* Cards.storyboard in Resources */,
-				897676BA28C5DEFA00B9467B /* Settings.storyboard in Resources */,
+				897676BA28C5DEFA00B9467B /* System.storyboard in Resources */,
 				4150D14223A3D5C9006B255A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

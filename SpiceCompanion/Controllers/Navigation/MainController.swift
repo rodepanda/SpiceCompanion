@@ -41,7 +41,7 @@ class MainController: UISplitViewController {
             name: "System",
             filledIcon: "memorychip.fill",
             outlinedIcon: "memorychip",
-            storyboard: "Settings"
+            storyboard: "System"
         ),
     ]
 
