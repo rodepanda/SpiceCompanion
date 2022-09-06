@@ -25,12 +25,12 @@ class MainController: UISplitViewController {
             outlinedIcon: "square.grid.3x3",
             storyboard: "Keypad"
         ),
-        MainTab(
-            name: "Mirror",
-            filledIcon: "rectangle.fill.on.rectangle.fill",
-            outlinedIcon: "rectangle.on.rectangle",
-            storyboard: "Mirror"
-        ),
+//        MainTab(
+//            name: "Mirror",
+//            filledIcon: "rectangle.fill.on.rectangle.fill",
+//            outlinedIcon: "rectangle.on.rectangle",
+//            storyboard: "Mirror"
+//        ),
         MainTab(
             name: "Patches",
             filledIcon: "puzzlepiece.extension.fill",

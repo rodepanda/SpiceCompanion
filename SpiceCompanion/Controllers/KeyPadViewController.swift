@@ -159,14 +159,14 @@ class KeyPadViewController: UIViewController{
     }
     
     @IBAction func mainMirrorButtonPressed(_ sender: Any) {
-        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "MirrorViewController") as! UINavigationController
+        let navigationController = UIStoryboard(name: "Mirror", bundle: .main).instantiateInitialViewController() as! UINavigationController
         let mirror = navigationController.viewControllers[0] as! MirrorViewController
         mirror.activeScreen = ConnectionController.get().screens[0]
         present(navigationController, animated: true, completion: nil)
     }
     
     @IBAction func subMirrorButtonPressed(_ sender: Any) {
-        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "MirrorViewController") as! UINavigationController
+        let navigationController = UIStoryboard(name: "Mirror", bundle: .main).instantiateInitialViewController() as! UINavigationController
         let mirror = navigationController.viewControllers[0] as! MirrorViewController
         mirror.activeScreen = ConnectionController.get().screens[1]
         present(navigationController, animated: true, completion: nil)
