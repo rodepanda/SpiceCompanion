@@ -48,7 +48,12 @@ class MainController: UISplitViewController {
     init() {
         super.init(style: .doubleColumn)
 
+        let sidebar = SidebarController(tabs: tabs)
+        let sidebarNavigationController = UINavigationController(rootViewController: sidebar)
+        sidebarNavigationController.navigationBar.prefersLargeTitles = true
+
         let tabs = TabsController(tabs: tabs)
+        setViewController(sidebarNavigationController, for: .primary)
         setViewController(tabs, for: .secondary)
         setViewController(tabs, for: .compact)
     }

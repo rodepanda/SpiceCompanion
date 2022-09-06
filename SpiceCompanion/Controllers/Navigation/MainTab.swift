@@ -9,7 +9,7 @@
 import UIKit
 
 /// A tab at the root of a `MainController`.
-struct MainTab {
+struct MainTab: Hashable {
 
     /// The storyboard containing this tab's view controller as its initial view controller.
     private let storyboard: UIStoryboard
