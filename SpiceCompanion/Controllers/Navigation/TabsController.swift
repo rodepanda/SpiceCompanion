@@ -9,12 +9,11 @@
 import UIKit
 
 /// The view controller containing the different tabs within a `MainController`.
-class TabsController: UITabBarController {
+class TabsController: UITabBarController, NavigationSource {
 
     /// All the tabs within this controller.
     private let tabs: [MainTab]
 
-    /// The delegate for this controller to publish its navigation source events to.
     weak var navigationSourceDelegate: NavigationSourceDelegate?
 
     init(tabs: [MainTab]) {
@@ -39,9 +38,11 @@ class TabsController: UITabBarController {
         // send out the initial event for the default selected tab
         tabBar(tabBar, didSelect: tabBar.selectedItem!)
     }
+}
 
-    /// Select and present the given tab within this controller.
-    /// - Parameter tab: The tab to select and present.
+// MARK: - NavigationSource
+
+extension TabsController {
     func selectTab(_ tab: MainTab) {
         guard let index = tabs.firstIndex(of: tab) else {
             return

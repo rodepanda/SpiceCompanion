@@ -69,6 +69,7 @@
 		89E526B228C6B6CE009E8282 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B128C6B6CE009E8282 /* SidebarController.swift */; };
 		89E526B428C6B775009E8282 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B328C6B775009E8282 /* MainTab.swift */; };
 		89E526B628C6D505009E8282 /* NavigationSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B528C6D505009E8282 /* NavigationSourceDelegate.swift */; };
+		89E526B828C6DC48009E8282 /* NavigationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E526B728C6DC48009E8282 /* NavigationSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		89E526B128C6B6CE009E8282 /* SidebarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		89E526B328C6B775009E8282 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		89E526B528C6D505009E8282 /* NavigationSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSourceDelegate.swift; sourceTree = "<group>"; };
+		89E526B728C6DC48009E8282 /* NavigationSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +337,7 @@
 				89E526B328C6B775009E8282 /* MainTab.swift */,
 				89E526AF28C6B680009E8282 /* TabsController.swift */,
 				89E526B128C6B6CE009E8282 /* SidebarController.swift */,
+				89E526B728C6DC48009E8282 /* NavigationSource.swift */,
 				89E526B528C6D505009E8282 /* NavigationSourceDelegate.swift */,
 			);
 			path = Navigation;
@@ -450,6 +453,7 @@
 				8938553328B21B8C0005BF43 /* MirrorView.swift in Sources */,
 				4150D15F23A5244A006B255A /* DataPacket.swift in Sources */,
 				415B7F842535AFE400FAB1A0 /* ButtonWritePacket.swift in Sources */,
+				89E526B828C6DC48009E8282 /* NavigationSource.swift in Sources */,
 				41E6A3FC2548CBEA00408144 /* TouchResetPacket.swift in Sources */,
 				41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */,
 				4177A8A32467635600B695E9 /* PatchManager.swift in Sources */,

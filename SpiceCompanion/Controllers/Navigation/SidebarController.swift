@@ -10,7 +10,7 @@ import UIKit
 
 /// The view controller containing the sidebar within a `MainController` when using a regular horizontal
 /// size class.
-class SidebarController: UICollectionViewController {
+class SidebarController: UICollectionViewController, NavigationSource {
 
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, ListItem>
     private typealias HeaderCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Section>
@@ -51,7 +51,6 @@ class SidebarController: UICollectionViewController {
         return dataSource
     }()
 
-    /// The delegate for this controller to publish its navigation source events to.
     weak var navigationSourceDelegate: NavigationSourceDelegate?
 
     init(tabs: [MainTab]) {
@@ -89,9 +88,11 @@ class SidebarController: UICollectionViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    /// Select the given tab within this controller.
-    /// - Parameter tab: The tab to select.
+// MARK: - NavigationSource
+
+extension SidebarController {
     func selectTab(_ tab: MainTab) {
         guard let sectionIndex = sections.firstIndex(where: { $0.tabs.contains(tab) }) else {
             return

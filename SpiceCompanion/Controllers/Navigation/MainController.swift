@@ -82,7 +82,7 @@ class MainController: UISplitViewController {
 // MARK: - NavigationSourceDelegate
 
 extension MainController: NavigationSourceDelegate {
-    func navigationSource(_ navigationSource: UIViewController, didSelectTab tab: MainTab) {
+    func navigationSource(_ navigationSource: NavigationSource, didSelectTab tab: MainTab) {
         // sync selection between the tabs and sidebar
         if navigationSource == sidebarController {
             tabsController.selectTab(tab)

@@ -8,10 +8,10 @@
 
 import UIKit
 
-/// A delegate for receiving events from primary navigation sources in `MainController`.
+/// A delegate for receiving events from a `NavigationSource`.
 protocol NavigationSourceDelegate: AnyObject {
     /// Called to inform the delegate that the navigation source has selected the given tab.
     /// - Parameter navigationSource: The navigation source publishing this event.
     /// - Parameter tab: The newly selected tab.
-    func navigationSource(_ navigationSource: UIViewController, didSelectTab tab: MainTab)
+    func navigationSource(_ navigationSource: NavigationSource, didSelectTab tab: MainTab)
 }
