@@ -34,7 +34,7 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
         
         if let card = card {
             nameField.text = card.name
-            numberField.text = card.cardNumber
+            numberField.text = card.id
             super.title = "Edit Card"
         }
         
@@ -89,7 +89,7 @@ class AddCardTableViewController: UITableViewController, NFCTagReaderSessionDele
         
         let name = nameField.text ?? ""
         let cardNumber = numberField.text?.lowercased() ?? ""
-        self.card = Card(name: name, number: cardNumber)
+        self.card = Card(id: cardNumber, name: name)
         
     }
     
