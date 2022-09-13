@@ -51,6 +51,11 @@
 		8940512D28D0021E00A082D3 /* ConnectionSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940512C28D0021E00A082D3 /* ConnectionSidebarView.swift */; };
 		8940512F28D00F9800A082D3 /* ConnectionTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940512E28D00F9800A082D3 /* ConnectionTabsView.swift */; };
 		8940513128D00FDC00A082D3 /* ConnectionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940513028D00FDC00A082D3 /* ConnectionTab.swift */; };
+		8940513628D01F8F00A082D3 /* StoryboardRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940513528D01F8F00A082D3 /* StoryboardRepresentable.swift */; };
+		8940513C28D034C900A082D3 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940513B28D034C900A082D3 /* CardsView.swift */; };
+		8940513E28D0350200A082D3 /* KeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940513D28D0350200A082D3 /* KeypadView.swift */; };
+		8940514028D0352000A082D3 /* PatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940513F28D0352000A082D3 /* PatchesView.swift */; };
+		8940514228D0354D00A082D3 /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940514128D0354D00A082D3 /* SystemView.swift */; };
 		895F337628B35F52002AAEC0 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337528B35F52002AAEC0 /* Server.swift */; };
 		895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337728B36526002AAEC0 /* SettingsStore.swift */; };
 		895F337A28B371C2002AAEC0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F337928B371C2002AAEC0 /* Settings.swift */; };
@@ -124,6 +129,11 @@
 		8940512C28D0021E00A082D3 /* ConnectionSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSidebarView.swift; sourceTree = "<group>"; };
 		8940512E28D00F9800A082D3 /* ConnectionTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTabsView.swift; sourceTree = "<group>"; };
 		8940513028D00FDC00A082D3 /* ConnectionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTab.swift; sourceTree = "<group>"; };
+		8940513528D01F8F00A082D3 /* StoryboardRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentable.swift; sourceTree = "<group>"; };
+		8940513B28D034C900A082D3 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		8940513D28D0350200A082D3 /* KeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadView.swift; sourceTree = "<group>"; };
+		8940513F28D0352000A082D3 /* PatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchesView.swift; sourceTree = "<group>"; };
+		8940514128D0354D00A082D3 /* SystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
 		895F337528B35F52002AAEC0 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		895F337728B36526002AAEC0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		895F337928B371C2002AAEC0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -283,6 +293,38 @@
 			path = Connection;
 			sourceTree = "<group>";
 		};
+		8940513728D0344F00A082D3 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				8940513B28D034C900A082D3 /* CardsView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		8940513828D0345800A082D3 /* Keypad */ = {
+			isa = PBXGroup;
+			children = (
+				8940513D28D0350200A082D3 /* KeypadView.swift */,
+			);
+			path = Keypad;
+			sourceTree = "<group>";
+		};
+		8940513928D0346000A082D3 /* Patches */ = {
+			isa = PBXGroup;
+			children = (
+				8940513F28D0352000A082D3 /* PatchesView.swift */,
+			);
+			path = Patches;
+			sourceTree = "<group>";
+		};
+		8940513A28D0346800A082D3 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				8940514128D0354D00A082D3 /* SystemView.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		895F337428B35F36002AAEC0 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,8 +348,13 @@
 			isa = PBXGroup;
 			children = (
 				899054A428C598F100966CFC /* FormTextField.swift */,
+				8940513528D01F8F00A082D3 /* StoryboardRepresentable.swift */,
 				8940512928D0017000A082D3 /* Connection */,
+				8940513728D0344F00A082D3 /* Cards */,
+				8940513828D0345800A082D3 /* Keypad */,
 				8938553528B2296B0005BF43 /* Mirror */,
+				8940513928D0346000A082D3 /* Patches */,
+				8940513A28D0346800A082D3 /* System */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -451,7 +498,9 @@
 				4113E0E624681BAF0051DBFF /* PatchTableViewController.swift in Sources */,
 				414A94D92535C67900DDDE31 /* QuitApplicationPacket.swift in Sources */,
 				4150D15823A504E9006B255A /* Rc4.swift in Sources */,
+				8940514028D0352000A082D3 /* PatchesView.swift in Sources */,
 				89947CFB28B0F3320078A255 /* MirrorTouchDisplayView.swift in Sources */,
+				8940513C28D034C900A082D3 /* CardsView.swift in Sources */,
 				41E6A3F92548CBDC00408144 /* TouchWritePacket.swift in Sources */,
 				899054A228C586A900966CFC /* ServerFormController.swift in Sources */,
 				4150D16123A5271B006B255A /* AvsPacket.swift in Sources */,
@@ -477,6 +526,7 @@
 				8940513128D00FDC00A082D3 /* ConnectionTab.swift in Sources */,
 				89E526B828C6DC48009E8282 /* NavigationSource.swift in Sources */,
 				8940512B28D0018100A082D3 /* ConnectionView.swift in Sources */,
+				8940513E28D0350200A082D3 /* KeypadView.swift in Sources */,
 				41E6A3FC2548CBEA00408144 /* TouchResetPacket.swift in Sources */,
 				41E6A4022548DD8E00408144 /* ConnectionControllerProtocol.swift in Sources */,
 				4177A8A32467635600B695E9 /* PatchManager.swift in Sources */,
@@ -494,10 +544,12 @@
 				895F337828B36526002AAEC0 /* SettingsStore.swift in Sources */,
 				89E526B628C6D505009E8282 /* NavigationSourceDelegate.swift in Sources */,
 				4113E0F224686FC10051DBFF /* SettingsTableViewController.swift in Sources */,
+				8940513628D01F8F00A082D3 /* StoryboardRepresentable.swift in Sources */,
 				8940512D28D0021E00A082D3 /* ConnectionSidebarView.swift in Sources */,
 				89E526AE28C6B5FC009E8282 /* MainController.swift in Sources */,
 				4150D16323A65E3A006B255A /* ConnectionController.swift in Sources */,
 				4113E0EC2468480B0051DBFF /* KeyPadPacket.swift in Sources */,
+				8940514228D0354D00A082D3 /* SystemView.swift in Sources */,
 				41E6A3F62548A5FF00408144 /* UIViewController.swift in Sources */,
 				4150D13B23A3D5C5006B255A /* SceneDelegate.swift in Sources */,
 				4150D15A23A515F5006B255A /* SpiceClient.swift in Sources */,
