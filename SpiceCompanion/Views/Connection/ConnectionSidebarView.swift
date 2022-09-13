@@ -24,7 +24,7 @@ struct ConnectionSidebarView: View {
             }
         }
         .listStyle(.sidebar)
-        .navigationTitle("Sidebar") //TODO: server in environment
+        .navigationTitle(ConnectionController.get().server.name)
     }
 }
 
