@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4150D13423A3D5C5006B255A"
-               BuildableName = "SpiceCompanionCompanion.app"
+               BuildableName = "SpiceCompanion.app"
                BlueprintName = "SpiceCompanion"
                ReferencedContainer = "container:SpiceCompanion.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4150D13423A3D5C5006B255A"
-            BuildableName = "SpiceCompanionCompanion.app"
+            BuildableName = "SpiceCompanion.app"
             BlueprintName = "SpiceCompanion"
             ReferencedContainer = "container:SpiceCompanion.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4150D13423A3D5C5006B255A"
-            BuildableName = "SpiceCompanionCompanion.app"
+            BuildableName = "SpiceCompanion.app"
             BlueprintName = "SpiceCompanion"
             ReferencedContainer = "container:SpiceCompanion.xcodeproj">
          </BuildableReference>

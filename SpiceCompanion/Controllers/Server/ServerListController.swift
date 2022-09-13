@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 /// The view controller for displaying and editing a list of the user's servers, as well as opening a connection
 /// to them.
@@ -158,10 +159,10 @@ extension ServerListController {
                 return
             }
 
-            let mainController = MainController()
-            mainController.modalPresentationStyle = .fullScreen
-            client.setUIViewController(uiViewController: mainController)
-            self.present(mainController, animated: true)
+            let controller = UIHostingController(rootView: ConnectionView())
+            controller.modalPresentationStyle = .fullScreen
+            client.setUIViewController(uiViewController: controller)
+            self.present(controller, animated: true)
         }
     }
 
