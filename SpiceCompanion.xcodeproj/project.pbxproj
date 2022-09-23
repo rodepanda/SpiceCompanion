@@ -18,7 +18,6 @@
 		8903036128DD368A0066E969 /* SpiceCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8903036428DD368A0066E969 /* SpiceCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiceCompanionApp.swift; sourceTree = "<group>"; };
 		8903036828DD368B0066E969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8903036A28DD368B0066E969 /* SpiceCompanion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpiceCompanion.entitlements; sourceTree = "<group>"; };
 		8903036C28DD368B0066E969 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8903037328DD38F40066E969 /* Notice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
 		89B421B828DD3AC90087642A /* ServerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerList.swift; sourceTree = "<group>"; };
@@ -58,7 +57,6 @@
 				8903036428DD368A0066E969 /* SpiceCompanionApp.swift */,
 				89B421B528DD3AB60087642A /* Views */,
 				8903036828DD368B0066E969 /* Assets.xcassets */,
-				8903036A28DD368B0066E969 /* SpiceCompanion.entitlements */,
 				8903036B28DD368B0066E969 /* Preview Content */,
 			);
 			path = SpiceCompanion;
@@ -281,7 +279,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/SpiceCompanion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpiceCompanion/Preview Content\"";
@@ -321,7 +318,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SpiceCompanion/SpiceCompanion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpiceCompanion/Preview Content\"";
