@@ -11,7 +11,10 @@ import SwiftUI
 struct SpiceCompanionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ServerList()
+            }
+            .navigationViewStyle(.stack)
         }
     }
 }
