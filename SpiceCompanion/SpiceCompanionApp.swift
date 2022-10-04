@@ -15,6 +15,7 @@ struct SpiceCompanionApp: App {
                 ServerList()
             }
             .navigationViewStyle(.stack)
+            .environment(\.serversStore, ServersStore())
         }
     }
 }
