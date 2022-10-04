@@ -11,6 +11,7 @@
 		8903036928DD368B0066E969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8903036828DD368B0066E969 /* Assets.xcassets */; };
 		8903036D28DD368B0066E969 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8903036C28DD368B0066E969 /* Preview Assets.xcassets */; };
 		8903037428DD38F40066E969 /* Notice in Resources */ = {isa = PBXBuildFile; fileRef = 8903037328DD38F40066E969 /* Notice */; };
+		898FD6C028EBBDA0006291F5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6BF28EBBDA0006291F5 /* Server.swift */; };
 		89B421B928DD3AC90087642A /* ServerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B421B828DD3AC90087642A /* ServerList.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		8903036828DD368B0066E969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8903036C28DD368B0066E969 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8903037328DD38F40066E969 /* Notice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
+		898FD6BF28EBBDA0006291F5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		89B421B828DD3AC90087642A /* ServerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 			children = (
 				8903036428DD368A0066E969 /* SpiceCompanionApp.swift */,
 				89B421B528DD3AB60087642A /* Views */,
+				898FD6BA28EBBD56006291F5 /* Models */,
 				8903036828DD368B0066E969 /* Assets.xcassets */,
 				8903036B28DD368B0066E969 /* Preview Content */,
 			);
@@ -68,6 +71,22 @@
 				8903036C28DD368B0066E969 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		898FD6BA28EBBD56006291F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				898FD6BE28EBBD93006291F5 /* Servers */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		898FD6BE28EBBD93006291F5 /* Servers */ = {
+			isa = PBXGroup;
+			children = (
+				898FD6BF28EBBDA0006291F5 /* Server.swift */,
+			);
+			path = Servers;
 			sourceTree = "<group>";
 		};
 		89B421B528DD3AB60087642A /* Views */ = {
@@ -158,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8903036528DD368A0066E969 /* SpiceCompanionApp.swift in Sources */,
+				898FD6C028EBBDA0006291F5 /* Server.swift in Sources */,
 				89B421B928DD3AC90087642A /* ServerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
