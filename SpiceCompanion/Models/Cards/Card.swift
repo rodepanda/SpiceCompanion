@@ -22,6 +22,12 @@ struct Card: Identifiable, Equatable, Codable {
     /// older formats exist that can be used.
     var number: String
 
+    init(name: String, number: String) {
+        self.id = UUID()
+        self.name = name
+        self.number = number
+    }
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = (try? container.decode(UUID.self, forKey: .id)) ?? UUID()
