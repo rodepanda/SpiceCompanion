@@ -14,9 +14,9 @@ class Store<Contents: Codable>: ObservableObject {
     private let filename: String
 
     /// The default contents of this store to use when there are no contents present.
-    private let defaultContents: Contents
+    private let defaultContents: () async -> Contents
 
-    init(filename: String, defaultContents: Contents) {
+    init(filename: String, defaultContents: @escaping () async -> Contents) {
         self.filename = filename
         self.defaultContents = defaultContents
     }
@@ -27,7 +27,7 @@ class Store<Contents: Codable>: ObservableObject {
         return try await Task.detached(priority: .background) {
             let fileUrl = try self.getFileUrl()
             guard let file = try? FileHandle(forReadingFrom: fileUrl) else {
-                return self.defaultContents
+                return await self.defaultContents()
             }
 
             let decoder = PropertyListDecoder()

@@ -14,6 +14,8 @@ import Foundation
 class LegacyStore: Store<LegacySettings> {
 
     init() {
-        super.init(filename: "Settings", defaultContents: LegacySettings())
+        super.init(filename: "Settings", defaultContents: {
+            LegacySettings()
+        })
     }
 }
