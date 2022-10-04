@@ -17,7 +17,11 @@
 		898FD6C628EBC1AF006291F5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C528EBC1AF006291F5 /* Card.swift */; };
 		898FD6C828EBC2BB006291F5 /* ServersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C728EBC2BB006291F5 /* ServersStore.swift */; };
 		898FD6CA28EBC3FC006291F5 /* LegacyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C928EBC3FC006291F5 /* LegacyStore.swift */; };
+		89A4043C28EC2950003B94E3 /* CardWavesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */; };
+		89A4043E28EC29F9003B94E3 /* CardFlowerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */; };
+		89A4044028EC2A9F003B94E3 /* CardStripesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */; };
 		89A4044328EC2AFC003B94E3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4044228EC2AFC003B94E3 /* Color.swift */; };
+		89A4044528EC3080003B94E3 /* CardBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4044428EC3080003B94E3 /* CardBackground.swift */; };
 		89B421B928DD3AC90087642A /* ServerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B421B828DD3AC90087642A /* ServerList.swift */; };
 		89B871FA28EBD86C008A8399 /* StoreEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B871F928EBD86C008A8399 /* StoreEnvironment.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +38,11 @@
 		898FD6C528EBC1AF006291F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		898FD6C728EBC2BB006291F5 /* ServersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersStore.swift; sourceTree = "<group>"; };
 		898FD6C928EBC3FC006291F5 /* LegacyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyStore.swift; sourceTree = "<group>"; };
+		89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWavesBackground.swift; sourceTree = "<group>"; };
+		89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlowerBackground.swift; sourceTree = "<group>"; };
+		89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStripesBackground.swift; sourceTree = "<group>"; };
 		89A4044228EC2AFC003B94E3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		89A4044428EC3080003B94E3 /* CardBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackground.swift; sourceTree = "<group>"; };
 		89B421B828DD3AC90087642A /* ServerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerList.swift; sourceTree = "<group>"; };
 		89B871F928EBD86C008A8399 /* StoreEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				89B421B728DD3ABF0087642A /* Servers */,
+				89B871FB28EBF963008A8399 /* Cards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +173,17 @@
 				89B871F928EBD86C008A8399 /* StoreEnvironment.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		89B871FB28EBF963008A8399 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				89A4044428EC3080003B94E3 /* CardBackground.swift */,
+				89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */,
+				89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */,
+				89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +259,13 @@
 			files = (
 				89B871FA28EBD86C008A8399 /* StoreEnvironment.swift in Sources */,
 				898FD6C628EBC1AF006291F5 /* Card.swift in Sources */,
+				89A4044028EC2A9F003B94E3 /* CardStripesBackground.swift in Sources */,
 				898FD6BD28EBBD64006291F5 /* Store.swift in Sources */,
 				8903036528DD368A0066E969 /* SpiceCompanionApp.swift in Sources */,
 				898FD6C028EBBDA0006291F5 /* Server.swift in Sources */,
+				89A4043E28EC29F9003B94E3 /* CardFlowerBackground.swift in Sources */,
+				89A4043C28EC2950003B94E3 /* CardWavesBackground.swift in Sources */,
+				89A4044528EC3080003B94E3 /* CardBackground.swift in Sources */,
 				89A4044328EC2AFC003B94E3 /* Color.swift in Sources */,
 				898FD6C328EBBFD9006291F5 /* LegacySettings.swift in Sources */,
 				898FD6C828EBC2BB006291F5 /* ServersStore.swift in Sources */,
