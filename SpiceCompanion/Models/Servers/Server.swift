@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// A single defined Spice server that can be connected to.
+/// A defined Spice server that can be connected to.
 struct Server: Identifiable, Codable {
 
     /// The unique internal identifier of this server.
