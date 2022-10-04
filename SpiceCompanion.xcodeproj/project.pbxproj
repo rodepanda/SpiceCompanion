@@ -15,6 +15,7 @@
 		898FD6C028EBBDA0006291F5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6BF28EBBDA0006291F5 /* Server.swift */; };
 		898FD6C328EBBFD9006291F5 /* LegacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C228EBBFD9006291F5 /* LegacySettings.swift */; };
 		898FD6C628EBC1AF006291F5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C528EBC1AF006291F5 /* Card.swift */; };
+		898FD6C828EBC2BB006291F5 /* ServersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C728EBC2BB006291F5 /* ServersStore.swift */; };
 		898FD6CA28EBC3FC006291F5 /* LegacyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C928EBC3FC006291F5 /* LegacyStore.swift */; };
 		89B421B928DD3AC90087642A /* ServerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B421B828DD3AC90087642A /* ServerList.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		898FD6BF28EBBDA0006291F5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		898FD6C228EBBFD9006291F5 /* LegacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacySettings.swift; sourceTree = "<group>"; };
 		898FD6C528EBC1AF006291F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		898FD6C728EBC2BB006291F5 /* ServersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersStore.swift; sourceTree = "<group>"; };
 		898FD6C928EBC3FC006291F5 /* LegacyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyStore.swift; sourceTree = "<group>"; };
 		89B421B828DD3AC90087642A /* ServerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 			children = (
 				898FD6BC28EBBD64006291F5 /* Store.swift */,
 				898FD6C928EBC3FC006291F5 /* LegacyStore.swift */,
+				898FD6C728EBC2BB006291F5 /* ServersStore.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				8903036528DD368A0066E969 /* SpiceCompanionApp.swift in Sources */,
 				898FD6C028EBBDA0006291F5 /* Server.swift in Sources */,
 				898FD6C328EBBFD9006291F5 /* LegacySettings.swift in Sources */,
+				898FD6C828EBC2BB006291F5 /* ServersStore.swift in Sources */,
 				898FD6CA28EBC3FC006291F5 /* LegacyStore.swift in Sources */,
 				89B421B928DD3AC90087642A /* ServerList.swift in Sources */,
 			);
