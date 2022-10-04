@@ -13,6 +13,7 @@
 		8903037428DD38F40066E969 /* Notice in Resources */ = {isa = PBXBuildFile; fileRef = 8903037328DD38F40066E969 /* Notice */; };
 		898FD6BD28EBBD64006291F5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6BC28EBBD64006291F5 /* Store.swift */; };
 		898FD6C028EBBDA0006291F5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6BF28EBBDA0006291F5 /* Server.swift */; };
+		898FD6C328EBBFD9006291F5 /* LegacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C228EBBFD9006291F5 /* LegacySettings.swift */; };
 		898FD6C628EBC1AF006291F5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C528EBC1AF006291F5 /* Card.swift */; };
 		89B421B928DD3AC90087642A /* ServerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B421B828DD3AC90087642A /* ServerList.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		8903037328DD38F40066E969 /* Notice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notice; sourceTree = "<group>"; };
 		898FD6BC28EBBD64006291F5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		898FD6BF28EBBDA0006291F5 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		898FD6C228EBBFD9006291F5 /* LegacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacySettings.swift; sourceTree = "<group>"; };
 		898FD6C528EBC1AF006291F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		89B421B828DD3AC90087642A /* ServerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 		898FD6BA28EBBD56006291F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				898FD6C128EBBFCD006291F5 /* Legacy */,
 				898FD6BE28EBBD93006291F5 /* Servers */,
 				898FD6C428EBC1A6006291F5 /* Cards */,
 				898FD6BB28EBBD5C006291F5 /* Persistence */,
@@ -101,6 +104,14 @@
 				898FD6BF28EBBDA0006291F5 /* Server.swift */,
 			);
 			path = Servers;
+			sourceTree = "<group>";
+		};
+		898FD6C128EBBFCD006291F5 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				898FD6C228EBBFD9006291F5 /* LegacySettings.swift */,
+			);
+			path = Legacy;
 			sourceTree = "<group>";
 		};
 		898FD6C428EBC1A6006291F5 /* Cards */ = {
@@ -202,6 +213,7 @@
 				898FD6BD28EBBD64006291F5 /* Store.swift in Sources */,
 				8903036528DD368A0066E969 /* SpiceCompanionApp.swift in Sources */,
 				898FD6C028EBBDA0006291F5 /* Server.swift in Sources */,
+				898FD6C328EBBFD9006291F5 /* LegacySettings.swift in Sources */,
 				89B421B928DD3AC90087642A /* ServerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
