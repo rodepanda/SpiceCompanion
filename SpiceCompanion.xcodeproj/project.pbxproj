@@ -17,6 +17,7 @@
 		898FD6C628EBC1AF006291F5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C528EBC1AF006291F5 /* Card.swift */; };
 		898FD6C828EBC2BB006291F5 /* ServersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C728EBC2BB006291F5 /* ServersStore.swift */; };
 		898FD6CA28EBC3FC006291F5 /* LegacyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C928EBC3FC006291F5 /* LegacyStore.swift */; };
+		89A0E0BC28F62F08002DB1DE /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0E0BB28F62F08002DB1DE /* ServerView.swift */; };
 		89A4043C28EC2950003B94E3 /* CardWavesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */; };
 		89A4043E28EC29F9003B94E3 /* CardFlowerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */; };
 		89A4044028EC2A9F003B94E3 /* CardStripesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */; };
@@ -39,6 +40,7 @@
 		898FD6C528EBC1AF006291F5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		898FD6C728EBC2BB006291F5 /* ServersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersStore.swift; sourceTree = "<group>"; };
 		898FD6C928EBC3FC006291F5 /* LegacyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyStore.swift; sourceTree = "<group>"; };
+		89A0E0BB28F62F08002DB1DE /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWavesBackground.swift; sourceTree = "<group>"; };
 		89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlowerBackground.swift; sourceTree = "<group>"; };
 		89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStripesBackground.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				89B421B828DD3AC90087642A /* ServerList.swift */,
+				89A0E0BB28F62F08002DB1DE /* ServerView.swift */,
 			);
 			path = Servers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				89A4044328EC2AFC003B94E3 /* Color.swift in Sources */,
 				898FD6C328EBBFD9006291F5 /* LegacySettings.swift in Sources */,
 				898FD6C828EBC2BB006291F5 /* ServersStore.swift in Sources */,
+				89A0E0BC28F62F08002DB1DE /* ServerView.swift in Sources */,
 				898FD6CA28EBC3FC006291F5 /* LegacyStore.swift in Sources */,
 				89B421B928DD3AC90087642A /* ServerList.swift in Sources */,
 			);

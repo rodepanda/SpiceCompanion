@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A view for displaying a card in prominent, stylized appearance.
+/// A view for displaying a card in a prominent, stylized appearance.
 struct CardView: View {
 
     /// The configuration of this card's background.
