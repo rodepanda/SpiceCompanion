@@ -27,6 +27,11 @@ struct Server: Identifiable, Codable {
     /// If this is `nil` then this server does not use encryption and communicates over plaintext.
     var password: String?
 
+    /// Whether or not data transferred to and from this server is encrypted.
+    var isEncrypted: Bool {
+        return password != nil
+    }
+
     init(id: UUID = UUID(), name: String, host: String, port: UInt16, password: String? = nil) {
         self.id = id
         self.name = name
