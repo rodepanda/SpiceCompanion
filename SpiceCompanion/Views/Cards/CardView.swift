@@ -24,6 +24,7 @@ struct CardView: View {
                 VStack {
                     HStack(alignment: .firstTextBaseline) {
                         Text(card.name)
+                            .multilineTextAlignment(.leading)
                         Spacer()
                         Image(systemName: "wave.3.forward.circle.fill")
                     }

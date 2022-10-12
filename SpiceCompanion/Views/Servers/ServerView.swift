@@ -44,6 +44,7 @@ struct ServerView: View {
 
                     Text(server.name)
                         .font(.headline)
+                        .multilineTextAlignment(.leading)
                 }
                 .padding()
                 .foregroundColor(.white)
