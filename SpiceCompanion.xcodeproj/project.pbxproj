@@ -19,6 +19,7 @@
 		898FD6CA28EBC3FC006291F5 /* LegacyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FD6C928EBC3FC006291F5 /* LegacyStore.swift */; };
 		89A0E0BC28F62F08002DB1DE /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0E0BB28F62F08002DB1DE /* ServerView.swift */; };
 		89A0E0BE28F639D7002DB1DE /* ServerForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0E0BD28F639D7002DB1DE /* ServerForm.swift */; };
+		89A0E0C128F64EF7002DB1DE /* NavigationViewRoundedLargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0E0C028F64EF7002DB1DE /* NavigationViewRoundedLargeTitle.swift */; };
 		89A4043C28EC2950003B94E3 /* CardWavesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */; };
 		89A4043E28EC29F9003B94E3 /* CardFlowerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */; };
 		89A4044028EC2A9F003B94E3 /* CardStripesBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */; };
@@ -43,6 +44,7 @@
 		898FD6C928EBC3FC006291F5 /* LegacyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyStore.swift; sourceTree = "<group>"; };
 		89A0E0BB28F62F08002DB1DE /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		89A0E0BD28F639D7002DB1DE /* ServerForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerForm.swift; sourceTree = "<group>"; };
+		89A0E0C028F64EF7002DB1DE /* NavigationViewRoundedLargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewRoundedLargeTitle.swift; sourceTree = "<group>"; };
 		89A4043B28EC2950003B94E3 /* CardWavesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWavesBackground.swift; sourceTree = "<group>"; };
 		89A4043D28EC29F9003B94E3 /* CardFlowerBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlowerBackground.swift; sourceTree = "<group>"; };
 		89A4043F28EC2A9F003B94E3 /* CardStripesBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStripesBackground.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				89B421B528DD3AB60087642A /* Views */,
 				898FD6BA28EBBD56006291F5 /* Models */,
 				89B871F828EBD85A008A8399 /* Environment */,
+				89A0E0BF28F64EDD002DB1DE /* Modifiers */,
 				89A4044128EC2AF0003B94E3 /* Extensions */,
 				8903036828DD368B0066E969 /* Assets.xcassets */,
 				8903036B28DD368B0066E969 /* Preview Content */,
@@ -146,6 +149,14 @@
 				898FD6C528EBC1AF006291F5 /* Card.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		89A0E0BF28F64EDD002DB1DE /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				89A0E0C028F64EF7002DB1DE /* NavigationViewRoundedLargeTitle.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		89A4044128EC2AF0003B94E3 /* Extensions */ = {
@@ -274,6 +285,7 @@
 				89B871FD28EBF978008A8399 /* CardView.swift in Sources */,
 				89A0E0BE28F639D7002DB1DE /* ServerForm.swift in Sources */,
 				898FD6C028EBBDA0006291F5 /* Server.swift in Sources */,
+				89A0E0C128F64EF7002DB1DE /* NavigationViewRoundedLargeTitle.swift in Sources */,
 				89A4043E28EC29F9003B94E3 /* CardFlowerBackground.swift in Sources */,
 				89A4043C28EC2950003B94E3 /* CardWavesBackground.swift in Sources */,
 				89A4044528EC3080003B94E3 /* CardBackground.swift in Sources */,
