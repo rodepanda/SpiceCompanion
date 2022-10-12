@@ -29,7 +29,7 @@ struct Server: Identifiable, Codable {
 
     /// Whether or not data transferred to and from this server is encrypted.
     var isEncrypted: Bool {
-        return password != nil
+        return password != nil && !password!.isEmpty
     }
 
     init(id: UUID = UUID(), name: String, host: String, port: UInt16, password: String? = nil) {
