@@ -57,11 +57,11 @@ class MirrorView: UIView {
         clipsToBounds = true
         isMultipleTouchEnabled = true
 
-        renderView.frame = frame
+        renderView.frame = CGRect(origin: .zero, size: frame.size)
         renderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(renderView)
 
-        touchDisplayView.frame = frame
+        touchDisplayView.frame = CGRect(origin: .zero, size: frame.size)
         touchDisplayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(touchDisplayView)
 
