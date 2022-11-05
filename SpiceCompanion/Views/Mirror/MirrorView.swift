@@ -21,6 +21,9 @@ class MirrorView: UIView {
     /// The extents of the last value that `frameImage` was set to.
     private var lastFrameExtent: CGRect?
 
+    /// The extents of the last value that `frameImage` was set to, before any local orientation changes.
+    private var lastFrameAbsoluteExtent: CGRect?
+
     /// The current constraint on this view used to maintain the aspect ratio of the mirrored screen.
     private var aspectRatioConstraint: NSLayoutConstraint!
 
@@ -40,6 +43,7 @@ class MirrorView: UIView {
             // ugly hack but its functional until full rotation support can be
             // added throughout the interface
             var image = newValue
+            lastFrameAbsoluteExtent = image?.extent
             if shouldUseForcedLandscape(for: image?.extent ?? .zero) {
                 image = image?.oriented(.right)
             }
@@ -57,11 +61,11 @@ class MirrorView: UIView {
         clipsToBounds = true
         isMultipleTouchEnabled = true
 
-        renderView.frame = frame
+        renderView.frame = CGRect(origin: .zero, size: frame.size)
         renderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(renderView)
 
-        touchDisplayView.frame = frame
+        touchDisplayView.frame = CGRect(origin: .zero, size: frame.size)
         touchDisplayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(touchDisplayView)
 
@@ -182,7 +186,7 @@ class MirrorView: UIView {
                                     y: screenLocation.y * frameScaleY)
 
         // translate from forced landscape coordinates to mirror coordinates
-        if shouldUseForcedLandscape(for: frameImage.extent) {
+        if shouldUseForcedLandscape(for: lastFrameAbsoluteExtent ?? frameImage.extent) {
             let x = frameLocation.y
             let y = (frameLocation.x * -1) + frameWidth
             frameLocation =  CGPoint(x: x, y: y)
